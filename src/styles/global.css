@@ -1,0 +1,224 @@
+/* CodeFuse Solutions — design tokens & base styles */
+
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('/fonts/CabinetGrotesk-800.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'General Sans';
+  src: url('/fonts/GeneralSans-600.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --paper: #faf9f6;
+  --ink: #161513;
+  --graphite: #55524b;
+  --hairline: #e7e4dd;
+  --ember: #c7430f;
+  --ember-deep: #a0350a;
+
+  --font-display: 'Cabinet Grotesk', 'Arial Black', sans-serif;
+  --font-body: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --gutter: clamp(1.25rem, 6vw, 6.5rem);
+  --max: 1400px;
+  --section-pad: clamp(5rem, 14vh, 9.5rem);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: var(--ember);
+  color: var(--paper);
+}
+
+.wrap {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ---------- type scale ---------- */
+
+.display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2.625rem, 7.2vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(2rem, 3.4vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+.title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.kicker {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.8125rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--graphite);
+}
+
+.lede {
+  font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
+  line-height: 1.55;
+  color: var(--graphite);
+  max-width: 34em;
+}
+
+.body-copy {
+  color: var(--graphite);
+  max-width: 65ch;
+}
+
+/* ---------- buttons & links ---------- */
+
+.btn {
+  display: inline-block;
+  background: var(--ember);
+  color: var(--paper);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1;
+  text-decoration: none;
+  padding: 1.125rem 2.25rem;
+  border: 0;
+  transition:
+    background 0.25s var(--ease-out-expo),
+    transform 0.25s var(--ease-out-expo);
+}
+
+.btn:hover {
+  background: var(--ember-deep);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.text-link {
+  font-weight: 500;
+  text-decoration: none;
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: 0 100%;
+  padding-bottom: 2px;
+  transition: color 0.2s ease-out;
+}
+
+.text-link:hover {
+  color: var(--ember);
+  background-image: linear-gradient(var(--ember), var(--ember));
+}
+
+/* ---------- motion ---------- */
+
+html.js [data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+}
+
+html.js [data-reveal].in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+}
+
+html.js .fuse-line::after {
+  transform: scaleX(0);
+}
+
+html.js .fuse-line.lit::after {
+  transform: scaleX(1);
+  transition: transform 1.3s var(--ease-out-expo) 0.45s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  html.js [data-reveal],
+  html.js .fuse-line::after {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

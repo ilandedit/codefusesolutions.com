@@ -1,0 +1,90 @@
+---
+interface Props {
+  showWork?: boolean;
+}
+const { showWork = false } = Astro.props;
+---
+
+<header data-header>
+  <div class="wrap bar">
+    <a class="wordmark" href="/" aria-label="CodeFuse Solutions — home">
+      CodeFuse<span class="wordmark-tail">&nbsp;Solutions</span>
+    </a>
+    <nav aria-label="Main">
+      {showWork && <a href="/#work">Work</a>}
+      <a href="/#approach">Approach</a>
+      <a href="/#studio">Studio</a>
+      <a class="nav-contact" href="mailto:contact@codefusesolutions.com">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<style>
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: color-mix(in srgb, var(--paper) 92%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.3s ease-out;
+  }
+
+  header.scrolled {
+    border-bottom-color: var(--hairline);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.125rem;
+  }
+
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.3125rem;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+
+  .wordmark-tail {
+    font-family: var(--font-body);
+    font-weight: 400;
+    color: var(--graphite);
+    font-size: 1.0625rem;
+  }
+
+  nav {
+    display: flex;
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+  }
+
+  nav a {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: var(--graphite);
+    transition: color 0.2s ease-out;
+  }
+
+  nav a:hover {
+    color: var(--ink);
+  }
+
+  .nav-contact {
+    color: var(--ember);
+  }
+
+  .nav-contact:hover {
+    color: var(--ember-deep);
+  }
+
+  @media (max-width: 480px) {
+    .wordmark-tail {
+      display: none;
+    }
+  }
+</style>

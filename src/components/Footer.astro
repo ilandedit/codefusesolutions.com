@@ -1,0 +1,31 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer>
+  <div class="wrap bar">
+    <p>© {year} CodeFuse Solutions</p>
+    <a class="text-link" href="mailto:contact@codefusesolutions.com">contact@codefusesolutions.com</a>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--hairline);
+  }
+
+  .bar {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    padding-block: 2rem;
+    font-size: 0.9375rem;
+    color: var(--graphite);
+  }
+
+  a {
+    font-size: 0.9375rem;
+  }
+</style>

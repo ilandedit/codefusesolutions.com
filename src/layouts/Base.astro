@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="preload"
+      href="/fonts/CabinetGrotesk-800.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/GeneralSans-400.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href="/fonts/GeneralSans-500.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <slot />
+    <script>
+      // Header hairline appears once the page scrolls.
+      const header = document.querySelector('[data-header]');
+      if (header) {
+        const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+        onScroll();
+        window.addEventListener('scroll', onScroll, { passive: true });
+      }
+
+      // One orchestrated entrance: staggered hero reveal, then the fuse line lights.
+      // Double rAF ensures the hidden initial state is painted first, so the
+      // transition reliably plays instead of coalescing with the first frame.
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          document.querySelectorAll<HTMLElement>('[data-reveal]').forEach((el, i) => {
+            el.style.transitionDelay = `${i * 110}ms`;
+            el.classList.add('in');
+          });
+          document.querySelector('.fuse-line')?.classList.add('lit');
+        });
+      });
+    </script>
+  </body>
+</html>

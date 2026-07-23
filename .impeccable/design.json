@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-23T15:45:00Z",
+  "title": "Design System: CodeFuse Solutions",
+  "extensions": {
+    "colorMeta": {
+      "ember": { "role": "primary", "displayName": "Ember", "canonical": "#c7430f", "tonalRamp": ["oklch(20% 0.09 40)", "oklch(30% 0.13 40)", "oklch(40% 0.16 40)", "oklch(50% 0.18 40)", "oklch(58% 0.18 40)", "oklch(70% 0.13 40)", "oklch(85% 0.06 40)", "oklch(95% 0.02 40)"] },
+      "ember-deep": { "role": "primary", "displayName": "Ember Deep", "canonical": "#a0350a" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#161513", "tonalRamp": ["oklch(15% 0.005 80)", "oklch(25% 0.005 80)", "oklch(35% 0.006 80)", "oklch(45% 0.007 80)", "oklch(55% 0.008 80)", "oklch(70% 0.008 80)", "oklch(85% 0.008 80)", "oklch(95% 0.006 80)"] },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#faf9f6" },
+      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#55524b" },
+      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#e7e4dd" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero statement and closing CTA only." },
+      "headline": { "displayName": "Headline", "purpose": "Section leads and editorial row titles." },
+      "title": { "displayName": "Title", "purpose": "Step and work-item titles." },
+      "body": { "displayName": "Body", "purpose": "Copy in Graphite, max 65ch." },
+      "label": { "displayName": "Label", "purpose": "The single hero kicker; uppercase, tracked." },
+      "lede": { "displayName": "Lede", "purpose": "Hero and closing standfirsts in Graphite." },
+      "row-title": { "displayName": "Row Title", "purpose": "Capability rows and case-study subheads." },
+      "statement": { "displayName": "Statement", "purpose": "The studio paragraph." },
+      "mail-display": { "displayName": "Mail Display", "purpose": "The closing email link." },
+      "wordmark": { "displayName": "Wordmark", "purpose": "Header wordmark; tail drops below 480px." },
+      "wordmark-tail": { "displayName": "Wordmark Tail", "purpose": "The 'Solutions' tail of the wordmark." },
+      "nav": { "displayName": "Nav/Footer Small", "purpose": "Navigation and footer text." },
+      "button": { "displayName": "Button Label", "purpose": "Primary button text." }
+    },
+    "motion": [
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only easing: entrance reveal, fuse line draw, button states." }
+    ],
+    "breakpoints": [
+      { "name": "row-stack", "value": "820px" },
+      { "name": "wordmark-compact", "value": "480px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single ember action; one per viewport region.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Tell us your problem</a>",
+      "css": ".ds-btn-primary { display: inline-block; background: #c7430f; color: #faf9f6; font-family: 'General Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 1rem; line-height: 1; text-decoration: none; padding: 1.125rem 2.25rem; border-radius: 0; transition: background 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #a0350a; transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 2px solid #c7430f; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "description": "Quiet secondary action with a drawn 1px underline that turns ember on hover.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">How we work</a>",
+      "css": ".ds-text-link { color: #161513; font-family: 'General Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; text-decoration: none; background-image: linear-gradient(#161513, #161513); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; padding-bottom: 2px; transition: color 0.2s ease-out; } .ds-text-link:hover { color: #c7430f; background-image: linear-gradient(#c7430f, #c7430f); }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "description": "Sticky translucent header; graphite links, one ember contact link.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-wordmark\">CodeFuse<span class=\"ds-nav-tail\"> Solutions</span></span><span class=\"ds-nav-links\"><a href=\"#\">Approach</a><a href=\"#\">Studio</a><a class=\"ds-nav-contact\" href=\"#\">Contact</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: rgba(250,249,246,0.92); padding: 1.125rem 1.5rem; border-bottom: 1px solid #e7e4dd; } .ds-nav-wordmark { font-family: 'Cabinet Grotesk', 'Arial Black', sans-serif; font-weight: 800; font-size: 1.3125rem; letter-spacing: -0.01em; color: #161513; } .ds-nav-tail { font-family: 'General Sans', Arial, sans-serif; font-weight: 400; font-size: 1.0625rem; color: #55524b; } .ds-nav-links { display: flex; gap: 2rem; } .ds-nav-links a { font-family: 'General Sans', Arial, sans-serif; font-size: 0.9375rem; font-weight: 500; color: #55524b; text-decoration: none; transition: color 0.2s ease-out; } .ds-nav-links a:hover { color: #161513; } .ds-nav-contact { color: #c7430f !important; } .ds-nav-contact:hover { color: #a0350a !important; }"
+    },
+    {
+      "name": "Editorial Row",
+      "kind": "card",
+      "description": "The capability row: headline left, graphite copy right, hairline top; replaces card grids.",
+      "html": "<div class=\"ds-row\"><h3 class=\"ds-row-title\">Systems that don't exist yet</h3><p class=\"ds-row-copy\">When nothing on the market matches how your business actually runs, we design and build the system that does.</p></div>",
+      "css": ".ds-row { display: grid; grid-template-columns: 5fr 7fr; gap: 1.5rem 4rem; padding: 2.75rem 0; border-top: 1px solid #e7e4dd; background: #faf9f6; } .ds-row-title { font-family: 'Cabinet Grotesk', 'Arial Black', sans-serif; font-weight: 800; font-size: 1.75rem; line-height: 1.12; letter-spacing: -0.015em; color: #161513; margin: 0; } .ds-row-copy { font-family: 'General Sans', Arial, sans-serif; font-size: 1.125rem; line-height: 1.6; color: #55524b; margin: 0; align-self: center; }"
+    },
+    {
+      "name": "Fuse Line",
+      "kind": "custom",
+      "description": "Signature: hairline with an ember segment that draws in after the hero reveal.",
+      "html": "<div class=\"ds-fuse\"><span class=\"ds-fuse-ember\"></span></div>",
+      "css": ".ds-fuse { position: relative; height: 1px; background: #e7e4dd; margin: 2rem 0; } .ds-fuse-ember { position: absolute; left: 0; top: -1px; bottom: 0; width: 38%; background: #c7430f; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Confident Studio",
+    "overview": "The category standard, played completely straight and finished to the level of Work & Co, Instrument, and MetaLab: a light, typography-led studio site where restraint reads as competence. The page persuades by craft, not devices — a business owner with a hard problem should feel they are already looking at precise work. Density is low; type is large and decisive; color is rationed so the single accent means something. The user explicitly rejected conceptual carriers; nothing on the surface may read as a costume. Warmth comes from editorial pacing and honest copy, not ornament.",
+    "keyCharacteristics": [
+      "Warm paper ground, near-black ink, one ember accent used sparingly",
+      "Cabinet Grotesk Extrabold display over General Sans text; hairline dividers",
+      "One orchestrated entrance motion; everything else is quiet state feedback",
+      "No fabricated proof anywhere: no logos, stats, testimonials until real"
+    ],
+    "rules": [
+      { "name": "The One Fuse Rule", "body": "Ember appears once per viewport region — the action, or the drawn line, or a hover emphasis — never several competing at once.", "section": "colors" },
+      { "name": "The One Kicker Rule", "body": "Exactly one tracked-uppercase label exists on the page (the hero kicker). Sections lead with headlines, not eyebrows.", "section": "typography" }
+    ],
+    "dos": [
+      "Do keep every claim on the page true today; absence beats filler (the Work section renders only when a case-study file exists).",
+      "Do keep contact@codefusesolutions.com findable within seconds from the first viewport.",
+      "Do give every interactive element hover and visible keyboard focus states.",
+      "Do honor prefers-reduced-motion by rendering the entrance fully settled."
+    ],
+    "donts": [
+      "Don't use icon-card grids, hero metrics, section numbers, gradient text, glass-as-decoration, or monospace-as-technical-costume.",
+      "Don't introduce a second accent color or use Ember for decoration.",
+      "Don't let the site drift dark or conceptual — light, conventional, excellent is the commitment."
+    ]
+  }
+}

@@ -1,0 +1,287 @@
+---
+/*
+DIRECTION CONTRACT
+THESIS: The category standard played straight at elite-agency craft — a light,
+typography-led studio page. Refuses the dark-techy dev-shop default and any
+conceptual print carrier (both were offered and declined).
+OWN-WORLD: Warm paper (#faf9f6), near-black ink, one ember accent (#c7430f);
+Cabinet Grotesk Extrabold display over General Sans; hairline editorial rows;
+flat, squared geometry.
+STORY: A business owner with a misfit problem reads "custom software for
+problems that don't fit off the shelf," sees precision in the page itself,
+and emails.
+FIRST VIEWPORT: Sticky wordmark header; kicker; display statement; lede;
+ember CTA + quiet secondary; the fuse line draws beneath after the type lands.
+FORM: Canon (standing exit) chosen by the user after two re-rolls
+(seed keys 8f93ab8c, 416fa21e). Staging: single-column editorial scroll.
+Craft bar: Work & Co, Instrument, MetaLab.
+*/
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const work = (await getCollection('work')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const hasWork = work.length > 0;
+---
+
+<Base
+  title="CodeFuse Solutions — Custom software for problems that don't fit off the shelf"
+  description="CodeFuse Solutions is an independent software studio that takes on complex, niche problems and builds the exact system your business needs."
+>
+  <Header showWork={hasWork} />
+
+  <main>
+    <section class="hero wrap">
+      <p class="kicker" data-reveal>Independent software studio</p>
+      <h1 class="display" data-reveal>
+        Custom software for problems that don&rsquo;t fit off the shelf.
+      </h1>
+      <p class="lede" data-reveal>
+        CodeFuse Solutions takes on the complex, niche problems off-the-shelf
+        software can&rsquo;t touch — and builds the exact system your business
+        needs.
+      </p>
+      <div class="hero-actions" data-reveal>
+        <a class="btn" href="mailto:contact@codefusesolutions.com">Tell us your problem</a>
+        <a class="text-link" href="#approach">How we work</a>
+      </div>
+      <div class="fuse-line" aria-hidden="true"></div>
+    </section>
+
+    {
+      hasWork && (
+        <section id="work" class="wrap section">
+          <h2 class="headline">Selected work</h2>
+          <ul class="work-list">
+            {work.map((entry) => (
+              <li>
+                <a class="work-item" href={`/work/${entry.id}/`}>
+                  <h3 class="title">{entry.data.title}</h3>
+                  <p class="body-copy">{entry.data.summary}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <section class="wrap section">
+      <h2 class="headline section-lead">The work we take on.</h2>
+      <div class="row">
+        <h3 class="headline row-title">Systems that don&rsquo;t exist yet</h3>
+        <p class="body-copy row-copy">
+          When nothing on the market matches how your business actually runs,
+          we design and build the system that does — from the first
+          conversation to the day it goes live.
+        </p>
+      </div>
+      <div class="row">
+        <h3 class="headline row-title">Software that bends to your business</h3>
+        <p class="body-copy row-copy">
+          Integrations, automations, and replacements for tools you&rsquo;ve
+          outgrown — built around your operation instead of forcing your
+          operation around them.
+        </p>
+      </div>
+      <div class="row">
+        <h3 class="headline row-title">Problems other shops passed on</h3>
+        <p class="body-copy row-copy">
+          The odd, gnarly, deeply specific work. Complexity is the reason to
+          call us, not a reason to apologize.
+        </p>
+      </div>
+    </section>
+
+    <section id="approach" class="wrap section">
+      <h2 class="headline section-lead">How we work</h2>
+      <div class="steps">
+        <div class="step">
+          <h3 class="title">Understand first</h3>
+          <p class="body-copy">
+            We start with how your business actually works — the process, the
+            constraints, the edge cases that make your problem yours. Nothing
+            gets built until the problem is genuinely understood.
+          </p>
+        </div>
+        <div class="step">
+          <h3 class="title">Build precisely</h3>
+          <p class="body-copy">
+            Engagements are few and deep, and you talk directly to the person
+            building your system. Scope stays honest; decisions get explained
+            in plain language.
+          </p>
+        </div>
+        <div class="step">
+          <h3 class="title">Stand behind it</h3>
+          <p class="body-copy">
+            We ship software we&rsquo;re prepared to live with — and we stay
+            reachable after launch, because a custom system is a relationship,
+            not a handoff.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="studio" class="wrap section">
+      <h2 class="headline section-lead">The studio</h2>
+      <p class="studio-copy">
+        CodeFuse Solutions is the independent studio of founder Derrick
+        Wengerd. We keep the practice deliberately small so every engagement
+        gets senior attention from the first call to the last commit — and we
+        only take on work we can do exceptionally well.
+      </p>
+    </section>
+
+    <section id="contact" class="wrap section closing">
+      <h2 class="display">Have a problem that doesn&rsquo;t fit?</h2>
+      <p class="lede">
+        Tell us what you&rsquo;re up against. We&rsquo;ll tell you honestly
+        whether we&rsquo;re the right studio for it.
+      </p>
+      <a class="mail-link" href="mailto:contact@codefusesolutions.com">
+        contact@codefusesolutions.com
+      </a>
+    </section>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  .hero {
+    padding-top: clamp(5rem, 16vh, 10rem);
+    padding-bottom: clamp(4rem, 10vh, 7rem);
+    display: grid;
+    gap: 2rem;
+    position: relative;
+  }
+
+  .hero .display {
+    max-width: 15ch;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem 2.25rem;
+    margin-top: 0.5rem;
+  }
+
+  .fuse-line {
+    margin-top: clamp(2.5rem, 6vh, 4.5rem);
+    height: 1px;
+    background: var(--hairline);
+    position: relative;
+  }
+
+  .fuse-line::after {
+    content: '';
+    position: absolute;
+    inset: -1px 62% 0 0;
+    background: var(--ember);
+    transform-origin: left;
+  }
+
+  .section {
+    padding-block: var(--section-pad);
+    border-top: 1px solid var(--hairline);
+  }
+
+  .section-lead {
+    margin-bottom: clamp(2.5rem, 6vh, 4.5rem);
+  }
+
+  .row {
+    display: grid;
+    grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+    gap: 1.5rem 4rem;
+    padding-block: 2.75rem;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .row-title {
+    font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+  }
+
+  .row-copy {
+    align-self: center;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem;
+  }
+
+  .step h3 {
+    margin-bottom: 0.875rem;
+  }
+
+  .studio-copy {
+    font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+    line-height: 1.45;
+    max-width: 28em;
+    text-wrap: pretty;
+  }
+
+  .closing {
+    display: grid;
+    gap: 1.75rem;
+    padding-bottom: clamp(6rem, 16vh, 10rem);
+  }
+
+  .mail-link {
+    justify-self: start;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.375rem, 3.4vw, 2.75rem);
+    letter-spacing: -0.015em;
+    text-decoration: none;
+    background-image: linear-gradient(var(--ember), var(--ember));
+    background-repeat: no-repeat;
+    background-size: 100% 3px;
+    background-position: 0 100%;
+    padding-bottom: 6px;
+    transition: color 0.25s var(--ease-out-expo);
+    overflow-wrap: anywhere;
+  }
+
+  .mail-link:hover {
+    color: var(--ember);
+  }
+
+  .work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .work-item {
+    display: grid;
+    gap: 0.75rem;
+    padding-block: 2.5rem;
+    border-top: 1px solid var(--hairline);
+    text-decoration: none;
+  }
+
+  .work-item:hover h3 {
+    color: var(--ember);
+  }
+
+  @media (max-width: 820px) {
+    .row {
+      grid-template-columns: 1fr;
+      padding-block: 2.25rem;
+    }
+
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,68 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const work = await getCollection('work');
+  return work.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+---
+
+<Base title={`${entry.data.title} — CodeFuse Solutions`} description={entry.data.summary}>
+  <Header showWork={true} />
+
+  <main class="wrap">
+    <article>
+      <header class="case-head">
+        <p class="kicker">
+          Case study{entry.data.year && ` · ${entry.data.year}`}
+        </p>
+        <h1 class="display">{entry.data.title}</h1>
+        <p class="lede">{entry.data.summary}</p>
+      </header>
+      <div class="case-body">
+        <Content />
+      </div>
+    </article>
+  </main>
+
+  <Footer />
+</Base>
+
+<style>
+  .case-head {
+    padding-top: clamp(4rem, 12vh, 8rem);
+    display: grid;
+    gap: 1.75rem;
+  }
+
+  .case-body {
+    padding-block: clamp(3rem, 8vh, 5rem) clamp(5rem, 12vh, 8rem);
+    max-width: 68ch;
+  }
+
+  .case-body :global(h2) {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.5rem, 2.6vw, 2.125rem);
+    line-height: 1.15;
+    margin: 2.5em 0 0.75em;
+  }
+
+  .case-body :global(p) {
+    color: var(--graphite);
+    margin-block: 1em;
+  }
+
+  .case-body :global(a) {
+    color: var(--ember);
+  }
+</style>
