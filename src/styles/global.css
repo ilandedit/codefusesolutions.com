@@ -194,6 +194,19 @@ html.js [data-reveal] {
   transform: translateY(22px);
 }
 
+html.js [data-scroll-reveal] {
+  opacity: 0;
+  transform: translateY(26px);
+}
+
+html.js [data-scroll-reveal].in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.9s var(--ease-out-expo),
+    transform 0.9s var(--ease-out-expo);
+}
+
 html.js [data-reveal].in {
   opacity: 1;
   transform: none;
@@ -216,6 +229,7 @@ html.js .fuse-line.lit::after {
     scroll-behavior: auto;
   }
   html.js [data-reveal],
+  html.js [data-scroll-reveal],
   html.js .fuse-line::after {
     opacity: 1;
     transform: none;

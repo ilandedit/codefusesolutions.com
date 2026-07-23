@@ -72,8 +72,8 @@ const hasWork = work.length > 0;
     }
 
     <section class="wrap section">
-      <h2 class="headline section-lead">The work we take on.</h2>
-      <div class="row">
+      <h2 class="headline section-lead" data-scroll-reveal>The work we take on.</h2>
+      <div class="row" data-scroll-reveal>
         <h3 class="headline row-title">Systems that don&rsquo;t exist yet</h3>
         <p class="body-copy row-copy">
           When nothing on the market matches how your business actually runs,
@@ -81,7 +81,7 @@ const hasWork = work.length > 0;
           conversation to the day it goes live.
         </p>
       </div>
-      <div class="row">
+      <div class="row" data-scroll-reveal>
         <h3 class="headline row-title">Software that bends to your business</h3>
         <p class="body-copy row-copy">
           Integrations, automations, and replacements for tools you&rsquo;ve
@@ -89,7 +89,7 @@ const hasWork = work.length > 0;
           operation around them.
         </p>
       </div>
-      <div class="row">
+      <div class="row" data-scroll-reveal>
         <h3 class="headline row-title">Problems other shops passed on</h3>
         <p class="body-copy row-copy">
           The odd, gnarly, deeply specific work. Complexity is the reason to
@@ -99,9 +99,9 @@ const hasWork = work.length > 0;
     </section>
 
     <section id="approach" class="wrap section">
-      <h2 class="headline section-lead">How we work</h2>
+      <h2 class="headline section-lead" data-scroll-reveal>How we work</h2>
       <div class="steps">
-        <div class="step">
+        <div class="step" data-scroll-reveal>
           <h3 class="title">Understand first</h3>
           <p class="body-copy">
             We start with how your business actually works — the process, the
@@ -109,7 +109,7 @@ const hasWork = work.length > 0;
             gets built until the problem is genuinely understood.
           </p>
         </div>
-        <div class="step">
+        <div class="step" data-scroll-reveal>
           <h3 class="title">Build precisely</h3>
           <p class="body-copy">
             Engagements are few and deep, and you talk directly to the person
@@ -117,7 +117,7 @@ const hasWork = work.length > 0;
             in plain language.
           </p>
         </div>
-        <div class="step">
+        <div class="step" data-scroll-reveal>
           <h3 class="title">Stand behind it</h3>
           <p class="body-copy">
             We ship software we&rsquo;re prepared to live with — and we stay
@@ -129,8 +129,8 @@ const hasWork = work.length > 0;
     </section>
 
     <section id="studio" class="wrap section">
-      <h2 class="headline section-lead">The studio</h2>
-      <p class="studio-copy">
+      <h2 class="headline section-lead" data-scroll-reveal>The studio</h2>
+      <p class="studio-copy" data-scroll-reveal>
         CodeFuse Solutions is the independent studio of founder Derrick
         Wengerd. We keep the practice deliberately small so every engagement
         gets senior attention from the first call to the last commit — and we
@@ -139,12 +139,12 @@ const hasWork = work.length > 0;
     </section>
 
     <section id="contact" class="wrap section closing">
-      <h2 class="display">Have a problem that doesn&rsquo;t fit?</h2>
-      <p class="lede">
+      <h2 class="display" data-scroll-reveal>Have a problem that doesn&rsquo;t fit?</h2>
+      <p class="lede" data-scroll-reveal>
         Tell us what you&rsquo;re up against. We&rsquo;ll tell you honestly
         whether we&rsquo;re the right studio for it.
       </p>
-      <a class="mail-link" href="mailto:contact@codefusesolutions.com">
+      <a class="mail-link" href="mailto:contact@codefusesolutions.com" data-scroll-reveal>
         contact@codefusesolutions.com
       </a>
     </section>
@@ -160,6 +160,12 @@ const hasWork = work.length > 0;
       for (const e of entries) {
         if (e.isIntersecting) {
           e.target.classList.add('lit');
+          e.target
+            .querySelectorAll<HTMLElement>('[data-scroll-reveal]')
+            .forEach((el, i) => {
+              el.style.transitionDelay = `${i * 110}ms`;
+              el.classList.add('in');
+            });
           io.unobserve(e.target);
         }
       }
@@ -243,7 +249,7 @@ const hasWork = work.length > 0;
     top: -1px;
     left: 0;
     width: 38%;
-    height: 1px;
+    height: 2px;
     background: var(--ember);
     transform-origin: left;
   }
@@ -262,8 +268,8 @@ const hasWork = work.length > 0;
     position: fixed;
     top: 0;
     bottom: 0;
-    left: max(calc(var(--gutter) / 2), 0.75rem);
-    width: 1px;
+    left: max(calc(var(--gutter) / 2 - 1px), 0.75rem);
+    width: 2px;
     background: var(--hairline);
     z-index: 5;
     pointer-events: none;
@@ -280,10 +286,10 @@ const hasWork = work.length > 0;
   .fuse-rail span::after {
     content: '';
     position: absolute;
-    bottom: -1px;
-    left: -1px;
-    width: 3px;
-    height: 3px;
+    bottom: -3px;
+    left: -3px;
+    width: 8px;
+    height: 8px;
     background: var(--ember);
   }
 

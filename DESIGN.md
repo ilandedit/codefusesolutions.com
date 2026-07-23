@@ -169,10 +169,10 @@ A full-width 1px Hairline at the hero's foot with an Ember segment (left 38%) th
 
 ### The Burning Fuse (signature motion system)
 The fuse-line grammar carried through the whole scroll, in three parts:
-- **Section ignition:** every section's top hairline carries an Ember segment (left 38%, 1px) that draws in with the same 1.3s ease-out-expo the first time the section enters the viewport (IntersectionObserver, threshold 0.15, once).
-- **The fuse rail:** a fixed 1px Hairline in the left half-gutter running the full viewport height, whose Ember fill scales from the top to track scroll progress (rAF-throttled, transform-only, 3px square ember tip). The page reads as a fuse burning down toward the contact section. Hidden below 820px and without JS.
+- **Section ignition:** every section's top hairline carries an Ember segment (left 38%, 2px) that draws in with the same 1.3s ease-out-expo the first time the section enters the viewport (IntersectionObserver, threshold 0.15, once), and the section's tagged content ([data-scroll-reveal]: leads, rows, steps, closing elements) rises 26px into place with a 110ms sibling stagger in the same easing.
+- **The fuse rail:** a fixed 2px Hairline in the left half-gutter running the full viewport height, whose Ember fill scales from the top to track scroll progress (rAF-throttled, transform-only, 8px square ember burn tip). The page reads as a fuse burning down toward the contact section. Hidden below 820px and without JS.
 - **Interaction feedback:** nav links draw a 1px currentColor underline (scaleX from left, 250ms ease-out-expo) on hover/focus; the closing mail link's ember underline thickens from 3px to 0.18em on hover/focus.
-No other scroll-driven or looping motion exists; sections do not fade or rise on scroll.
+No looping, parallax, or autonomous motion exists; every animation is entrance, scroll-position, or interaction feedback, and reduced-motion renders everything settled.
 
 ## Do's and Don'ts
 
