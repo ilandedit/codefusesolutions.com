@@ -27,7 +27,9 @@
       "button": { "displayName": "Button Label", "purpose": "Primary button text." }
     },
     "motion": [
-      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only easing: entrance reveal, fuse line draw, button states." }
+      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only easing: entrance reveal, fuse draws, underline slides, button states." },
+      { "name": "fuse-ignition", "value": "transform: scaleX(0 -> 1) 1.3s ease-out-expo", "purpose": "Section hairlines ignite an ember segment on first viewport entry." },
+      { "name": "fuse-rail", "value": "transform: scaleY(scroll progress), rAF-throttled", "purpose": "Gutter rail ember fill tracks scroll — the page as a burning fuse. Hidden <820px and no-JS." }
     ],
     "breakpoints": [
       { "name": "row-stack", "value": "820px" },

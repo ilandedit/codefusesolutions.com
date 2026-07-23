@@ -118,7 +118,7 @@ Restrained strategy: warm neutrals plus one ember accent, rationed hard.
 - **Hairline** (#e7e4dd): 1px dividers between sections and rows.
 
 ### Named Rules
-**The One Fuse Rule.** Ember appears once per viewport region — the action, or the drawn line, or a hover emphasis — never several competing at once.
+**The One Fuse Rule.** Ember appears once per viewport region — the action, or the drawn line, or a hover emphasis — never several competing at once. The fuse rail is the one page-level exception: it lives in the gutter, outside content regions, as the page's single persistent voice.
 
 ## Typography
 
@@ -166,6 +166,13 @@ Squared editorial geometry: 0 radius everywhere. Buttons are confident rectangle
 
 ### The Fuse Line (signature)
 A full-width 1px Hairline at the hero's foot with an Ember segment (left 38%) that draws in with scaleX over 1.3s ease-out-expo, 450ms after the staggered hero reveal. Reduced motion renders it fully drawn and static.
+
+### The Burning Fuse (signature motion system)
+The fuse-line grammar carried through the whole scroll, in three parts:
+- **Section ignition:** every section's top hairline carries an Ember segment (left 38%, 1px) that draws in with the same 1.3s ease-out-expo the first time the section enters the viewport (IntersectionObserver, threshold 0.15, once).
+- **The fuse rail:** a fixed 1px Hairline in the left half-gutter running the full viewport height, whose Ember fill scales from the top to track scroll progress (rAF-throttled, transform-only, 3px square ember tip). The page reads as a fuse burning down toward the contact section. Hidden below 820px and without JS.
+- **Interaction feedback:** nav links draw a 1px currentColor underline (scaleX from left, 250ms ease-out-expo) on hover/focus; the closing mail link's ember underline thickens from 3px to 0.18em on hover/focus.
+No other scroll-driven or looping motion exists; sections do not fade or rise on scroll.
 
 ## Do's and Don'ts
 
