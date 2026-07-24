@@ -73,9 +73,17 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
         },
         { threshold: 0, rootMargin: '0px 0px -10% 0px' }
       );
-      document
-        .querySelectorAll('[data-scroll-reveal]')
-        .forEach((el) => io.observe(el));
+      const targets = document.querySelectorAll('[data-reveal]');
+      targets.forEach((el) => io.observe(el));
+
+      // Safety net: if anything is still hidden a moment after load (observer
+      // never fired, selector drift, script error upstream), show it. Content
+      // must never be able to stay invisible.
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          targets.forEach((el) => el.classList.add('in'));
+        }, 1200);
+      });
     </script>
   </body>
 </html>
