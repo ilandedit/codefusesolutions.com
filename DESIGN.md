@@ -1,30 +1,38 @@
 ---
 name: CodeFuse Solutions
-description: The Misfit Grid — clean exposed-grid professionalism where exactly one element per screen doesn't fit, and the misfit is the action.
+description: Signal — a dark, precise studio site where two accent colors carry the two halves of the work: listening and building.
 colors:
-  paper: "#fbfaf7"
-  ink: "#1a1916"
-  slate: "#5b584e"
-  gridline: "#e9e6de"
-  cobalt: "#2b46e0"
-  cobalt-deep: "#1f34b8"
+  bg: "#0c0e12"
+  panel: "#141821"
+  panel-quiet: "#11151d"
+  line: "#232936"
+  ink: "#f0f2f6"
+  mute: "#8f98a8"
+  live: "#3ddc97"
+  volt: "#6f93ff"
+  volt-deep: "#3f5fe0"
+  volt-press: "#3350c4"
   white: "#ffffff"
 typography:
   display:
     fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)"
+    fontSize: "clamp(2.375rem, 5.6vw, 4.375rem)"
     fontWeight: 600
-    lineHeight: 1.04
-    letterSpacing: "-0.01em"
+    lineHeight: 1.06
+    letterSpacing: "-0.015em"
   headline:
     fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(1.625rem, 3.2vw, 2.5rem)"
+    fontSize: "clamp(1.625rem, 3.2vw, 2.375rem)"
     fontWeight: 600
-    lineHeight: 1.12
-    letterSpacing: "-0.005em"
+    lineHeight: 1.15
+  close-headline:
+    fontFamily: "Clash Display, Arial Black, sans-serif"
+    fontSize: "clamp(1.875rem, 4.4vw, 3.25rem)"
+    fontWeight: 600
+    lineHeight: 1.1
   title:
     fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "1.3125rem"
+    fontSize: "1.1875rem"
     fontWeight: 600
     lineHeight: 1.25
   body:
@@ -34,142 +42,160 @@ typography:
     lineHeight: 1.65
   lede:
     fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.125rem, 1.7vw, 1.3125rem)"
+    fontSize: "1.125rem"
     fontWeight: 400
     lineHeight: 1.6
+  small:
+    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 400
   label:
     fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.8125rem"
     fontWeight: 500
     letterSpacing: "0.06em"
-  button:
+  step-label:
     fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 600
-  small:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 400
+    fontSize: "0.75rem"
+    fontWeight: 700
+    letterSpacing: "0.08em"
   mail-display:
     fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(1.375rem, 3.2vw, 2.625rem)"
-    fontWeight: 700
-    letterSpacing: "-0.005em"
-  statement:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.1875rem, 1.9vw, 1.5rem)"
-    fontWeight: 400
-    lineHeight: 1.55
+    fontSize: "clamp(1.25rem, 3vw, 2.125rem)"
+    fontWeight: 600
+  monogram:
+    fontFamily: "Clash Display, Arial Black, sans-serif"
+    fontSize: "1.75rem"
+    fontWeight: 600
 rounded:
-  none: "0px"
+  sm: "6px"
+  md: "8px"
+  lg: "12px"
+  xl: "14px"
+  pill: "999px"
 spacing:
-  gutter: "clamp(1.25rem, 6vw, 6rem)"
-  section: "clamp(4.5rem, 12vh, 8.5rem)"
+  gutter: "clamp(1.25rem, 5vw, 3.5rem)"
+  section: "clamp(3rem, 8vh, 4.75rem)"
 components:
-  misfit-primary:
-    backgroundColor: "{colors.cobalt}"
-    textColor: "#ffffff"
-    rounded: "{rounded.none}"
-    padding: "1.25rem 2rem"
-  misfit-primary-hover:
-    backgroundColor: "{colors.cobalt-deep}"
+  button-primary:
+    backgroundColor: "{colors.volt-deep}"
+    textColor: "{colors.white}"
+    rounded: "{rounded.md}"
+    padding: "1.0625rem 1.75rem"
+  button-primary-hover:
+    backgroundColor: "{colors.volt-press}"
+  button-ghost:
+    backgroundColor: "transparent"
+    textColor: "{colors.mute}"
+    rounded: "{rounded.md}"
+    padding: "0.625rem 0.875rem"
 ---
 
 # Design System: CodeFuse Solutions
 
 ## Overview
 
-**Creative North Star: "The Misfit Grid"**
+**Creative North Star: "Signal"**
 
-A clean, warm, professional page built on a visibly drawn grid — and on every screen, exactly one element refuses to fit. It crosses a column rule, tilts a couple of degrees, or bleeds a margin. That misfit is always the thing that acts, and it alone carries color. The site performs the company's positioning on itself: CodeFuse takes the problems that don't fit, so on this site, the thing that doesn't fit is the thing you click.
+A dark, precise, modern software-studio surface where every colored thing means something. The page reads as instrumentation for a serious practice: near-black ground, quiet panels separated by hairlines, calm generous type, and exactly two accent colors that carry the studio's two halves — **green for listening** (the conversation, understanding, the first move) and **blue for building** (the system, the action, the commitment). Nothing is colored for decoration.
 
-This is the third world (2026-07-24, replacing the dark Catalog, which replaced the light-editorial canon; both are anti-reference). The pinned brief: clean and professional with character — personality from one clever concept, color with purpose, in the spirit of adhamdannaway.com and tamalsen.dev, never bold for its own sake.
-
-**Signature interaction:** hovering a misfit straightens it — CodeFuse makes the thing that doesn't fit, fit.
+Chosen by the user from three working comps after four rejected worlds. The failures are instructive and binding: a characterless light canon, a beautiful dark identity that belonged to someone else, a conceptual grid, and treatments read as "artsy." Signal is deliberately none of those — it is professional first, with personality carried by the two-color logic and the confidence of the type.
 
 **Key Characteristics:**
-- Warm paper ground with faintly drawn column rules; calm near-black type
-- Cobalt reserved exclusively for misfit actions; quiet breaks stay ink and positional
-- One misfit per screen — the rhythm is order, order, break
+- Near-black ground (#0c0e12) with quiet panels and hairline separation; no glow, no neon, no gradient wash
+- Clash Display headlines over Switzer body — confident geometry, invisible reading text
+- Green = listening, blue = building; the two accents never swap roles
 - No fabricated proof; Work renders only when real case studies exist
 
 ## Colors
 
-Monochrome professionalism plus one purposeful accent that means exactly one thing.
+Two-accent system on a near-black field. Every accent use must answer "which half of the work is this?"
 
 ### Primary
-- **Cobalt** (#2b46e0): the misfit-action color — the hero CTA plate, the nav Contact plate, the closing email plate. 6.5:1 as text on Paper; white text on Cobalt passes at 6.8:1.
-- **Cobalt Deep** (#1f34b8): hover/pressed state of Cobalt surfaces.
+- **Volt** (#6f93ff): the building half, used as *text and accents on dark* — links, project tags, the third method step. 6.6:1 on the ground.
+- **Volt Deep** (#3f5fe0): the fill for solid actions carrying white text (5.4:1 — the bright Volt fails white text at 3.2:1 and must never take it). **Volt Press** (#3350c4) is its hover/active.
+
+### Secondary
+- **Live** (#3ddc97): the listening half — the status dot, the hero rule, capability icons, the first method step, copy-confirmation. High contrast on the ground; when filled, it takes dark text, never white.
 
 ### Neutral
-- **White** (#ffffff): text on Cobalt plates and selection foreground only — never a ground.
-- **Paper** (#fbfaf7): warm white ground; never pure #fff.
-- **Ink** (#1a1916): headings and primary text.
-- **Slate** (#5b584e): body copy and secondary labels; ≥6:1 on Paper.
-- **Gridline** (#e9e6de): the drawn column rules and section hairlines — visible but quiet.
+- **Ink** (#f0f2f6): headings and primary text.
+- **Mute** (#8f98a8): body copy and secondary labels; 6.5:1 on the ground.
+- **Ground** (#0c0e12): the page. **Panel** (#141821) for raised cards, **Panel Quiet** (#11151d) for recessed blocks.
+- **Line** (#232936): hairlines, borders, section rules.
+- **White** (#ffffff): only as text on Volt Deep.
 
 ### Named Rules
-**The Misfit Rule.** Cobalt appears only on elements that both (a) break the grid and (b) perform an action. A colored element that fits, or a broken element that isn't actionable, is a violation. Quiet (non-action) breaks are ink and positional only.
+**The Two Halves Rule.** Green means listening/understanding; blue means building/acting. An accent that can't be assigned to one of those halves shouldn't be colored at all.
+**The Fill Rule.** White text only on Volt Deep or darker. Live and Volt take dark text when filled, never white.
 
 ## Typography
 
-**Display Font:** Clash Display 600/700 (Arial Black fallback), self-hosted woff2
+**Display Font:** Clash Display 600 (Arial Black fallback), self-hosted woff2
 **Body Font:** Switzer 400/500/600 (Helvetica Neue fallback), self-hosted woff2
 
-**Character:** Confident geometry with warmth — Clash Display's character carries personality without shouting; Switzer stays invisible and professional in the body. No uppercase-tracking theatrics; sentence case throughout except small labels.
+**Character:** Confident geometric headlines with tight tracking; body text that gets out of the way. Sentence case everywhere except small tracked labels and method step markers.
 
 ### Hierarchy
-- **Display** (600, clamp(2.5rem, 6.5vw, 5.5rem), 1.04): hero statement and closing question only.
-- **Headline** (600, clamp(1.625rem, 3.2vw, 2.5rem), 1.12): section leads.
-- **Title** (600, 1.3125rem): row and step titles.
-- **Body** (Switzer 400, 1.0625rem, 1.65): copy in Slate, max 65ch.
-- **Lede** (Switzer 400, clamp(1.125rem, 1.7vw, 1.3125rem)): hero and closing standfirsts.
-- **Label** (Switzer 500, 0.8125rem, 0.06em): kicker, nav, small captions.
-- **Button** (Switzer 600, 0.9375rem): misfit plate text.
-- **Small** (Switzer 400, 0.875rem): footer.
-- **Mail Display** (Clash Display 700, clamp(1.375rem, 3.2vw, 2.625rem)): the closing email plate.
-- **Statement** (Switzer 400, clamp(1.1875rem, 1.9vw, 1.5rem), 1.55): the studio paragraph, in Ink.
+- **Display** (600, clamp(2.375rem, 5.6vw, 4.375rem), 1.06, -0.015em): the hero statement only. The two verbs carry the accent colors.
+- **Close Headline** (600, clamp(1.875rem, 4.4vw, 3.25rem)): the closing ask.
+- **Headline** (600, clamp(1.625rem, 3.2vw, 2.375rem)): section titles.
+- **Title** (600, 1.1875rem): cards, steps, project titles.
+- **Lede** (400, 1.125rem): the hero standfirst and studio statement, in Mute.
+- **Body** (400, 1.0625rem, 1.65): copy in Mute, max 62ch.
+- **Small** (400, 0.9375rem): nav, footer, hero email line.
+- **Label** (500, 0.8125rem, 0.06em): eyebrow and section notes.
+- **Step Label** (700, 0.75rem, 0.08em): the method's `01 — UNDERSTAND` markers. Numbering is legitimate here and only here: the method is a real sequence.
+- **Monogram** (600, 1.75rem): the founder initials in the studio block.
+
+Tints are derived, never hand-mixed: use `color-mix(in srgb, var(--token) N%, transparent)` for icon washes, the monogram gradient, and the action's shadow, so every color on the page traces back to a documented token.
 
 ## Layout
 
-Content capped at 1200px inside gutters (clamp(1.25rem, 6vw, 6rem)). The grid is drawn: faint Gridline column rules run vertically through the content area (6 columns desktop, 3 below 820px), with section hairlines horizontal. **Content rides the same six tracks it draws** — rows and steps are `repeat(6, 1fr)` with `column-gap: 0` (breathing room comes from item padding, never gaps, because a gap pushes content edges off the drawn sixths). Capability titles occupy tracks 1–2, copy tracks 3–6; method steps span two tracks each. Every module aligns to the rules — except each screen's one misfit, whose break is measured in whole tracks so it lands exactly on a rule. Sections carry clamp(4.5rem, 12vh, 8.5rem) padding. Capability rows: title left, copy right on the column rules, stacking below 820px; Method is a three-step row that stacks the same.
+Content capped at 1180px inside gutters (clamp(1.25rem, 5vw, 3.5rem)). Sections are separated by a 1px Line rule with clamp(3rem, 8vh, 4.75rem) padding. Capability content is a three-card grid; the method is a single bordered block divided into three panels by internal hairlines (one object, three parts — it reads as a process, not three unrelated cards); work is a two-column card grid. All collapse to one column at 900px (method, capabilities) and 820px (work, studio).
 
-**Break inventory (one per screen, by design):** nav — the Contact plate (tilted -1.5°, Cobalt); hero — the CTA plate (tilted -2°, Cobalt), landing tilted after the rest assembles; work-we-take-on — row three's title takes track 3, crossing the rule at two-sixths where every other title stops, and its copy yields to the next rule (ink, positional); method — step three sits 1.5rem below its siblings' baseline (ink, positional); studio — the paragraph bleeds left across the gutter rule (ink, positional); contact — the email plate (tilted -2°, Cobalt). No screen has two misfits. Stacked below 820px, positional breaks become bounded indents (margin, never offset) so nothing overflows the gutter.
+**Information architecture (approved, binding):** claim → what we take on → proof → how we work → the studio → the ask. Each section does one job; no section restates another. Every nav item resolves to a real section. The page ends on the ask, never on a content section.
 
 ## Elevation & Depth
 
-Essentially flat. Misfit plates carry one small hard offset shadow (4px 4px 0 rgba(26,25,22,0.12)) — a printed-plate lift with real offset, never a blur halo. Nothing else casts anything.
+Flat with hairlines. Depth comes from panel tone (Panel above Ground, Panel Quiet below it) and 1px Line borders — not shadows. The one exception: the primary action lifts 2px on hover with a soft blue-tinted shadow, the only shadow in the system. The sticky header uses translucent ground plus backdrop blur.
 
 ## Shapes
 
-Squared, 0 radius everywhere. Misfit plates are rectangles with the tilt as their identity; quiet breaks are purely positional. Underlines are drawn 1–2px background-image rules.
+Rounded rectangles on a restrained scale: 6px small (buttons, quiet chips), 8px actions, 12px capability cards, 14px project and method blocks, pill only for metadata chips. No circles except the status dot.
 
 ## Components
 
-### The Misfit Plate (signature)
-- **Primary (action):** Cobalt ground, white Button text, 1.25rem × 2rem padding, rotate(-2deg), hard offset shadow, trailing "→".
-- **Hover / Focus:** the plate straightens to rotate(0) and deepens to Cobalt Deep over 200ms ease-out-expo — the signature "we make it fit" moment; focus-visible adds a 2px Cobalt outline offset 3px.
-- **Nav variant:** compact (0.625rem 0.875rem padding, min-height 44px, -1.5° tilt), same behavior.
+### Primary action
+- Volt Deep fill, white text, 8px radius, 1.0625rem × 1.75rem padding, Switzer 600.
+- **Hover:** lifts 2px with `0 10px 26px rgba(91,140,255,.28)`, background to Volt Press. **Focus-visible:** 2px Volt outline offset 3px.
+
+### Ghost / copy button
+- Transparent with a Line border, Mute text, 6px radius, min-height 44px; border and text go Live on hover.
 
 ### Text links
-- Switzer 500, Ink, 1px underline via background-image; hover shifts text and underline to Cobalt.
+- Ink with a 1px Line underline; hover shifts both to Live.
+
+### Cards (capability, project, method panel)
+- Panel or Panel Quiet ground, 1px Line border, radius per the shape scale.
+- **Hover (interactive cards only):** border goes Live (capability) or Volt (project) and the card lifts 2px. Non-interactive panels never react.
 
 ### Navigation
-- Sticky, opaque Paper, Gridline bottom rule; wordmark "CodeFuse" (Clash Display 600) + "Solutions" tail in Slate (drops below 480px); links in Slate darkening to Ink; Contact is the nav's misfit plate. Tap targets ≥44px.
+- Sticky, translucent ground, blurred, with a Line bottom border. Status dot (Live, with a soft ring) + wordmark left; Work (only when case studies exist), Method, Studio, and a solid Contact action right. All targets ≥44px.
 
-### Quiet breaks
-- Ink-only positional violations (cross a rule, offset a baseline, bleed a margin). Never colored, never rotated more than needed to read as deliberate, always in document flow.
+### The Method Block (signature)
+One bordered container split into three panels by internal hairlines, each capped by a 2px top bar: Live for step 01, a Live→Volt gradient for step 02, Volt for step 03. The gradient is the whole idea made visible — listening becoming building. It is the only gradient permitted in the system.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep exactly one break per screen; if a new section needs emphasis, it earns the break by carrying the action.
-- **Do** keep every claim true today; Work renders only when a case-study file exists.
-- **Do** keep contact@codefusesolutions.com reachable from the first viewport (hero CTA → #contact, plain-text address, ?subject= prefill, copy-address affordance).
-- **Do** honor prefers-reduced-motion: plates render settled at their tilt, reveals visible, no entrance choreography.
+- **Do** keep every claim true today; the Work section renders only when a case-study file exists, and sample entries never ship.
+- **Do** keep contact@codefusesolutions.com reachable in the first viewport (plain text under the hero actions) and again at the close, with `?subject=` prefill and a copy-address button.
+- **Do** give every interactive element a hover state and a visible keyboard focus ring.
+- **Do** honor prefers-reduced-motion: reveals render settled, no transitions.
 
 ### Don't:
-- **Don't** let Cobalt touch anything that fits the grid or anything that isn't an action.
-- **Don't** add a second accent, gradients, glass, big blurred shadows, or icon-card grids.
-- **Don't** tilt more than 2 degrees or break the grid twice on one screen — restraint is what makes the misfit legible.
-- **Don't** carry over grammar from the Catalog or fuse-line worlds (numbers, code strips, mono-as-voice, ember, plots).
+- **Don't** put white text on Live or bright Volt (contrast failure) — see The Fill Rule.
+- **Don't** add a third accent, glows, neon edges, scanlines, or decorative gradients; the method block's Live→Volt bar is the only gradient.
+- **Don't** restate a section's idea in another section, or end the page on anything but the ask.
+- **Don't** number sections other than the method steps.

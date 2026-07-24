@@ -7,14 +7,14 @@ const { showWork = false } = Astro.props;
 
 <header>
   <div class="wrap bar">
-    <a class="wordmark" href="/" aria-label="CodeFuse Solutions — home">
-      CodeFuse<span class="wordmark-tail">&nbsp;Solutions</span>
+    <a class="mark" href="/" aria-label="CodeFuse Solutions — home">
+      <span class="dot" aria-hidden="true"></span>CodeFuse Solutions
     </a>
     <nav aria-label="Main">
-      {showWork && <a class="nav-link label" href="/#work">Work</a>}
-      <a class="nav-link label" href="/#method">Method</a>
-      <a class="nav-link label" href="/#studio">Studio</a>
-      <a class="misfit misfit-compact" href="/#contact">Contact</a>
+      {showWork && <a class="nav-link small" href="/#work">Work</a>}
+      <a class="nav-link small" href="/#method">Method</a>
+      <a class="nav-link small" href="/#studio">Studio</a>
+      <a class="nav-btn" href="/#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -23,57 +23,83 @@ const { showWork = false } = Astro.props;
   header {
     position: sticky;
     top: 0;
-    z-index: 10;
-    background: var(--paper);
-    border-bottom: 1px solid var(--gridline);
+    z-index: 9;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
   }
 
   .bar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 1rem;
-    min-height: 3.75rem;
+    padding-block: 0.5rem;
+    min-height: 4rem;
   }
 
-  .wordmark {
+  .mark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.625rem;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.375rem;
+    font-size: 1.25rem;
     color: var(--ink);
     text-decoration: none;
-    padding-block: 0.625rem;
   }
 
-  .wordmark-tail {
-    font-family: var(--font-text);
-    font-weight: 400;
-    font-size: 1.0625rem;
-    color: var(--slate);
+  .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--live);
+    box-shadow: 0 0 0 4px rgba(61, 220, 151, 0.15);
   }
 
   nav {
     display: flex;
     align-items: center;
-    gap: clamp(1rem, 3vw, 2.25rem);
+    gap: clamp(0.75rem, 2.5vw, 1.5rem);
   }
 
   .nav-link {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    color: var(--slate);
+    color: var(--mute);
     text-decoration: none;
-    transition: color 160ms ease-out;
+    transition: color 0.18s var(--ease);
   }
 
   .nav-link:hover {
     color: var(--ink);
   }
 
-  @media (max-width: 480px) {
-    .wordmark-tail {
-      display: none;
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding-inline: 1.125rem;
+    background: var(--ink);
+    color: var(--bg);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.18s var(--ease), color 0.18s var(--ease);
+  }
+
+  .nav-btn:hover {
+    background: var(--volt-deep);
+    color: #fff;
+  }
+
+  @media (max-width: 520px) {
+    .mark {
+      font-size: 1.0625rem;
     }
   }
 </style>

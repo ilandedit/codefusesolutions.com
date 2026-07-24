@@ -21,11 +21,11 @@ const { Content } = await render(entry);
 <Base title={`${entry.data.title} — CodeFuse Solutions`} description={entry.data.summary}>
   <Header showWork={true} />
 
-  <main class="wrap grid-stage">
+  <main class="wrap">
     <article>
       <header class="case-head">
-        <p class="label kicker">
-          Case study{entry.data.year && ` · ${entry.data.year}`}
+        <p class="ptag">
+          {entry.data.client ?? 'Case study'}{entry.data.year && ` · ${entry.data.year}`}
         </p>
         <h1 class="headline">{entry.data.title}</h1>
         <p class="lede">{entry.data.summary}</p>
@@ -33,6 +33,10 @@ const { Content } = await render(entry);
       <div class="case-body">
         <Content />
       </div>
+      <aside class="case-close">
+        <p class="body-copy">Have a problem like this one?</p>
+        <a class="btn" href="/#contact">Tell us about it</a>
+      </aside>
     </article>
   </main>
 
@@ -41,34 +45,48 @@ const { Content } = await render(entry);
 
 <style>
   .case-head {
-    padding-top: clamp(3.5rem, 12vh, 7rem);
+    padding-top: clamp(3rem, 10vh, 6rem);
     display: grid;
-    gap: 1.5rem;
+    gap: 1.25rem;
+    max-width: 60ch;
   }
 
-  .kicker {
-    color: var(--slate);
+  .ptag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--live);
   }
 
   .case-body {
-    padding-block: clamp(3rem, 8vh, 5rem) clamp(5rem, 12vh, 8rem);
+    padding-block: clamp(2.5rem, 7vh, 4rem);
     max-width: 68ch;
   }
 
   .case-body :global(h2) {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.3125rem;
+    font-size: 1.1875rem;
     line-height: 1.25;
     margin: 2.5em 0 0.75em;
   }
 
   .case-body :global(p) {
-    color: var(--slate);
+    color: var(--mute);
     margin-block: 1em;
   }
 
   .case-body :global(a) {
-    color: var(--cobalt);
+    color: var(--volt);
+  }
+
+  .case-close {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--line);
+    padding-block: clamp(2rem, 6vh, 3rem) clamp(4rem, 12vh, 6rem);
   }
 </style>

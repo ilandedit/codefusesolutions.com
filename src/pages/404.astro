@@ -5,23 +5,21 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Base
-  title="This page doesn't fit — CodeFuse Solutions"
+  title="Page not found — CodeFuse Solutions"
   description="That page doesn't exist. CodeFuse Solutions builds custom software for complex, niche problems."
 >
   <Header />
 
-  <main class="wrap not-found grid-stage">
-    <div class="tilt-card">
-      <h1 class="display">This page doesn&rsquo;t fit.</h1>
-      <p class="body-copy">
-        It&rsquo;s not part of the site — but pages that don&rsquo;t fit are
-        sort of our thing. If your problem is one of them, you&rsquo;re in the
-        right place.
-      </p>
-      <div class="actions">
-        <a class="text-link label" href="/">Back to the site</a>
-        <a class="text-link label" href="/#contact">Contact</a>
-      </div>
+  <main class="wrap not-found">
+    <p class="label eyebrow">Error 404</p>
+    <h1 class="display">This page doesn&rsquo;t exist.</h1>
+    <p class="lede">
+      The page you were after isn&rsquo;t here — but if your problem is the kind
+      nothing off the shelf can solve, you&rsquo;re in the right place.
+    </p>
+    <div class="actions">
+      <a class="btn" href="/">Back to the studio</a>
+      <a class="text-link small" href="/#contact">Get in touch</a>
     </div>
   </main>
 
@@ -30,33 +28,37 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .not-found {
-    padding-top: clamp(4rem, 16vh, 10rem);
+    padding-top: clamp(4rem, 15vh, 9rem);
     padding-bottom: clamp(5rem, 18vh, 11rem);
     display: grid;
     justify-items: start;
   }
 
-  /* The 404 is the whole page's misfit: one tilted plate. */
-  .tilt-card {
-    display: grid;
-    gap: 1.5rem;
-    justify-items: start;
-    background: var(--paper);
-    border: 1px solid var(--ink);
-    box-shadow: var(--plate-shadow);
-    padding: clamp(1.75rem, 5vw, 3.5rem);
-    rotate: -2deg;
-    max-width: 40rem;
-    transition: rotate 200ms var(--ease-out-expo);
+  .eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    color: var(--mute);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
   }
 
-  .tilt-card:hover {
-    rotate: 0deg;
+  .eyebrow::before {
+    content: '';
+    width: 28px;
+    height: 1px;
+    background: var(--live);
+  }
+
+  .not-found .lede {
+    margin-top: 1.75rem;
   }
 
   .actions {
+    margin-top: 2.25rem;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 1.5rem;
     flex-wrap: wrap;
   }
 </style>

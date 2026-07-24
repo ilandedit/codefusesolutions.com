@@ -39,7 +39,10 @@ CodeFuse Solutions builds custom software for the most complex and niche problem
 - Name: CodeFuse Solutions. (Note: Ant Group operates an unrelated AI project named "CodeFuse" — a known naming collision, not a constraint the user has acted on.)
 - Solo venture presented as a company: the site speaks as "we", and names Derrick Wengerd as founder (a real human for clients to trust; also serves employer/peer readers).
 - Visual identity is being created from scratch — no existing logo, palette, or fonts.
-- User-pinned binding visual direction (2026-07-24, third round; supersedes "dark & technical" and everything before it): clean and professional with character — light-leaning ground, purposeful color (never bold for its own sake), personality carried by one clever signature concept. Named references: adhamdannaway.com (split designer/coder hero), tamalsen.dev (code-comment headings, warm personal touches). Both prior builds (light-editorial canon, dark Catalog) are anti-reference: the first for having no character, the second for wearing someone else's.
+- **Approved visual world (2026-07-24, final): "Signal."** Chosen by the user from three real working comps after four rejected worlds. Near-black ground, precise panels, two signal accents (green = the listening half, blue = the building half), Clash Display over Switzer. Clean and professional with character; color used only to mean something.
+- **Approved information architecture:** claim → what we take on → proof (work) → how we work (three steps) → the studio (founder) → the ask. The user rejected an earlier arrangement that restated the same idea three times and ended without a close; every section must do a distinct job and the page must end on the ask.
+- Reference craft bar: adhamdannaway.com, tamalsen.dev — one clear idea, professional, personality without loudness.
+- Anti-reference (all rejected builds): the light-editorial canon (no character), the dark Catalog (beautiful but someone else's identity), the Misfit Grid, and any "liberal artsy" treatment.
 
 ## Evidence on Hand
 
