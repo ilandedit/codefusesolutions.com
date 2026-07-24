@@ -8,24 +8,13 @@ const { showWork = false } = Astro.props;
 <header>
   <div class="wrap bar">
     <a class="wordmark" href="/" aria-label="CodeFuse Solutions — home">
-      <svg class="mark" width="26" height="16" viewBox="0 0 26 16" aria-hidden="true">
-        <g fill="currentColor">
-          <rect x="0" y="0" width="2" height="16"></rect>
-          <rect x="4" y="0" width="1" height="16"></rect>
-          <rect x="7" y="0" width="3" height="16"></rect>
-          <rect x="12" y="0" width="1" height="16"></rect>
-          <rect x="15" y="0" width="2" height="16"></rect>
-          <rect x="19" y="0" width="1" height="16"></rect>
-          <rect x="22" y="0" width="4" height="16"></rect>
-        </g>
-      </svg>
-      <span class="label">CodeFuse Solutions</span>
+      CodeFuse<span class="wordmark-tail">&nbsp;Solutions</span>
     </a>
     <nav aria-label="Main">
-      {showWork && <a class="label" href="/#work">Work</a>}
-      <a class="label" href="/#method">Method</a>
-      <a class="label" href="/#studio">Studio</a>
-      <a class="label nav-contact" href="/#contact">Contact</a>
+      {showWork && <a class="nav-link label" href="/#work">Work</a>}
+      <a class="nav-link label" href="/#method">Method</a>
+      <a class="nav-link label" href="/#studio">Studio</a>
+      <a class="misfit misfit-compact" href="/#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -35,8 +24,8 @@ const { showWork = false } = Astro.props;
     position: sticky;
     top: 0;
     z-index: 10;
-    background: var(--void);
-    border-bottom: 1px solid var(--hairline);
+    background: var(--paper);
+    border-bottom: 1px solid var(--gridline);
   }
 
   .bar {
@@ -44,51 +33,46 @@ const { showWork = false } = Astro.props;
     align-items: center;
     justify-content: space-between;
     gap: 1rem;
-    min-height: 3.5rem;
+    min-height: 3.75rem;
   }
 
   .wordmark {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--pulse);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.375rem;
+    color: var(--ink);
     text-decoration: none;
-    padding-block: 0.75rem;
+    padding-block: 0.625rem;
   }
 
-  .mark {
-    display: block;
+  .wordmark-tail {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 1.0625rem;
+    color: var(--slate);
   }
 
   nav {
     display: flex;
-    align-items: stretch;
+    align-items: center;
     gap: clamp(1rem, 3vw, 2.25rem);
   }
 
-  nav a {
+  .nav-link {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
-    color: var(--industrial);
+    color: var(--slate);
     text-decoration: none;
-    transition: color 120ms linear;
+    transition: color 160ms ease-out;
   }
 
-  nav a:hover {
-    color: var(--pulse);
-  }
-
-  .nav-contact {
-    color: var(--code-contact-text);
-  }
-
-  .nav-contact:hover {
-    color: var(--pulse);
+  .nav-link:hover {
+    color: var(--ink);
   }
 
   @media (max-width: 480px) {
-    .wordmark .label {
+    .wordmark-tail {
       display: none;
     }
   }

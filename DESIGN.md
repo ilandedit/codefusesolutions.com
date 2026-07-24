@@ -1,183 +1,175 @@
 ---
 name: CodeFuse Solutions
-description: Dark-technical catalog identity — matte void, pulse-ink hairlines, numbered entries, coded color strips.
+description: The Misfit Grid — clean exposed-grid professionalism where exactly one element per screen doesn't fit, and the misfit is the action.
 colors:
-  void: "#0b0b0a"
-  pulse: "#f2efe6"
-  industrial: "#a09d94"
-  hairline-dark: "#262622"
-  code-blueprint: "#3760c8"
-  code-frequency: "#1e8f89"
-  code-energy: "#e6b91e"
-  code-contact: "#d0342c"
-  code-contact-text: "#e04b42"
+  paper: "#fbfaf7"
+  ink: "#1a1916"
+  slate: "#5b584e"
+  gridline: "#e9e6de"
+  cobalt: "#2b46e0"
+  cobalt-deep: "#1f34b8"
+  white: "#ffffff"
 typography:
   display:
-    fontFamily: "Technor, Arial Black, sans-serif"
-    fontSize: "clamp(2.5rem, 6.8vw, 5.75rem)"
-    fontWeight: 900
-    lineHeight: 1.0
-    letterSpacing: "0.01em"
-  section-title:
-    fontFamily: "Technor, Arial Black, sans-serif"
-    fontSize: "clamp(1.5rem, 3vw, 2.5rem)"
-    fontWeight: 700
-    lineHeight: 1.08
-    letterSpacing: "0.02em"
-  entry-title:
-    fontFamily: "Technor, Arial Black, sans-serif"
-    fontSize: "clamp(1.125rem, 1.8vw, 1.5rem)"
-    fontWeight: 700
-    lineHeight: 1.2
-    letterSpacing: "0.03em"
+    fontFamily: "Clash Display, Arial Black, sans-serif"
+    fontSize: "clamp(2.5rem, 6.5vw, 5.5rem)"
+    fontWeight: 600
+    lineHeight: 1.04
+    letterSpacing: "-0.01em"
+  headline:
+    fontFamily: "Clash Display, Arial Black, sans-serif"
+    fontSize: "clamp(1.625rem, 3.2vw, 2.5rem)"
+    fontWeight: 600
+    lineHeight: 1.12
+    letterSpacing: "-0.005em"
+  title:
+    fontFamily: "Clash Display, Arial Black, sans-serif"
+    fontSize: "1.3125rem"
+    fontWeight: 600
+    lineHeight: 1.25
   body:
-    fontFamily: "Martian Mono, Consolas, monospace"
-    fontSize: "0.9375rem"
-    fontWeight: 400
-    lineHeight: 1.75
-  label:
-    fontFamily: "Martian Mono, Consolas, monospace"
-    fontSize: "0.75rem"
-    fontWeight: 500
-    letterSpacing: "0.12em"
-  mail-display:
-    fontFamily: "Technor, Arial Black, sans-serif"
-    fontSize: "clamp(1.25rem, 3.2vw, 2.625rem)"
-    fontWeight: 900
-    letterSpacing: "0.01em"
-  nav:
-    fontFamily: "Martian Mono, Consolas, monospace"
-    fontSize: "0.75rem"
-    fontWeight: 500
-    letterSpacing: "0.1em"
-  statement:
-    fontFamily: "Martian Mono, Consolas, monospace"
+    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
     fontSize: "1.0625rem"
     fontWeight: 400
-    lineHeight: 1.8
-  button:
-    fontFamily: "Martian Mono, Consolas, monospace"
+    lineHeight: 1.65
+  lede:
+    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.125rem, 1.7vw, 1.3125rem)"
+    fontWeight: 400
+    lineHeight: 1.6
+  label:
+    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.8125rem"
     fontWeight: 500
-    letterSpacing: "0.1em"
+    letterSpacing: "0.06em"
+  button:
+    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.9375rem"
+    fontWeight: 600
+  small:
+    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
+    fontSize: "0.875rem"
+    fontWeight: 400
+  mail-display:
+    fontFamily: "Clash Display, Arial Black, sans-serif"
+    fontSize: "clamp(1.375rem, 3.2vw, 2.625rem)"
+    fontWeight: 700
+    letterSpacing: "-0.005em"
+  statement:
+    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
+    fontSize: "clamp(1.1875rem, 1.9vw, 1.5rem)"
+    fontWeight: 400
+    lineHeight: 1.55
 rounded:
   none: "0px"
 spacing:
-  gutter: "clamp(1.25rem, 6vw, 6.5rem)"
+  gutter: "clamp(1.25rem, 6vw, 6rem)"
   section: "clamp(4.5rem, 12vh, 8.5rem)"
 components:
-  button-primary:
-    backgroundColor: "transparent"
-    textColor: "{colors.pulse}"
+  misfit-primary:
+    backgroundColor: "{colors.cobalt}"
+    textColor: "#ffffff"
     rounded: "{rounded.none}"
-    padding: "1.0625rem 1.75rem"
-  button-primary-hover:
-    backgroundColor: "{colors.pulse}"
-    textColor: "{colors.void}"
+    padding: "1.25rem 2rem"
+  misfit-primary-hover:
+    backgroundColor: "{colors.cobalt-deep}"
 ---
 
 # Design System: CodeFuse Solutions
 
 ## Overview
 
-**Creative North Star: "The Catalog"**
+**Creative North Star: "The Misfit Grid"**
 
-Factory-Records catalog identity fused to a software studio: matte void-black board, pulse-ink hairline graphics, engraved industrial display caps, mono body text, and a numbering system that treats everything the studio makes as a pressed release. The studio itself is the catalog; every section of the site is a numbered entry (CF 001 THE WORK, CF 002 METHOD, CF 003 STUDIO, CF 007 CONTACT), and every future case study takes the next number — one file, one release. Vast unprinted black is a feature: density lives in precise small type and hairline plots, never in filler.
+A clean, warm, professional page built on a visibly drawn grid — and on every screen, exactly one element refuses to fit. It crosses a column rule, tilts a couple of degrees, or bleeds a margin. That misfit is always the thing that acts, and it alone carries color. The site performs the company's positioning on itself: CodeFuse takes the problems that don't fit, so on this site, the thing that doesn't fit is the thing you click.
 
-One deliberate divergence from the source world: Factory withheld; we label. This is a Persuade surface — the offer and the action stay in plain words within seconds. The coded color strips are a real system (each entry carries its code), but text always accompanies code.
+This is the third world (2026-07-24, replacing the dark Catalog, which replaced the light-editorial canon; both are anti-reference). The pinned brief: clean and professional with character — personality from one clever concept, color with purpose, in the spirit of adhamdannaway.com and tamalsen.dev, never bold for its own sake.
 
-This replaces the light-editorial canon world entirely (user-directed redesign, 2026-07-24). The old site is anti-reference. Product truth (PRODUCT.md) is unchanged: no fabricated proof, work section absent until real, email is the one action.
+**Signature interaction:** hovering a misfit straightens it — CodeFuse makes the thing that doesn't fit, fit.
 
 **Key Characteristics:**
-- Matte Void ground, Pulse hairline ink, Industrial gray secondary — color only as coded blocks
-- Engraved (outline) Technor display caps over Martian Mono body
-- Catalog-number grammar on every entry; hairline radial pulse plot as the signature graphic
-- Contact red is reserved: the contact entry alone owns a hue
+- Warm paper ground with faintly drawn column rules; calm near-black type
+- Cobalt reserved exclusively for misfit actions; quiet breaks stay ink and positional
+- One misfit per screen — the rhythm is order, order, break
+- No fabricated proof; Work renders only when real case studies exist
 
 ## Colors
 
-Void/Pulse monochrome carries the page; the code hues exist only as small coded blocks, never as grounds or text — except Contact red, which marks the contact entry's code and accents.
+Monochrome professionalism plus one purposeful accent that means exactly one thing.
 
 ### Primary
-- **Pulse** (#f2efe6): all text, hairlines, plots, borders on Void. The ink of the system.
-
-### Secondary
-- **Contact Red** (#d0342c): the contact entry's code block, hover fills, and the mail-link underline. Nowhere else.
-- **Contact Red Text** (#e04b42): the small-text roles of Contact Red — nav CONTACT link, the CF 007 entry number, the contact button's text and border. Exists because #d0342c is 3.95:1 on Void; this variant passes 4.5:1.
-
-### Tertiary
-- **Blueprint** (#3760c8), **Frequency** (#1e8f89), **Energy** (#e6b91e): coded blocks in entry code strips only. Never text, never grounds.
+- **Cobalt** (#2b46e0): the misfit-action color — the hero CTA plate, the nav Contact plate, the closing email plate. 6.5:1 as text on Paper; white text on Cobalt passes at 6.8:1.
+- **Cobalt Deep** (#1f34b8): hover/pressed state of Cobalt surfaces.
 
 ### Neutral
-- **Void** (#0b0b0a): the ground everywhere; matte, never pure #000.
-- **Industrial** (#a09d94): body copy and secondary labels; ≥4.5:1 on Void.
-- **Hairline Dark** (#262622): 1px rules and borders between entries.
+- **White** (#ffffff): text on Cobalt plates and selection foreground only — never a ground.
+- **Paper** (#fbfaf7): warm white ground; never pure #fff.
+- **Ink** (#1a1916): headings and primary text.
+- **Slate** (#5b584e): body copy and secondary labels; ≥6:1 on Paper.
+- **Gridline** (#e9e6de): the drawn column rules and section hairlines — visible but quiet.
 
 ### Named Rules
-**The Code Rule.** Color hues appear only inside code strips (small rectangular blocks) — with one exception: Contact Red may color the contact entry's text accents and nav link. A hue as a background field or headline color is a violation.
+**The Misfit Rule.** Cobalt appears only on elements that both (a) break the grid and (b) perform an action. A colored element that fits, or a broken element that isn't actionable, is a violation. Quiet (non-action) breaks are ink and positional only.
 
 ## Typography
 
-**Display Font:** Technor 900/700 (industrial squared caps; Arial Black fallback), self-hosted woff2
-**Body Font:** Martian Mono 400/500/700 (Consolas fallback), self-hosted woff2
+**Display Font:** Clash Display 600/700 (Arial Black fallback), self-hosted woff2
+**Body Font:** Switzer 400/500/600 (Helvetica Neue fallback), self-hosted woff2
 
-**Character:** Engraved and machined. Display headlines are UPPERCASE Technor; the hero statement renders "engraved" — outline stroke (1.5px Pulse, transparent fill) with the key phrase solid-filled. Body is mono at a deliberately small size with tall leading — the printed-spec voice.
+**Character:** Confident geometry with warmth — Clash Display's character carries personality without shouting; Switzer stays invisible and professional in the body. No uppercase-tracking theatrics; sentence case throughout except small labels.
 
 ### Hierarchy
-- **Display** (900, clamp(2.5rem, 6.8vw, 5.75rem), 1.0, uppercase): hero statement and closing email only. Hero uses engraved outline with one filled emphasis phrase.
-- **Section Title** (700, clamp(1.5rem, 3vw, 2.5rem), uppercase): catalog entry titles (THE WORK WE TAKE ON, METHOD…).
-- **Entry Title** (700, clamp(1.125rem, 1.8vw, 1.5rem), uppercase): rows and steps inside entries.
-- **Body** (Martian Mono 400, 0.9375rem, 1.75): copy in Industrial, max 62ch.
-- **Label** (Martian Mono 500, 0.75rem, 0.12em tracked, uppercase): catalog numbers, kickers, nav, code-strip captions.
-- **Mail Display** (900, clamp(1.25rem, 3.2vw, 2.625rem), uppercase): the closing email link.
-- **Statement** (Martian Mono 400, 1.0625rem, 1.8): the studio paragraph, in Pulse rather than Industrial.
-- **Button Label** (Martian Mono 500, 0.8125rem, 0.1em tracked, uppercase): button text.
-
-### Named Rules
-**The Entry Header Rule.** Every section opens with the same machined header row: catalog number (Label) · code strip · section title. No section may invent a different header grammar.
+- **Display** (600, clamp(2.5rem, 6.5vw, 5.5rem), 1.04): hero statement and closing question only.
+- **Headline** (600, clamp(1.625rem, 3.2vw, 2.5rem), 1.12): section leads.
+- **Title** (600, 1.3125rem): row and step titles.
+- **Body** (Switzer 400, 1.0625rem, 1.65): copy in Slate, max 65ch.
+- **Lede** (Switzer 400, clamp(1.125rem, 1.7vw, 1.3125rem)): hero and closing standfirsts.
+- **Label** (Switzer 500, 0.8125rem, 0.06em): kicker, nav, small captions.
+- **Button** (Switzer 600, 0.9375rem): misfit plate text.
+- **Small** (Switzer 400, 0.875rem): footer.
+- **Mail Display** (Clash Display 700, clamp(1.375rem, 3.2vw, 2.625rem)): the closing email plate.
+- **Statement** (Switzer 400, clamp(1.1875rem, 1.9vw, 1.5rem), 1.55): the studio paragraph, in Ink.
 
 ## Layout
 
-Single column inside gutters (clamp(1.25rem, 6vw, 6.5rem)), content capped at 1440px. Entries are separated by 1px Hairline Dark rules and clamp(4.5rem, 12vh, 8.5rem) vertical padding. The hero is a 7/5 split — engraved statement left, radial pulse plot right — collapsing to stacked below 900px (plot shrinks, never disappears: mobile keeps the signature). Capability and method content read as hairline-ruled rows with entry titles left, mono copy right (stacking below 820px). Vast black margins are intentional; do not fill them.
+Content capped at 1200px inside gutters (clamp(1.25rem, 6vw, 6rem)). The grid is drawn: faint Gridline column rules run vertically through the content area (6 columns desktop, 3 below 820px), with section hairlines horizontal. Every module aligns to the columns — except each screen's one misfit. Sections carry clamp(4.5rem, 12vh, 8.5rem) padding. Capability rows: title left, copy right on the column rules, stacking below 820px; Method is a three-step row that stacks the same.
+
+**Break inventory (one per screen, by design):** nav — the Contact plate (tilted -1.5°, Cobalt); hero — the CTA plate (tilted -2°, spanning a column rule, Cobalt); work-we-take-on — row three's title crosses onto the copy column (ink, positional); method — step three sits 1rem below its siblings' baseline (ink, positional); studio — the paragraph bleeds left across the first column rule (ink, positional); contact — the email plate (tilted -2°, bleeding the right margin, Cobalt). No screen has two misfits.
 
 ## Elevation & Depth
 
-None. The board is matte; there are no shadows, no glows, no blur. Depth is drawn — hairline weight (1px resting, 2px active), plot line density, and type scale. The sticky nav is opaque Void with a Hairline Dark bottom rule (no translucency, no backdrop blur).
+Essentially flat. Misfit plates carry one small hard offset shadow (4px 4px 0 rgba(26,25,22,0.12)) — a printed-plate lift with real offset, never a blur halo. Nothing else casts anything.
 
 ## Shapes
 
-Machined rectangles, 0 radius everywhere. Buttons are 1px Pulse-bordered rectangles with mono labels; active/hover inverts (Pulse fill, Void text). Code strips are butt-jointed rectangles. The only circles on the page belong to the radial plot's ticked ring.
+Squared, 0 radius everywhere. Misfit plates are rectangles with the tilt as their identity; quiet breaks are purely positional. Underlines are drawn 1–2px background-image rules.
 
 ## Components
 
-### Buttons
-- **Shape:** square-cornered, 1px solid Pulse border, transparent ground
-- **Primary:** mono Label text in Pulse, 1.0625rem × 1.75rem padding, trailing "→"
-- **Hover / Active / Focus:** Pulse fill with Void text (hard swap, 120ms); focus-visible adds a 2px Pulse outline offset 3px
-- **Contact variant:** border and text in Contact Red; hover fills Contact Red with Pulse text
+### The Misfit Plate (signature)
+- **Primary (action):** Cobalt ground, white Button text, 1.25rem × 2rem padding, rotate(-2deg), hard offset shadow, trailing "→".
+- **Hover / Focus:** the plate straightens to rotate(0) and deepens to Cobalt Deep over 200ms ease-out-expo — the signature "we make it fit" moment; focus-visible adds a 2px Cobalt outline offset 3px.
+- **Nav variant:** compact (0.5rem 0.875rem padding, -1.5° tilt), same behavior.
 
 ### Text links
-- Mono, Pulse, 1px underline drawn via background-image; hover doubles the underline to 2px. The nav CONTACT link is Contact Red.
+- Switzer 500, Ink, 1px underline via background-image; hover shifts text and underline to Cobalt.
 
 ### Navigation
-- Sticky, opaque Void, Hairline Dark bottom rule always visible; left: barcode mark + CODEFUSE SOLUTIONS in Label caps; right: mono links (METHOD, STUDIO, CONTACT-in-red, plus WORK when it exists). Tap targets ≥44px tall on mobile.
+- Sticky, opaque Paper, Gridline bottom rule; wordmark "CodeFuse" (Clash Display 600) + "Solutions" tail in Slate (drops below 480px); links in Slate darkening to Ink; Contact is the nav's misfit plate. Tap targets ≥44px.
 
-### Entry Header (signature)
-`CF 00N` Label + code strip (5–8 butt-jointed 14×8px blocks — hues interleaved with neutral blocks in Industrial, Pulse, and Hairline Dark; neutrals don't violate the Code Rule) + Section Title on one baseline row, sitting directly on the entry's top hairline (entry top padding is 1.25rem; pacing comes from the previous entry's bottom padding). Catalog numbers ascend down the page; the work listing is labeled CF 004+ and sits between CF 003 and CF 007.
-
-### The Pulse Plot (signature graphic)
-A radial burst of hairline Pulse strokes (deterministic pseudo-random lengths, seeded at build) inside a ticked ring with mono degree labels (0/90/180/270) — the studio's "pressed signal." Rays split into three opacity tiers (0.95/0.6/0.35, brightest = longest) for instrument depth. Lives in the hero at large scale; a compact variant may mark future case-study entries. Motion: the tiers fade in staggered over ~1.2s on load, then the dial rotates imperceptibly slowly (240s/rev); reduced-motion renders it complete and static. SVG hairlines only — no bitmap.
+### Quiet breaks
+- Ink-only positional violations (cross a rule, offset a baseline, bleed a margin). Never colored, never rotated more than needed to read as deliberate, always in document flow.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every claim true today; the Work entry (CF 004+) renders only when a case-study file exists, and each new case study takes the next catalog number automatically.
-- **Do** keep the offer and contact@codefusesolutions.com legible as plain text within the first viewport and again at the closing entry; the hero primary action targets #contact (visible address), and mailtos carry a ?subject= prefill.
-- **Do** give every interactive element a hard inverted hover state and visible keyboard focus.
-- **Do** honor prefers-reduced-motion: plot static and complete, reveals settled, no rotation.
+- **Do** keep exactly one break per screen; if a new section needs emphasis, it earns the break by carrying the action.
+- **Do** keep every claim true today; Work renders only when a case-study file exists.
+- **Do** keep contact@codefusesolutions.com reachable from the first viewport (hero CTA → #contact, plain-text address, ?subject= prefill, copy-address affordance).
+- **Do** honor prefers-reduced-motion: plates render settled at their tilt, reveals visible, no entrance choreography.
 
 ### Don't:
-- **Don't** use glows, neon edges, scanlines, gradients, blur, or any "dark dashboard" garnish — the world is matte print, not CRT.
-- **Don't** let a hue escape its code block (Contact Red's defined roles excepted).
-- **Don't** hide meaning behind code alone — every code strip sits beside plain words.
-- **Don't** carry over the ember palette, fuse-line motifs, or any grammar from the replaced light-editorial world.
+- **Don't** let Cobalt touch anything that fits the grid or anything that isn't an action.
+- **Don't** add a second accent, gradients, glass, big blurred shadows, or icon-card grids.
+- **Don't** tilt more than 2 degrees or break the grid twice on one screen — restraint is what makes the misfit legible.
+- **Don't** carry over grammar from the Catalog or fuse-line worlds (numbers, code strips, mono-as-voice, ember, plots).

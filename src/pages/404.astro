@@ -5,21 +5,23 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Base
-  title="No such entry — CodeFuse Solutions"
+  title="This page doesn't fit — CodeFuse Solutions"
   description="That page doesn't exist. CodeFuse Solutions builds custom software for complex, niche problems."
 >
   <Header />
 
-  <main class="wrap not-found">
-    <p class="label num">CF&nbsp;404 — not in catalog</p>
-    <h1 class="display engraved">No such <span class="filled">entry</span>.</h1>
-    <p class="body-copy">
-      That page doesn&rsquo;t exist — but if your problem is the kind nothing
-      off the shelf can solve, you&rsquo;re in the right place.
-    </p>
-    <div class="actions">
-      <a class="text-link label" href="/">Back to the catalog</a>
-      <a class="text-link label" href="/#contact">Contact</a>
+  <main class="wrap not-found grid-stage">
+    <div class="tilt-card">
+      <h1 class="display">This page doesn&rsquo;t fit.</h1>
+      <p class="body-copy">
+        It&rsquo;s not part of the site — but pages that don&rsquo;t fit are
+        sort of our thing. If your problem is one of them, you&rsquo;re in the
+        right place.
+      </p>
+      <div class="actions">
+        <a class="text-link label" href="/">Back to the site</a>
+        <a class="text-link label" href="/#contact">Contact</a>
+      </div>
     </div>
   </main>
 
@@ -31,12 +33,25 @@ import Footer from '../components/Footer.astro';
     padding-top: clamp(4rem, 16vh, 10rem);
     padding-bottom: clamp(5rem, 18vh, 11rem);
     display: grid;
-    gap: 1.75rem;
     justify-items: start;
   }
 
-  .num {
-    color: var(--industrial);
+  /* The 404 is the whole page's misfit: one tilted plate. */
+  .tilt-card {
+    display: grid;
+    gap: 1.5rem;
+    justify-items: start;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    box-shadow: var(--plate-shadow);
+    padding: clamp(1.75rem, 5vw, 3.5rem);
+    rotate: -2deg;
+    max-width: 40rem;
+    transition: rotate 200ms var(--ease-out-expo);
+  }
+
+  .tilt-card:hover {
+    rotate: 0deg;
   }
 
   .actions {

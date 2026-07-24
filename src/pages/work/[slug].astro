@@ -8,36 +8,27 @@ export async function getStaticPaths() {
   const work = (await getCollection('work')).sort(
     (a, b) => a.data.order - b.data.order
   );
-  return work.map((entry, i) => ({
+  return work.map((entry) => ({
     params: { slug: entry.id },
-    props: { entry, catalogNumber: `CF ${String(4 + i).padStart(3, '0')}` },
+    props: { entry },
   }));
 }
 
-const { entry, catalogNumber } = Astro.props;
+const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
 <Base title={`${entry.data.title} — CodeFuse Solutions`} description={entry.data.summary}>
   <Header showWork={true} />
 
-  <main class="wrap">
+  <main class="wrap grid-stage">
     <article>
       <header class="case-head">
-        <div class="case-id">
-          <p class="label num">
-            {catalogNumber} — case study{entry.data.year && ` · ${entry.data.year}`}
-          </p>
-          <span class="code-strip" aria-hidden="true">
-            <i style="background: var(--code-blueprint)"></i>
-            <i style="background: var(--industrial)"></i>
-            <i style="background: var(--code-frequency)"></i>
-            <i style="background: var(--pulse)"></i>
-            <i style="background: var(--code-energy)"></i>
-          </span>
-        </div>
-        <h1 class="section-title">{entry.data.title}</h1>
-        <p class="body-copy">{entry.data.summary}</p>
+        <p class="label kicker">
+          Case study{entry.data.year && ` · ${entry.data.year}`}
+        </p>
+        <h1 class="headline">{entry.data.title}</h1>
+        <p class="lede">{entry.data.summary}</p>
       </header>
       <div class="case-body">
         <Content />
@@ -55,19 +46,8 @@ const { Content } = await render(entry);
     gap: 1.5rem;
   }
 
-  .num {
-    color: var(--industrial);
-  }
-
-  .case-id {
-    display: flex;
-    align-items: baseline;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-  }
-
-  .case-id .code-strip {
-    align-self: center;
+  .kicker {
+    color: var(--slate);
   }
 
   .case-body {
@@ -77,20 +57,18 @@ const { Content } = await render(entry);
 
   .case-body :global(h2) {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(1.125rem, 1.8vw, 1.5rem);
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    line-height: 1.2;
-    margin: 3em 0 1em;
+    font-weight: 600;
+    font-size: 1.3125rem;
+    line-height: 1.25;
+    margin: 2.5em 0 0.75em;
   }
 
   .case-body :global(p) {
-    color: var(--industrial);
+    color: var(--slate);
     margin-block: 1em;
   }
 
   .case-body :global(a) {
-    color: var(--pulse);
+    color: var(--cobalt);
   }
 </style>

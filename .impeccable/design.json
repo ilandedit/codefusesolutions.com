@@ -1,101 +1,103 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-24T14:10:00Z",
+  "generatedAt": "2026-07-24T15:35:00Z",
   "title": "Design System: CodeFuse Solutions",
   "extensions": {
     "colorMeta": {
-      "pulse": { "role": "primary", "displayName": "Pulse", "canonical": "#f2efe6", "tonalRamp": ["oklch(20% 0.008 95)", "oklch(32% 0.008 95)", "oklch(45% 0.009 95)", "oklch(58% 0.01 95)", "oklch(70% 0.011 95)", "oklch(82% 0.012 95)", "oklch(90% 0.012 95)", "oklch(96% 0.01 95)"] },
-      "code-contact": { "role": "secondary", "displayName": "Contact Red", "canonical": "#d0342c" },
-      "code-blueprint": { "role": "tertiary", "displayName": "Blueprint", "canonical": "#3760c8" },
-      "code-frequency": { "role": "tertiary", "displayName": "Frequency", "canonical": "#1e8f89" },
-      "code-energy": { "role": "tertiary", "displayName": "Energy", "canonical": "#e6b91e" },
-      "void": { "role": "neutral", "displayName": "Void", "canonical": "#0b0b0a", "tonalRamp": ["oklch(12% 0.004 100)", "oklch(18% 0.004 100)", "oklch(26% 0.004 100)", "oklch(36% 0.005 100)", "oklch(48% 0.005 100)", "oklch(62% 0.006 100)", "oklch(78% 0.006 100)", "oklch(92% 0.006 100)"] },
-      "industrial": { "role": "neutral", "displayName": "Industrial", "canonical": "#a09d94" },
-      "hairline-dark": { "role": "neutral", "displayName": "Hairline Dark", "canonical": "#262622" }
+      "cobalt": { "role": "primary", "displayName": "Cobalt", "canonical": "#2b46e0", "tonalRamp": ["oklch(22% 0.16 268)", "oklch(30% 0.2 268)", "oklch(38% 0.22 268)", "oklch(46% 0.23 268)", "oklch(54% 0.22 268)", "oklch(66% 0.17 268)", "oklch(80% 0.1 268)", "oklch(93% 0.04 268)"] },
+      "cobalt-deep": { "role": "primary", "displayName": "Cobalt Deep", "canonical": "#1f34b8" },
+      "white": { "role": "neutral", "displayName": "White", "canonical": "#ffffff" },
+      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#fbfaf7" },
+      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#1a1916", "tonalRamp": ["oklch(16% 0.005 90)", "oklch(24% 0.005 90)", "oklch(34% 0.006 90)", "oklch(45% 0.007 90)", "oklch(58% 0.008 90)", "oklch(72% 0.008 90)", "oklch(85% 0.007 90)", "oklch(95% 0.005 90)"] },
+      "slate": { "role": "neutral", "displayName": "Slate", "canonical": "#5b584e" },
+      "gridline": { "role": "neutral", "displayName": "Gridline", "canonical": "#e9e6de" }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero statement (engraved outline with one filled phrase) and closing email only." },
-      "section-title": { "displayName": "Section Title", "purpose": "Catalog entry titles, uppercase." },
-      "entry-title": { "displayName": "Entry Title", "purpose": "Rows and steps inside entries, uppercase." },
-      "body": { "displayName": "Body", "purpose": "Mono copy in Industrial, max 62ch, tall leading." },
-      "label": { "displayName": "Label", "purpose": "Catalog numbers, kickers, nav, code captions." },
-      "mail-display": { "displayName": "Mail Display", "purpose": "The closing email link." },
-      "statement": { "displayName": "Statement", "purpose": "The studio paragraph, in Pulse." },
-      "button": { "displayName": "Button Label", "purpose": "Button text, tracked uppercase." }
+      "display": { "displayName": "Display", "purpose": "Hero statement and closing question only." },
+      "headline": { "displayName": "Headline", "purpose": "Section leads, sentence case." },
+      "title": { "displayName": "Title", "purpose": "Row and step titles." },
+      "body": { "displayName": "Body", "purpose": "Copy in Slate, max 65ch." },
+      "lede": { "displayName": "Lede", "purpose": "Hero and closing standfirsts." },
+      "label": { "displayName": "Label", "purpose": "Kicker, nav, small captions." },
+      "button": { "displayName": "Button", "purpose": "Misfit plate text." },
+      "small": { "displayName": "Small", "purpose": "Footer." },
+      "mail-display": { "displayName": "Mail Display", "purpose": "The closing email plate." },
+      "statement": { "displayName": "Statement", "purpose": "The studio paragraph, in Ink." }
     },
+    "shadows": [
+      { "name": "plate", "value": "4px 4px 0 rgba(26,25,22,0.12)", "purpose": "The misfit plate's printed lift — hard offset, never blur. The only shadow in the system." }
+    ],
     "motion": [
-      { "name": "press", "value": "opacity/translateY 0.8s cubic-bezier(0.16,1,0.3,1), 90ms stagger", "purpose": "Hero elements print once on load; scroll reveals share the grammar per element." },
-      { "name": "press-plot", "value": "opacity 1.4s linear 0.3s", "purpose": "The Pulse Plot's rays fade in once. Reduced motion renders complete and static." },
-      { "name": "hard-swap", "value": "background/color 120ms linear", "purpose": "Buttons invert (Pulse fill, Void text) with a hard machined swap — no easing theatrics." }
+      { "name": "assemble", "value": "opacity/translateY 0.7s cubic-bezier(0.16,1,0.3,1), staggered", "purpose": "Hero modules assemble in order on load; scroll reveals share the grammar per element." },
+      { "name": "land", "value": "rotate 0 → -2deg + settle, 0.55s, after assembly", "purpose": "The hero misfit lands last — order first, then the break." },
+      { "name": "straighten", "value": "rotate → 0deg, 200ms ease-out-expo", "purpose": "The signature: hovering any misfit straightens it — we make it fit." }
     ],
     "breakpoints": [
-      { "name": "hero-stack", "value": "900px" },
       { "name": "row-stack", "value": "820px" },
       { "name": "wordmark-compact", "value": "480px" }
     ]
   },
   "components": [
     {
-      "name": "Primary Button",
+      "name": "Misfit Plate (primary)",
       "kind": "button",
-      "refersTo": "button-primary",
-      "description": "1px Pulse-bordered machined rectangle; hover inverts hard.",
-      "html": "<a class=\"ds-btn\" href=\"#\">TELL US YOUR PROBLEM →</a>",
-      "css": ".ds-btn { display: inline-block; font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; color: #f2efe6; background: transparent; border: 1px solid #f2efe6; padding: 1.0625rem 1.75rem; text-decoration: none; transition: background 120ms linear, color 120ms linear; } .ds-btn:hover { background: #f2efe6; color: #0b0b0a; } .ds-btn:focus-visible { outline: 2px solid #f2efe6; outline-offset: 3px; }"
+      "refersTo": "misfit-primary",
+      "description": "The signature action: a tilted Cobalt plate crossing the grid; hovering straightens it.",
+      "html": "<a class=\"ds-misfit\" href=\"#\">Tell us your problem →</a>",
+      "css": ".ds-misfit { display: inline-block; background: #2b46e0; color: #fff; font-family: 'Switzer', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 0.9375rem; line-height: 1; text-decoration: none; padding: 1.25rem 2rem; box-shadow: 4px 4px 0 rgba(26,25,22,0.12); rotate: -2deg; transition: rotate 200ms cubic-bezier(0.16,1,0.3,1), background 200ms cubic-bezier(0.16,1,0.3,1); } .ds-misfit:hover { rotate: 0deg; background: #1f34b8; } .ds-misfit:focus-visible { outline: 2px solid #2b46e0; outline-offset: 3px; rotate: 0deg; }"
     },
     {
-      "name": "Contact Button",
+      "name": "Misfit Plate (nav)",
       "kind": "button",
-      "description": "The contact entry's variant in Contact Red.",
-      "html": "<button class=\"ds-btn-contact\">COPY ADDRESS</button>",
-      "css": ".ds-btn-contact { display: inline-block; font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; color: #d0342c; background: transparent; border: 1px solid #d0342c; padding: 1.0625rem 1.75rem; cursor: pointer; transition: background 120ms linear, color 120ms linear; } .ds-btn-contact:hover { background: #d0342c; color: #f2efe6; }"
-    },
-    {
-      "name": "Entry Header",
-      "kind": "custom",
-      "description": "The signature header row: catalog number, code strip, section title on one baseline.",
-      "html": "<div class=\"ds-entry-head\"><span class=\"ds-num\">CF 001</span><span class=\"ds-strip\"><i style=\"background:#3760c8\"></i><i style=\"background:#1e8f89\"></i><i style=\"background:#e6b91e\"></i></span><h2 class=\"ds-title\">THE WORK WE TAKE ON</h2></div>",
-      "css": ".ds-entry-head { display: flex; align-items: baseline; gap: 2rem; background: #0b0b0a; padding: 1.5rem; border-top: 1px solid #262622; } .ds-num { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; color: #a09d94; } .ds-strip { display: inline-flex; gap: 2px; align-self: center; } .ds-strip i { display: block; width: 14px; height: 8px; } .ds-title { font-family: 'Technor', 'Arial Black', sans-serif; font-weight: 700; font-size: 1.75rem; letter-spacing: 0.02em; text-transform: uppercase; color: #f2efe6; margin: 0; }"
+      "description": "Compact nav variant of the misfit plate.",
+      "html": "<a class=\"ds-misfit-sm\" href=\"#\">Contact</a>",
+      "css": ".ds-misfit-sm { display: inline-block; background: #2b46e0; color: #fff; font-family: 'Switzer', Arial, sans-serif; font-weight: 600; font-size: 0.8125rem; letter-spacing: 0.06em; line-height: 1; text-decoration: none; padding: 0.625rem 0.875rem; box-shadow: 4px 4px 0 rgba(26,25,22,0.12); rotate: -1.5deg; transition: rotate 200ms cubic-bezier(0.16,1,0.3,1), background 200ms cubic-bezier(0.16,1,0.3,1); } .ds-misfit-sm:hover { rotate: 0deg; background: #1f34b8; }"
     },
     {
       "name": "Text Link",
       "kind": "custom",
-      "description": "Mono link with drawn underline that doubles on hover.",
-      "html": "<a class=\"ds-link\" href=\"#\">METHOD +</a>",
-      "css": ".ds-link { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #f2efe6; text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; padding-bottom: 3px; transition: background-size 120ms linear; } .ds-link:hover { background-size: 100% 2px; }"
+      "description": "Ink link with drawn underline; hover shifts to Cobalt.",
+      "html": "<a class=\"ds-link\" href=\"#\">How we work</a>",
+      "css": ".ds-link { font-family: 'Switzer', Arial, sans-serif; font-weight: 500; font-size: 0.9375rem; color: #1a1916; text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; padding-bottom: 2px; transition: color 160ms ease-out; } .ds-link:hover { color: #2b46e0; }"
     },
     {
       "name": "Navigation",
       "kind": "nav",
-      "description": "Opaque Void bar, barcode mark, mono links, Contact in red.",
-      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-mark\">CODEFUSE SOLUTIONS</span><span class=\"ds-nav-links\"><a href=\"#\">METHOD</a><a href=\"#\">STUDIO</a><a class=\"ds-nav-contact\" href=\"#\">CONTACT</a></span></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: #0b0b0a; padding: 1rem 1.5rem; border-bottom: 1px solid #262622; } .ds-nav-mark { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #f2efe6; } .ds-nav-links { display: flex; gap: 2rem; } .ds-nav-links a { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a09d94; text-decoration: none; transition: color 120ms linear; } .ds-nav-links a:hover { color: #f2efe6; } .ds-nav-contact { color: #d0342c !important; } .ds-nav-contact:hover { color: #f2efe6 !important; }"
+      "description": "Sticky Paper bar with gridline rule; Contact is the nav's misfit.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-wordmark\">CodeFuse<span class=\"ds-nav-tail\"> Solutions</span></span><span class=\"ds-nav-links\"><a href=\"#\">Method</a><a href=\"#\">Studio</a><a class=\"ds-nav-misfit\" href=\"#\">Contact</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: #fbfaf7; padding: 0.75rem 1.5rem; border-bottom: 1px solid #e9e6de; } .ds-nav-wordmark { font-family: 'Clash Display', 'Arial Black', sans-serif; font-weight: 600; font-size: 1.375rem; color: #1a1916; } .ds-nav-tail { font-family: 'Switzer', Arial, sans-serif; font-weight: 400; font-size: 1.0625rem; color: #5b584e; } .ds-nav-links { display: flex; align-items: center; gap: 2rem; } .ds-nav-links a { font-family: 'Switzer', Arial, sans-serif; font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.06em; color: #5b584e; text-decoration: none; } .ds-nav-links a:hover { color: #1a1916; } .ds-nav-misfit { background: #2b46e0; color: #fff !important; padding: 0.625rem 0.875rem; box-shadow: 4px 4px 0 rgba(26,25,22,0.12); rotate: -1.5deg; transition: rotate 200ms cubic-bezier(0.16,1,0.3,1); } .ds-nav-misfit:hover { rotate: 0deg; }"
+    },
+    {
+      "name": "Quiet Break Row",
+      "kind": "card",
+      "description": "A capability row whose title crosses onto the copy column — an ink positional break, never colored.",
+      "html": "<div class=\"ds-row\"><h3 class=\"ds-row-title\">Problems other shops passed on</h3><p class=\"ds-row-copy\">The odd, gnarly, deeply specific work.</p></div>",
+      "css": ".ds-row { display: grid; grid-template-columns: 1fr 2fr; gap: 1rem 3.5rem; padding: 2.5rem 0; border-top: 1px solid #e9e6de; background: #fbfaf7; } .ds-row-title { font-family: 'Clash Display', 'Arial Black', sans-serif; font-weight: 600; font-size: 1.3125rem; color: #1a1916; margin: 0; position: relative; left: 3rem; } .ds-row-copy { font-family: 'Switzer', Arial, sans-serif; font-size: 1.0625rem; line-height: 1.65; color: #5b584e; margin: 0; }"
     }
   ],
   "narrative": {
-    "northStar": "The Catalog",
-    "overview": "Factory-Records catalog identity fused to a software studio: matte void-black board, pulse-ink hairline graphics, engraved industrial display caps, mono body text, and a numbering system that treats everything the studio makes as a pressed release. Every section is a numbered entry; every future case study takes the next number. One deliberate divergence from the source world: Factory withheld; we label — the offer and the action stay in plain words within seconds.",
+    "northStar": "The Misfit Grid",
+    "overview": "A clean, warm, professional page built on a visibly drawn grid — and on every screen, exactly one element refuses to fit. That misfit is always the thing that acts, and it alone carries color. The site performs the company's positioning on itself: CodeFuse takes the problems that don't fit, so the thing that doesn't fit is the thing you click. Signature interaction: hovering a misfit straightens it — we make it fit.",
     "keyCharacteristics": [
-      "Matte Void ground, Pulse hairline ink, Industrial gray secondary — color only as coded blocks",
-      "Engraved (outline) Technor display caps over Martian Mono body",
-      "Catalog-number grammar on every entry; hairline radial pulse plot as the signature graphic",
-      "Contact red is reserved: the contact entry alone owns a hue"
+      "Warm paper ground with faintly drawn column rules; calm near-black type",
+      "Cobalt reserved exclusively for misfit actions; quiet breaks stay ink and positional",
+      "One misfit per screen — the rhythm is order, order, break",
+      "No fabricated proof; Work renders only when real case studies exist"
     ],
     "rules": [
-      { "name": "The Code Rule", "body": "Color hues appear only inside code strips — with one exception: Contact Red may color the contact entry's text accents and nav link. A hue as a background field or headline color is a violation.", "section": "colors" },
-      { "name": "The Entry Header Rule", "body": "Every section opens with the same machined header row: catalog number · code strip · section title. No section may invent a different header grammar.", "section": "typography" }
+      { "name": "The Misfit Rule", "body": "Cobalt appears only on elements that both break the grid and perform an action. A colored element that fits, or a broken element that isn't actionable, is a violation. Quiet breaks are ink and positional only.", "section": "colors" }
     ],
     "dos": [
-      "Do keep every claim true today; the Work entry renders only when a case-study file exists, and each new case study takes the next catalog number.",
-      "Do keep the offer and email legible as plain text in the first viewport and the closing entry.",
-      "Do give every interactive element a hard inverted hover state and visible keyboard focus.",
-      "Do honor prefers-reduced-motion: plot static and complete, reveals settled, no rotation."
+      "Do keep exactly one break per screen; a new section earns its break by carrying the action.",
+      "Do keep every claim true today; Work renders only when a case-study file exists.",
+      "Do keep the email reachable from the first viewport with prefilled subject and a copy affordance.",
+      "Do honor prefers-reduced-motion: plates settled at their tilt, no entrance choreography."
     ],
     "donts": [
-      "Don't use glows, neon edges, scanlines, gradients, blur, or any dark-dashboard garnish — the world is matte print, not CRT.",
-      "Don't let a hue escape its code block (Contact Red's defined roles excepted).",
-      "Don't hide meaning behind code alone — every code strip sits beside plain words.",
-      "Don't carry over the ember palette or fuse-line motifs from the replaced world."
+      "Don't let Cobalt touch anything that fits the grid or anything that isn't an action.",
+      "Don't add a second accent, gradients, glass, blur shadows, or icon-card grids.",
+      "Don't tilt more than 2 degrees or break the grid twice on one screen.",
+      "Don't carry over grammar from the Catalog or fuse-line worlds."
     ]
   }
 }
