@@ -5,18 +5,24 @@ primary_target: "src/pages/index.astro"
 related_targets: []
 ---
 
-# Surface brief: / (landing page)
+# Surface brief: / (home)
 
-Scope: the landing page at src/pages/index.astro. Visitor mode: Persuade.
+Scope: the home page at src/pages/index.astro, the entry point of a four-page site. Visitor mode: Persuade.
 
-Audience & job: business owners with complex, niche software problems deciding whether to trust CodeFuse Solutions. The one action: email contact@codefusesolutions.com (hero CTA targets #contact; the address also sits in plain text in the first viewport; ?subject= prefill on every mailto; copy-address button at the close).
+Audience & job: business owners with complex, niche software problems deciding whether to trust CodeFuse Solutions. The one action: email contact@codefusesolutions.com. Home's specific job is to state the claim, show what the studio takes on, offer a taste of the work, and hand the visitor onward — to /work/ for proof or /contact/ to act. It does not try to close the sale alone.
 
-Proof & content constraints: no publishable case studies yet — the Work section renders only when a `work` collection file exists. Sample project entries used in the selection comps must never ship. No fabricated logos, stats, testimonials, or clients. Founder Derrick Wengerd named once, in the Studio section; voice is "we".
+Proof & content constraints: no real case studies yet. The three entries in src/content/work carry `sample: true` — they render in development with a visible badge and are stripped from production builds, where /work/ shows an honest empty state instead. No fabricated logos, stats, testimonials, or clients, ever. Founder Derrick Wengerd is named once, on /studio/. Voice is "we".
 
-Chosen direction (2026-07-24, final — "Signal"): user-selected from three working HTML comps after four rejected worlds. Near-black ground, quiet panels on hairlines, Clash Display over Switzer, two accents with fixed meaning (Live green = listening, Volt blue = building). Selection method note: the decision-page cards could not show a rendered preview for derived directions (no image generation in session), so candidates were built as real pages instead — this is the approach to repeat.
+Chosen direction (2026-07-24, current — "Navy & Copper"): user-selected from a six-palette board that held layout and type constant so colour was the only variable under judgement. White ground, navy (#0f2a5c) for structure and actions, copper (#a9642a) for the human half; Clash Display over Switzer. The two-halves colour logic is binding: copper means listening and people, navy means building and commitment.
 
-Approved information architecture (binding): claim → what we take on → proof → how we work (three steps) → the studio → the ask. Fixed after the user reported the earlier arrangement "felt off": it restated one idea three times, truncated the method at two of three steps, offered nav items with no matching sections, and ended without a close. Each section now does one job; every nav item resolves; the page ends on the ask.
+Structure (user's explicit decision, replacing an earlier single-page scroll): four real routes — / , /work/ , /studio/ , /contact/ — plus /work/<slug>/ case studies. Navigation marks the current page with a copper underline and aria-current. Every page except Contact ends in a full-bleed navy band pointing at the next step; Contact is the ending and carries no band.
 
-Memorable moment: the method block — one bordered object split into three panels whose top bars run Live → Live/Volt gradient → Volt, making "listening becomes building" visible. The only gradient in the system.
+Home composition: page header (copper label, display claim, lede, navy action, plain-text email) → "The work we take on" three cards → featured work (up to two cards with cover thumbnails, linking to /work/) → navy band to /contact/.
 
-Unresolved: which case studies publish first; DNS + email forwarding at go-live.
+Media: case-study screenshots live in src/assets/work/<slug>/ and go through Astro's image pipeline (multiple widths, WebP, intrinsic dimensions, lazy). Cover images surface here as card thumbnails. Video lives in public/work/<slug>/ and is rendered by VideoBlock; Astro does not transcode it.
+
+Selection-method note worth repeating: the decision page cannot show a rendered preview for derived directions (no image generation available in session), so candidates were built as real working HTML pages and compared live. Holding one variable constant per round — structure, then skin, then palette — is what finally converged.
+
+Rejected and off the table: the light-editorial canon (no character), the dark Factory-Records "Catalog" (beautiful but someone else's identity), the Misfit Grid, De Stijl primaries ("too artsy"), and the near-black "Signal" palette with bright green/blue accents (read as machine-generated). Dark grounds with bright neon-ish accents are permanently prohibited.
+
+Unresolved: which real case study publishes first; DNS and email forwarding at go-live.
