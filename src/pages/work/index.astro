@@ -74,13 +74,20 @@ const hasSamples = work.some((e) => e.data.sample);
           </ul>
         ) : (
           <div class="empty">
-            <h2 class="title">The first case studies are being written.</h2>
+            <h2 class="title">Our first commercial product is in build.</h2>
             <p class="body-copy">
-              We&rsquo;re a young studio and we&rsquo;d rather show you real
-              work than fill this page with stock imagery. Ask us about what
-              we&rsquo;re building — we&rsquo;ll talk you through it directly.
+              We publish a case study when the work is finished and the client
+              is happy for us to talk about it — not before. Nothing here is
+              padded with stock imagery or invented numbers, which is the same
+              standard we&rsquo;d hold your project to.
             </p>
-            <a class="btn" href="/contact/">Ask what we're working on</a>
+            <p class="body-copy">
+              In the meantime the fastest way to judge us is to talk to us.
+              Ask what we&rsquo;re building and you&rsquo;ll get a walkthrough
+              of the real thing — the problem it solves, how it&rsquo;s put
+              together, and what we got wrong on the way.
+            </p>
+            <a class="btn" href="/contact/">Ask what we're building</a>
           </div>
         )
       }
@@ -198,7 +205,11 @@ const hasSamples = work.some((e) => e.data.sample);
     display: grid;
     justify-items: start;
     gap: 1rem;
-    max-width: 46rem;
+    max-width: 52rem;
+  }
+
+  .empty .btn {
+    margin-top: 0.5rem;
   }
 
   @media (max-width: 820px) {

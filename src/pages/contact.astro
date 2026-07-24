@@ -36,7 +36,21 @@ import Footer from '../components/Footer.astro';
       </div>
 
       <div class="helper" data-reveal>
-        <h2 class="title">Helpful things to mention</h2>
+        <h2 class="title">Who reads this</h2>
+        <div class="who">
+          <span class="avatar" aria-hidden="true">DW</span>
+          <div>
+            <p class="title who-name">Derrick Wengerd</p>
+            <p class="small who-role">Founder — reads every message himself</p>
+          </div>
+        </div>
+        <p class="body-copy who-note">
+          You&rsquo;ll get a reply from a person, not an autoresponder or a
+          sales sequence. There&rsquo;s no cost to the first conversation and
+          nothing to sign, and what you describe stays between us.
+        </p>
+
+        <h2 class="title helper-h">Helpful things to mention</h2>
         <ul class="body-copy">
           <li>What the process looks like today, and where it breaks.</li>
           <li>What you&rsquo;ve already tried, including software you&rsquo;ve outgrown.</li>
@@ -116,6 +130,45 @@ import Footer from '../components/Footer.astro';
 
   .copy-note {
     color: var(--copper);
+  }
+
+  .who {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    margin-top: 1rem;
+  }
+
+  .avatar {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 auto;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .who-name {
+    font-size: 1.0625rem;
+  }
+
+  .who-role {
+    color: var(--mute);
+  }
+
+  .who-note {
+    margin-top: 1rem;
+  }
+
+  .helper-h {
+    margin-top: 2.25rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line);
   }
 
   .helper ul {

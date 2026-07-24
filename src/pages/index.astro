@@ -83,6 +83,43 @@ const featured = work.slice(0, 2);
       </div>
     </section>
 
+    <section class="wrap section">
+      <div class="section-head" data-reveal>
+        <h2 class="headline">Where we are right now</h2>
+      </div>
+      <div class="now">
+        <div class="now-main" data-reveal>
+          <p class="lede now-lede">
+            CodeFuse is a young studio, and we&rsquo;d rather tell you that
+            plainly than pad this page with stock photography and invented
+            metrics.
+          </p>
+          <p class="body-copy">
+            Our first commercial product is in build now. We won&rsquo;t show
+            you a screenshot of it until it&rsquo;s real — but we&rsquo;ll
+            happily walk you through what it does, how it&rsquo;s put together,
+            and the decisions behind it, on a call.
+          </p>
+          <p class="body-copy">
+            The same goes for your problem: you&rsquo;ll get a direct answer
+            from the person who would actually build it, not a proposal
+            assembled by someone who won&rsquo;t.
+          </p>
+        </div>
+        <aside class="now-side" data-reveal>
+          <p class="label">Who you&rsquo;ll be talking to</p>
+          <div class="who">
+            <span class="avatar" aria-hidden="true">DW</span>
+            <div>
+              <p class="title">Derrick Wengerd</p>
+              <p class="small who-role">Founder · reads every message himself</p>
+            </div>
+          </div>
+          <a class="text-link small" href="/studio/">How we work &rarr;</a>
+        </aside>
+      </div>
+    </section>
+
     {
       featured.length > 0 && (
         <section class="wrap section">
@@ -172,6 +209,58 @@ const featured = work.slice(0, 2);
     gap: 1.25rem;
   }
 
+  /* "Where we are right now" — the honest substitute for proof we don't have */
+  .now {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3rem);
+    align-items: start;
+  }
+
+  .now-main {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .now-lede {
+    color: var(--ink);
+    max-width: 46ch;
+  }
+
+  .now-side {
+    background: var(--wash);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+    justify-items: start;
+  }
+
+  .who {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+  }
+
+  .avatar {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 auto;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.125rem;
+  }
+
+  .who-role {
+    color: var(--mute);
+  }
+
   .take {
     background: var(--card);
     border: 1px solid var(--line);
@@ -255,6 +344,10 @@ const featured = work.slice(0, 2);
 
   @media (max-width: 900px) {
     .takes {
+      grid-template-columns: 1fr;
+    }
+
+    .now {
       grid-template-columns: 1fr;
     }
   }
