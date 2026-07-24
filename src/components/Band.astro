@@ -1,0 +1,17 @@
+---
+interface Props {
+  heading: string;
+  copy: string;
+  cta: string;
+  href: string;
+}
+const { heading, copy, cta, href } = Astro.props;
+---
+
+<section class="band">
+  <div class="wrap band-inner">
+    <h2 class="headline" data-reveal>{heading}</h2>
+    <p data-reveal>{copy}</p>
+    <a class="btn btn-invert" href={href} data-reveal>{cta}</a>
+  </div>
+</section>

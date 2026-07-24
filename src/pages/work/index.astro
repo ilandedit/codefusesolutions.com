@@ -1,0 +1,171 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import Band from '../../components/Band.astro';
+
+const work = (await getCollection('work'))
+  .filter((entry) => !(import.meta.env.PROD && entry.data.sample))
+  .sort((a, b) => a.data.order - b.data.order);
+const hasSamples = work.some((e) => e.data.sample);
+---
+
+<Base
+  title="Work — CodeFuse Solutions"
+  description="Case studies from CodeFuse Solutions: custom systems built for businesses whose problems didn't fit off-the-shelf software."
+>
+  <Header />
+
+  <main>
+    <section class="wrap page-head">
+      <p class="label">Work</p>
+      <h1 class="display">Systems built to fit.</h1>
+      <p class="lede">
+        Every engagement starts with a problem that off-the-shelf software
+        couldn&rsquo;t solve. Here&rsquo;s what that has looked like in
+        practice.
+      </p>
+    </section>
+
+    <section class="wrap section">
+      {
+        hasSamples && (
+          <p class="section-note dev-note">
+            Sample entries — visible in development only, never in the built
+            site.
+          </p>
+        )
+      }
+
+      {
+        work.length > 0 ? (
+          <ul class="work-list">
+            {work.map((entry) => (
+              <li data-reveal>
+                <a class="row" href={`/work/${entry.id}/`}>
+                  <div class="row-main">
+                    <p class="label row-tag">
+                      {entry.data.client ?? 'Case study'}
+                      {entry.data.year && ` · ${entry.data.year}`}
+                      {entry.data.sample && <span class="sample">Sample</span>}
+                    </p>
+                    <h2 class="headline row-title">{entry.data.title}</h2>
+                    <p class="body-copy">{entry.data.summary}</p>
+                  </div>
+                  <span class="row-go" aria-hidden="true">&rarr;</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <div class="empty">
+            <h2 class="title">The first case studies are being written.</h2>
+            <p class="body-copy">
+              We&rsquo;re a young studio and we&rsquo;d rather show you real
+              work than fill this page with stock imagery. Ask us about what
+              we&rsquo;re building — we&rsquo;ll talk you through it directly.
+            </p>
+            <a class="btn" href="/contact/">Ask what we're working on</a>
+          </div>
+        )
+      }
+    </section>
+  </main>
+
+  <Band
+    heading="Could your problem be next?"
+    copy="Tell us what you're up against. We'll tell you honestly whether we're the right studio for it."
+    cta="Get in touch"
+    href="/contact/"
+  />
+
+  <Footer />
+</Base>
+
+<style>
+  .dev-note {
+    margin-bottom: 1.5rem;
+  }
+
+  .work-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+  }
+
+  .work-list li {
+    border-top: 1px solid var(--line);
+  }
+
+  .work-list li:last-child {
+    border-bottom: 1px solid var(--line);
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding-block: 2rem;
+    text-decoration: none;
+    color: inherit;
+    /* transform, not padding: animating layout properties thrashes */
+    transition: transform 0.2s var(--ease);
+  }
+
+  .row:hover {
+    transform: translateX(0.5rem);
+  }
+
+  .row-main {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .row-tag {
+    color: var(--copper);
+  }
+
+  .row-title {
+    font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+  }
+
+  .row-go {
+    font-size: 1.5rem;
+    color: var(--line);
+    transition: color 0.2s var(--ease), transform 0.2s var(--ease);
+  }
+
+  .row:hover .row-go {
+    color: var(--copper);
+    transform: translateX(4px);
+  }
+
+  .sample {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.05rem 0.4rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--mute);
+  }
+
+  .empty {
+    background: var(--wash);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: clamp(1.75rem, 4vw, 3rem);
+    display: grid;
+    justify-items: start;
+    gap: 1rem;
+    max-width: 46rem;
+  }
+
+  @media (max-width: 640px) {
+    .row-go {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,190 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Band from '../components/Band.astro';
+---
+
+<Base
+  title="Studio — CodeFuse Solutions"
+  description="Who CodeFuse Solutions is and how we work: understand first, build precisely, stand behind it."
+>
+  <Header />
+
+  <main>
+    <section class="wrap page-head">
+      <p class="label">The studio</p>
+      <h1 class="display">Small on purpose.</h1>
+      <p class="lede">
+        CodeFuse Solutions is an independent software studio. We keep the
+        practice deliberately small so every engagement gets senior attention
+        from the first conversation to the shipped system.
+      </p>
+    </section>
+
+    <section class="wrap section">
+      <div class="founder" data-reveal>
+        <span class="avatar" aria-hidden="true">DW</span>
+        <div>
+          <p class="lede founder-copy">
+            The studio is run by founder Derrick Wengerd. You talk directly to
+            the person building your system — there&rsquo;s no account layer
+            between the conversation and the work, and we only take on projects
+            we can do exceptionally well.
+          </p>
+          <p class="small sig">Derrick Wengerd · Founder</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="section-head" data-reveal>
+        <h2 class="headline">How we work</h2>
+      </div>
+      <div class="steps" data-reveal>
+        <div class="step s1">
+          <p class="label stepn">01 — Understand</p>
+          <h3 class="title">The conversation comes first</h3>
+          <p class="body-copy">
+            We start with how your business actually works: the process, the
+            constraints, the edge cases that make your problem yours. Nothing
+            gets built until it&rsquo;s genuinely understood.
+          </p>
+        </div>
+        <div class="step s2">
+          <p class="label stepn">02 — Build</p>
+          <h3 class="title">Built precisely, explained plainly</h3>
+          <p class="body-copy">
+            Scope stays honest and decisions get explained in language you can
+            act on. You see the system as it takes shape, not at the end.
+          </p>
+        </div>
+        <div class="step s3">
+          <p class="label stepn">03 — Stand behind it</p>
+          <h3 class="title">We stay reachable after launch</h3>
+          <p class="body-copy">
+            We ship software we&rsquo;re prepared to live with, because a custom
+            system is a relationship, not a handoff.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Band
+    heading="Think we might fit?"
+    copy="Tell us what you're up against. We'll tell you honestly whether we're the right studio for it."
+    cta="Get in touch"
+    href="/contact/"
+  />
+
+  <Footer />
+</Base>
+
+<style>
+  .founder {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    align-items: start;
+    background: var(--wash);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: clamp(1.5rem, 3.5vw, 2.5rem);
+  }
+
+  .avatar {
+    width: 78px;
+    height: 78px;
+    border-radius: 6px;
+    display: grid;
+    place-items: center;
+    background: var(--navy);
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.625rem;
+  }
+
+  .founder-copy {
+    max-width: 56ch;
+    color: var(--ink);
+  }
+
+  .sig {
+    margin-top: 1rem;
+    color: var(--copper);
+    font-weight: 600;
+  }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .step {
+    background: var(--card);
+    border-right: 1px solid var(--line);
+    padding: 1.75rem 1.5rem;
+    position: relative;
+  }
+
+  .step:last-child {
+    border-right: 0;
+  }
+
+  .step::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+  }
+
+  /* the one gradient in the system: listening becoming building */
+  .s1::before {
+    background: var(--copper);
+  }
+
+  .s2::before {
+    background: linear-gradient(90deg, var(--copper), var(--navy));
+  }
+
+  .s3::before {
+    background: var(--navy);
+  }
+
+  .stepn {
+    color: var(--mute);
+    margin-bottom: 0.875rem;
+  }
+
+  .step .title {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .steps {
+      grid-template-columns: 1fr;
+    }
+
+    .step {
+      border-right: 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .step:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .founder {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -3,3 +3,4 @@ dist/
 .astro/
 scratch_*
 public/_comps/
+public/_palette/

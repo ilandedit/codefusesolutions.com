@@ -1,20 +1,38 @@
 ---
-interface Props {
-  showWork?: boolean;
-}
-const { showWork = false } = Astro.props;
+const path = Astro.url.pathname;
+const isCurrent = (href: string) =>
+  href === '/' ? path === '/' : path.startsWith(href);
+
+const links = [
+  { href: '/work/', label: 'Work' },
+  { href: '/studio/', label: 'Studio' },
+];
 ---
 
-<header>
+<header data-header>
   <div class="wrap bar">
-    <a class="mark" href="/" aria-label="CodeFuse Solutions — home">
-      <span class="dot" aria-hidden="true"></span>CodeFuse Solutions
+    <a class="wordmark" href="/" aria-label="CodeFuse Solutions — home">
+      CodeFuse<span class="tail">&nbsp;Solutions</span>
     </a>
     <nav aria-label="Main">
-      {showWork && <a class="nav-link small" href="/#work">Work</a>}
-      <a class="nav-link small" href="/#method">Method</a>
-      <a class="nav-link small" href="/#studio">Studio</a>
-      <a class="nav-btn" href="/#contact">Contact</a>
+      {
+        links.map((l) => (
+          <a
+            class:list={['nav-link', 'small', { current: isCurrent(l.href) }]}
+            href={l.href}
+            aria-current={isCurrent(l.href) ? 'page' : undefined}
+          >
+            {l.label}
+          </a>
+        ))
+      }
+      <a
+        class="btn nav-btn"
+        href="/contact/"
+        aria-current={isCurrent('/contact/') ? 'page' : undefined}
+      >
+        Contact
+      </a>
     </nav>
   </div>
 </header>
@@ -24,10 +42,13 @@ const { showWork = false } = Astro.props;
     position: sticky;
     top: 0;
     z-index: 9;
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
+    background: var(--paper);
     border-bottom: 1px solid var(--line);
+    transition: box-shadow 0.2s var(--ease);
+  }
+
+  header.scrolled {
+    box-shadow: 0 6px 20px rgba(16, 26, 46, 0.06);
   }
 
   .bar {
@@ -35,33 +56,30 @@ const { showWork = false } = Astro.props;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
-    padding-block: 0.5rem;
     min-height: 4rem;
+    padding-block: 0.5rem;
   }
 
-  .mark {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.625rem;
+  .wordmark {
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 1.25rem;
-    color: var(--ink);
+    font-size: 1.3125rem;
+    color: var(--navy);
     text-decoration: none;
+    letter-spacing: -0.01em;
   }
 
-  .dot {
-    width: 9px;
-    height: 9px;
-    border-radius: 50%;
-    background: var(--live);
-    box-shadow: 0 0 0 4px rgba(61, 220, 151, 0.15);
+  .tail {
+    font-family: var(--font-text);
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--mute);
   }
 
   nav {
     display: flex;
     align-items: center;
-    gap: clamp(0.75rem, 2.5vw, 1.5rem);
+    gap: clamp(0.75rem, 2.5vw, 1.75rem);
   }
 
   .nav-link {
@@ -70,36 +88,28 @@ const { showWork = false } = Astro.props;
     min-height: 44px;
     color: var(--mute);
     text-decoration: none;
-    transition: color 0.18s var(--ease);
+    border-bottom: 2px solid transparent;
+    transition: color 0.18s var(--ease), border-color 0.18s var(--ease);
   }
 
   .nav-link:hover {
     color: var(--ink);
   }
 
-  .nav-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    padding-inline: 1.125rem;
-    background: var(--ink);
-    color: var(--bg);
-    font-size: 0.9375rem;
-    font-weight: 600;
-    text-decoration: none;
-    border-radius: 8px;
-    transition: background 0.18s var(--ease), color 0.18s var(--ease);
+  .nav-link.current {
+    color: var(--ink);
+    border-bottom-color: var(--copper);
   }
 
-  .nav-btn:hover {
-    background: var(--volt-deep);
-    color: #fff;
+  .nav-btn {
+    padding: 0.625rem 1.125rem;
+    min-height: 40px;
+    font-size: 0.875rem;
   }
 
   @media (max-width: 520px) {
-    .mark {
-      font-size: 1.0625rem;
+    .tail {
+      display: none;
     }
   }
 </style>

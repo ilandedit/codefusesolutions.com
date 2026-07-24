@@ -10,16 +10,17 @@ import Footer from '../components/Footer.astro';
 >
   <Header />
 
-  <main class="wrap not-found">
-    <p class="label eyebrow">Error 404</p>
+  <main class="wrap page-head not-found">
+    <p class="label">Error 404</p>
     <h1 class="display">This page doesn&rsquo;t exist.</h1>
     <p class="lede">
       The page you were after isn&rsquo;t here — but if your problem is the kind
       nothing off the shelf can solve, you&rsquo;re in the right place.
     </p>
     <div class="actions">
-      <a class="btn" href="/">Back to the studio</a>
-      <a class="text-link small" href="/#contact">Get in touch</a>
+      <a class="btn" href="/">Back to home</a>
+      <a class="text-link small" href="/work/">See the work</a>
+      <a class="text-link small" href="/contact/">Get in touch</a>
     </div>
   </main>
 
@@ -28,34 +29,11 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .not-found {
-    padding-top: clamp(4rem, 15vh, 9rem);
-    padding-bottom: clamp(5rem, 18vh, 11rem);
-    display: grid;
-    justify-items: start;
-  }
-
-  .eyebrow {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    color: var(--mute);
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
-  }
-
-  .eyebrow::before {
-    content: '';
-    width: 28px;
-    height: 1px;
-    background: var(--live);
-  }
-
-  .not-found .lede {
-    margin-top: 1.75rem;
+    padding-bottom: clamp(5rem, 16vh, 9rem);
   }
 
   .actions {
-    margin-top: 2.25rem;
+    margin-top: 0.75rem;
     display: flex;
     align-items: center;
     gap: 1.5rem;
