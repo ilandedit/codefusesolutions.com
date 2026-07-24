@@ -45,6 +45,7 @@
   --code-frequency: #1e8f89;
   --code-energy: #e6b91e;
   --code-contact: #d0342c;
+  --code-contact-text: #e04b42;
 
   --font-display: 'Technor', 'Arial Black', sans-serif;
   --font-mono: 'Martian Mono', Consolas, monospace;
@@ -114,13 +115,19 @@ p {
 }
 
 .engraved {
-  color: transparent;
-  -webkit-text-stroke: 1.5px var(--pulse);
+  color: var(--pulse);
 }
 
-.engraved .filled {
-  color: var(--pulse);
-  -webkit-text-stroke: 0;
+@supports (-webkit-text-stroke: 1.5px #000) {
+  .engraved {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--pulse);
+  }
+
+  .engraved .filled {
+    color: var(--pulse);
+    -webkit-text-stroke: 0;
+  }
 }
 
 .section-title {
@@ -157,7 +164,9 @@ p {
 /* ---------- entry grammar ---------- */
 
 .entry {
-  padding-block: var(--section-pad);
+  /* Header stamp sits directly on the entry's hairline; pacing comes from
+     the previous entry's bottom padding. */
+  padding-block: 1.25rem var(--section-pad);
   border-top: 1px solid var(--hairline);
 }
 
@@ -213,8 +222,8 @@ p {
 }
 
 .btn-contact {
-  color: var(--code-contact);
-  border-color: var(--code-contact);
+  color: var(--code-contact-text);
+  border-color: var(--code-contact-text);
 }
 
 .btn-contact:hover,
@@ -268,6 +277,7 @@ html.js [data-scroll-reveal].in {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+    animation-delay: 0s !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }

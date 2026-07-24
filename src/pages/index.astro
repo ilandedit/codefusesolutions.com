@@ -36,7 +36,7 @@ function mulberry32(seed: number) {
   };
 }
 const rand = mulberry32(20260724);
-const C = 210;
+const C = 220;
 const rays = Array.from({ length: 168 }, (_, i) => {
   const angle = (i / 168) * Math.PI * 2 + (rand() - 0.5) * 0.03;
   const r = rand();
@@ -48,8 +48,10 @@ const rays = Array.from({ length: 168 }, (_, i) => {
     x2: C + Math.cos(angle) * outer,
     y2: C + Math.sin(angle) * outer,
     dot: r > 0.72,
+    tier: r > 0.66 ? 0 : r > 0.33 ? 1 : 2,
   };
 });
+const tiers = [0, 1, 2].map((t) => rays.filter((r) => r.tier === t));
 const ticks = Array.from({ length: 72 }, (_, i) => {
   const angle = (i / 72) * Math.PI * 2;
   const len = i % 6 === 0 ? 10 : 5;
@@ -89,61 +91,46 @@ const ticks = Array.from({ length: 72 }, (_, i) => {
         </a>
       </div>
       <figure class="plot" aria-hidden="true">
-        <svg viewBox="0 0 420 420" role="presentation">
-          <circle cx={C} cy={C} r="196" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"></circle>
-          <g stroke="currentColor" stroke-width="0.75">
-            {ticks.map((t) => (
-              <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2}></line>
+        <svg viewBox="0 0 440 440" role="presentation">
+          <g class="dial">
+            <circle cx={C} cy={C} r="196" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5"></circle>
+            <g stroke="currentColor" stroke-width="0.75">
+              {ticks.map((t) => (
+                <line x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2}></line>
+              ))}
+            </g>
+            {tiers.map((tier, i) => (
+              <g class={`rays tier-${i}`} stroke="currentColor" stroke-width="0.6">
+                {tier.map((r) => (
+                  <>
+                    <line x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2}></line>
+                    {r.dot && <circle cx={r.x2} cy={r.y2} r="1.1" fill="currentColor" stroke="none"></circle>}
+                  </>
+                ))}
+              </g>
             ))}
           </g>
-          <g class="rays" stroke="currentColor" stroke-width="0.6">
-            {rays.map((r) => (
-              <>
-                <line x1={r.x1} y1={r.y1} x2={r.x2} y2={r.y2}></line>
-                {r.dot && <circle cx={r.x2} cy={r.y2} r="1.1" fill="currentColor" stroke="none"></circle>}
-              </>
-            ))}
+          <g class="degrees" fill="currentColor" opacity="0.6" font-size="9" letter-spacing="1">
+            <text x={C} y="12" text-anchor="middle">0</text>
+            <text x="438" y={C + 4} text-anchor="end">90</text>
+            <text x={C} y="437" text-anchor="middle">180</text>
+            <text x="2" y={C + 4} text-anchor="start">270</text>
           </g>
         </svg>
         <figcaption class="label plot-caption">CF&nbsp;000 &mdash; pressed signal</figcaption>
       </figure>
     </section>
 
-    {
-      hasWork && (
-        <section id="work" class="wrap entry">
-          <div class="entry-head">
-            <span class="label entry-num">CF&nbsp;004</span>
-            <span class="code-strip" aria-hidden="true">
-              <i style="background: var(--code-blueprint)"></i>
-              <i style="background: var(--code-frequency)"></i>
-              <i style="background: var(--code-energy)"></i>
-            </span>
-            <h2 class="section-title">Selected work</h2>
-          </div>
-          <ul class="work-list">
-            {work.map((entry, i) => (
-              <li data-scroll-reveal>
-                <a class="work-item" href={`/work/${entry.id}/`}>
-                  <span class="label entry-num">CF&nbsp;{String(4 + i).padStart(3, '0')}</span>
-                  <h3 class="entry-title">{entry.data.title}</h3>
-                  <p class="body-copy">{entry.data.summary}</p>
-                  <span class="label view">View &rarr;</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )
-    }
-
     <section class="wrap entry">
       <div class="entry-head" data-scroll-reveal>
         <span class="label entry-num">CF&nbsp;001</span>
         <span class="code-strip" aria-hidden="true">
           <i style="background: var(--code-blueprint)"></i>
+          <i style="background: var(--industrial)"></i>
           <i style="background: var(--code-frequency)"></i>
+          <i style="background: var(--pulse)"></i>
           <i style="background: var(--code-energy)"></i>
+          <i style="background: var(--hairline)"></i>
         </span>
         <h2 class="section-title">The work we take on</h2>
       </div>
@@ -186,7 +173,10 @@ const ticks = Array.from({ length: 72 }, (_, i) => {
         <span class="label entry-num">CF&nbsp;002</span>
         <span class="code-strip" aria-hidden="true">
           <i style="background: var(--code-frequency)"></i>
+          <i style="background: var(--hairline)"></i>
           <i style="background: var(--code-blueprint)"></i>
+          <i style="background: var(--industrial)"></i>
+          <i style="background: var(--pulse)"></i>
         </span>
         <h2 class="section-title">Method</h2>
       </div>
@@ -223,7 +213,10 @@ const ticks = Array.from({ length: 72 }, (_, i) => {
         <span class="label entry-num">CF&nbsp;003</span>
         <span class="code-strip" aria-hidden="true">
           <i style="background: var(--code-energy)"></i>
+          <i style="background: var(--pulse)"></i>
           <i style="background: var(--code-frequency)"></i>
+          <i style="background: var(--hairline)"></i>
+          <i style="background: var(--industrial)"></i>
         </span>
         <h2 class="section-title">The studio</h2>
       </div>
@@ -234,6 +227,37 @@ const ticks = Array.from({ length: 72 }, (_, i) => {
         system — and we only take on work we can do exceptionally well.
       </p>
     </section>
+
+    {
+      hasWork && (
+        <section id="work" class="wrap entry">
+          <div class="entry-head">
+            <span class="label entry-num">CF&nbsp;004+</span>
+            <span class="code-strip" aria-hidden="true">
+              <i style="background: var(--code-blueprint)"></i>
+              <i style="background: var(--code-frequency)"></i>
+              <i style="background: var(--pulse)"></i>
+              <i style="background: var(--code-energy)"></i>
+              <i style="background: var(--industrial)"></i>
+              <i style="background: var(--hairline)"></i>
+            </span>
+            <h2 class="section-title">Selected work</h2>
+          </div>
+          <ul class="work-list">
+            {work.map((entry, i) => (
+              <li data-scroll-reveal>
+                <a class="work-item" href={`/work/${entry.id}/`}>
+                  <span class="label entry-num">CF&nbsp;{String(4 + i).padStart(3, '0')}</span>
+                  <h3 class="entry-title">{entry.data.title}</h3>
+                  <p class="body-copy">{entry.data.summary}</p>
+                  <span class="label view">View &rarr;</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
     <section id="contact" class="wrap entry closing">
       <div class="entry-head" data-scroll-reveal>
@@ -361,14 +385,41 @@ const ticks = Array.from({ length: 72 }, (_, i) => {
     color: var(--industrial);
   }
 
+  .plot .degrees {
+    font-family: var(--font-mono);
+  }
+
+  .plot .rays {
+    opacity: var(--tier-o, 1);
+  }
+
+  .plot .tier-0 { --tier-o: 0.95; }
+  .plot .tier-1 { --tier-o: 0.6; }
+  .plot .tier-2 { --tier-o: 0.35; }
+
   html.js .plot .rays {
     opacity: 0;
-    animation: press-plot 1.4s linear 0.3s forwards;
+    animation: press-plot 1.2s linear forwards;
+  }
+
+  html.js .plot .tier-0 { animation-delay: 0.3s; }
+  html.js .plot .tier-1 { animation-delay: 0.55s; }
+  html.js .plot .tier-2 { animation-delay: 0.8s; }
+
+  html.js .plot .dial {
+    animation: plot-spin 240s linear infinite;
+    transform-origin: 50% 50%;
   }
 
   @keyframes press-plot {
     to {
-      opacity: 1;
+      opacity: var(--tier-o, 1);
+    }
+  }
+
+  @keyframes plot-spin {
+    to {
+      transform: rotate(1turn);
     }
   }
 
@@ -412,7 +463,7 @@ const ticks = Array.from({ length: 72 }, (_, i) => {
   }
 
   .contact-num {
-    color: var(--code-contact);
+    color: var(--code-contact-text);
   }
 
   .mail-link {

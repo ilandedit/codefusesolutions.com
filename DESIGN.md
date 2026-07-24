@@ -10,6 +10,7 @@ colors:
   code-frequency: "#1e8f89"
   code-energy: "#e6b91e"
   code-contact: "#d0342c"
+  code-contact-text: "#e04b42"
 typography:
   display:
     fontFamily: "Technor, Arial Black, sans-serif"
@@ -101,7 +102,8 @@ Void/Pulse monochrome carries the page; the code hues exist only as small coded 
 - **Pulse** (#f2efe6): all text, hairlines, plots, borders on Void. The ink of the system.
 
 ### Secondary
-- **Contact Red** (#d0342c): the contact entry's code block, the nav CONTACT link, and the active state of the contact action. Nowhere else.
+- **Contact Red** (#d0342c): the contact entry's code block, hover fills, and the mail-link underline. Nowhere else.
+- **Contact Red Text** (#e04b42): the small-text roles of Contact Red — nav CONTACT link, the CF 007 entry number, the contact button's text and border. Exists because #d0342c is 3.95:1 on Void; this variant passes 4.5:1.
 
 ### Tertiary
 - **Blueprint** (#3760c8), **Frequency** (#1e8f89), **Energy** (#e6b91e): coded blocks in entry code strips only. Never text, never grounds.
@@ -161,10 +163,10 @@ Machined rectangles, 0 radius everywhere. Buttons are 1px Pulse-bordered rectang
 - Sticky, opaque Void, Hairline Dark bottom rule always visible; left: barcode mark + CODEFUSE SOLUTIONS in Label caps; right: mono links (METHOD, STUDIO, CONTACT-in-red, plus WORK when it exists). Tap targets ≥44px tall on mobile.
 
 ### Entry Header (signature)
-`CF 00N` Label + code strip (3–5 hue blocks, 14×8px, butt-jointed) + Section Title on one baseline row, sitting directly on the entry's top hairline.
+`CF 00N` Label + code strip (5–8 butt-jointed 14×8px blocks — hues interleaved with neutral blocks in Industrial, Pulse, and Hairline Dark; neutrals don't violate the Code Rule) + Section Title on one baseline row, sitting directly on the entry's top hairline (entry top padding is 1.25rem; pacing comes from the previous entry's bottom padding). Catalog numbers ascend down the page; the work listing is labeled CF 004+ and sits between CF 003 and CF 007.
 
 ### The Pulse Plot (signature graphic)
-A radial burst of hairline Pulse strokes (deterministic pseudo-random lengths, seeded at build) inside a ticked ring — the studio's "pressed signal." Lives in the hero at large scale; a compact variant may mark future case-study entries. Motion: the plot draws once on load (stroke groups fading in over ~1.2s) and thereafter rotates imperceptibly slowly (≥180s/rev); reduced-motion renders it complete and static. Canvas/SVG hairlines only — no bitmap.
+A radial burst of hairline Pulse strokes (deterministic pseudo-random lengths, seeded at build) inside a ticked ring with mono degree labels (0/90/180/270) — the studio's "pressed signal." Rays split into three opacity tiers (0.95/0.6/0.35, brightest = longest) for instrument depth. Lives in the hero at large scale; a compact variant may mark future case-study entries. Motion: the tiers fade in staggered over ~1.2s on load, then the dial rotates imperceptibly slowly (240s/rev); reduced-motion renders it complete and static. SVG hairlines only — no bitmap.
 
 ## Do's and Don'ts
 

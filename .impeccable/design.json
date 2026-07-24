@@ -1,37 +1,35 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-07-23T15:45:00Z",
+  "generatedAt": "2026-07-24T14:10:00Z",
   "title": "Design System: CodeFuse Solutions",
   "extensions": {
     "colorMeta": {
-      "ember": { "role": "primary", "displayName": "Ember", "canonical": "#c7430f", "tonalRamp": ["oklch(20% 0.09 40)", "oklch(30% 0.13 40)", "oklch(40% 0.16 40)", "oklch(50% 0.18 40)", "oklch(58% 0.18 40)", "oklch(70% 0.13 40)", "oklch(85% 0.06 40)", "oklch(95% 0.02 40)"] },
-      "ember-deep": { "role": "primary", "displayName": "Ember Deep", "canonical": "#a0350a" },
-      "ink": { "role": "neutral", "displayName": "Ink", "canonical": "#161513", "tonalRamp": ["oklch(15% 0.005 80)", "oklch(25% 0.005 80)", "oklch(35% 0.006 80)", "oklch(45% 0.007 80)", "oklch(55% 0.008 80)", "oklch(70% 0.008 80)", "oklch(85% 0.008 80)", "oklch(95% 0.006 80)"] },
-      "paper": { "role": "neutral", "displayName": "Paper", "canonical": "#faf9f6" },
-      "graphite": { "role": "neutral", "displayName": "Graphite", "canonical": "#55524b" },
-      "hairline": { "role": "neutral", "displayName": "Hairline", "canonical": "#e7e4dd" }
+      "pulse": { "role": "primary", "displayName": "Pulse", "canonical": "#f2efe6", "tonalRamp": ["oklch(20% 0.008 95)", "oklch(32% 0.008 95)", "oklch(45% 0.009 95)", "oklch(58% 0.01 95)", "oklch(70% 0.011 95)", "oklch(82% 0.012 95)", "oklch(90% 0.012 95)", "oklch(96% 0.01 95)"] },
+      "code-contact": { "role": "secondary", "displayName": "Contact Red", "canonical": "#d0342c" },
+      "code-blueprint": { "role": "tertiary", "displayName": "Blueprint", "canonical": "#3760c8" },
+      "code-frequency": { "role": "tertiary", "displayName": "Frequency", "canonical": "#1e8f89" },
+      "code-energy": { "role": "tertiary", "displayName": "Energy", "canonical": "#e6b91e" },
+      "void": { "role": "neutral", "displayName": "Void", "canonical": "#0b0b0a", "tonalRamp": ["oklch(12% 0.004 100)", "oklch(18% 0.004 100)", "oklch(26% 0.004 100)", "oklch(36% 0.005 100)", "oklch(48% 0.005 100)", "oklch(62% 0.006 100)", "oklch(78% 0.006 100)", "oklch(92% 0.006 100)"] },
+      "industrial": { "role": "neutral", "displayName": "Industrial", "canonical": "#a09d94" },
+      "hairline-dark": { "role": "neutral", "displayName": "Hairline Dark", "canonical": "#262622" }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Hero statement and closing CTA only." },
-      "headline": { "displayName": "Headline", "purpose": "Section leads and editorial row titles." },
-      "title": { "displayName": "Title", "purpose": "Step and work-item titles." },
-      "body": { "displayName": "Body", "purpose": "Copy in Graphite, max 65ch." },
-      "label": { "displayName": "Label", "purpose": "The single hero kicker; uppercase, tracked." },
-      "lede": { "displayName": "Lede", "purpose": "Hero and closing standfirsts in Graphite." },
-      "row-title": { "displayName": "Row Title", "purpose": "Capability rows and case-study subheads." },
-      "statement": { "displayName": "Statement", "purpose": "The studio paragraph." },
+      "display": { "displayName": "Display", "purpose": "Hero statement (engraved outline with one filled phrase) and closing email only." },
+      "section-title": { "displayName": "Section Title", "purpose": "Catalog entry titles, uppercase." },
+      "entry-title": { "displayName": "Entry Title", "purpose": "Rows and steps inside entries, uppercase." },
+      "body": { "displayName": "Body", "purpose": "Mono copy in Industrial, max 62ch, tall leading." },
+      "label": { "displayName": "Label", "purpose": "Catalog numbers, kickers, nav, code captions." },
       "mail-display": { "displayName": "Mail Display", "purpose": "The closing email link." },
-      "wordmark": { "displayName": "Wordmark", "purpose": "Header wordmark; tail drops below 480px." },
-      "wordmark-tail": { "displayName": "Wordmark Tail", "purpose": "The 'Solutions' tail of the wordmark." },
-      "nav": { "displayName": "Nav/Footer Small", "purpose": "Navigation and footer text." },
-      "button": { "displayName": "Button Label", "purpose": "Primary button text." }
+      "statement": { "displayName": "Statement", "purpose": "The studio paragraph, in Pulse." },
+      "button": { "displayName": "Button Label", "purpose": "Button text, tracked uppercase." }
     },
     "motion": [
-      { "name": "ease-out-expo", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The only easing: entrance reveal, fuse draws, underline slides, button states." },
-      { "name": "fuse-ignition", "value": "transform: scaleX(0 -> 1) 1.3s ease-out-expo", "purpose": "Section hairlines ignite an ember segment on first viewport entry." },
-      { "name": "fuse-rail", "value": "transform: scaleY(scroll progress), rAF-throttled", "purpose": "Gutter rail ember fill tracks scroll — the page as a burning fuse. Hidden <820px and no-JS." }
+      { "name": "press", "value": "opacity/translateY 0.8s cubic-bezier(0.16,1,0.3,1), 90ms stagger", "purpose": "Hero elements print once on load; scroll reveals share the grammar per element." },
+      { "name": "press-plot", "value": "opacity 1.4s linear 0.3s", "purpose": "The Pulse Plot's rays fade in once. Reduced motion renders complete and static." },
+      { "name": "hard-swap", "value": "background/color 120ms linear", "purpose": "Buttons invert (Pulse fill, Void text) with a hard machined swap — no easing theatrics." }
     ],
     "breakpoints": [
+      { "name": "hero-stack", "value": "900px" },
       { "name": "row-stack", "value": "820px" },
       { "name": "wordmark-compact", "value": "480px" }
     ]
@@ -41,62 +39,63 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The single ember action; one per viewport region.",
-      "html": "<a class=\"ds-btn-primary\" href=\"#\">Tell us your problem</a>",
-      "css": ".ds-btn-primary { display: inline-block; background: #c7430f; color: #faf9f6; font-family: 'General Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 1rem; line-height: 1; text-decoration: none; padding: 1.125rem 2.25rem; border-radius: 0; transition: background 0.25s cubic-bezier(0.16,1,0.3,1), transform 0.25s cubic-bezier(0.16,1,0.3,1); } .ds-btn-primary:hover { background: #a0350a; transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 2px solid #c7430f; outline-offset: 3px; }"
+      "description": "1px Pulse-bordered machined rectangle; hover inverts hard.",
+      "html": "<a class=\"ds-btn\" href=\"#\">TELL US YOUR PROBLEM →</a>",
+      "css": ".ds-btn { display: inline-block; font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; color: #f2efe6; background: transparent; border: 1px solid #f2efe6; padding: 1.0625rem 1.75rem; text-decoration: none; transition: background 120ms linear, color 120ms linear; } .ds-btn:hover { background: #f2efe6; color: #0b0b0a; } .ds-btn:focus-visible { outline: 2px solid #f2efe6; outline-offset: 3px; }"
+    },
+    {
+      "name": "Contact Button",
+      "kind": "button",
+      "description": "The contact entry's variant in Contact Red.",
+      "html": "<button class=\"ds-btn-contact\">COPY ADDRESS</button>",
+      "css": ".ds-btn-contact { display: inline-block; font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.8125rem; letter-spacing: 0.1em; text-transform: uppercase; line-height: 1; color: #d0342c; background: transparent; border: 1px solid #d0342c; padding: 1.0625rem 1.75rem; cursor: pointer; transition: background 120ms linear, color 120ms linear; } .ds-btn-contact:hover { background: #d0342c; color: #f2efe6; }"
+    },
+    {
+      "name": "Entry Header",
+      "kind": "custom",
+      "description": "The signature header row: catalog number, code strip, section title on one baseline.",
+      "html": "<div class=\"ds-entry-head\"><span class=\"ds-num\">CF 001</span><span class=\"ds-strip\"><i style=\"background:#3760c8\"></i><i style=\"background:#1e8f89\"></i><i style=\"background:#e6b91e\"></i></span><h2 class=\"ds-title\">THE WORK WE TAKE ON</h2></div>",
+      "css": ".ds-entry-head { display: flex; align-items: baseline; gap: 2rem; background: #0b0b0a; padding: 1.5rem; border-top: 1px solid #262622; } .ds-num { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; color: #a09d94; } .ds-strip { display: inline-flex; gap: 2px; align-self: center; } .ds-strip i { display: block; width: 14px; height: 8px; } .ds-title { font-family: 'Technor', 'Arial Black', sans-serif; font-weight: 700; font-size: 1.75rem; letter-spacing: 0.02em; text-transform: uppercase; color: #f2efe6; margin: 0; }"
     },
     {
       "name": "Text Link",
       "kind": "custom",
-      "description": "Quiet secondary action with a drawn 1px underline that turns ember on hover.",
-      "html": "<a class=\"ds-text-link\" href=\"#\">How we work</a>",
-      "css": ".ds-text-link { color: #161513; font-family: 'General Sans', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; text-decoration: none; background-image: linear-gradient(#161513, #161513); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; padding-bottom: 2px; transition: color 0.2s ease-out; } .ds-text-link:hover { color: #c7430f; background-image: linear-gradient(#c7430f, #c7430f); }"
+      "description": "Mono link with drawn underline that doubles on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">METHOD +</a>",
+      "css": ".ds-link { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #f2efe6; text-decoration: none; background-image: linear-gradient(currentColor, currentColor); background-repeat: no-repeat; background-size: 100% 1px; background-position: 0 100%; padding-bottom: 3px; transition: background-size 120ms linear; } .ds-link:hover { background-size: 100% 2px; }"
     },
     {
       "name": "Navigation",
       "kind": "nav",
-      "description": "Sticky translucent header; graphite links, one ember contact link.",
-      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-wordmark\">CodeFuse<span class=\"ds-nav-tail\"> Solutions</span></span><span class=\"ds-nav-links\"><a href=\"#\">Approach</a><a href=\"#\">Studio</a><a class=\"ds-nav-contact\" href=\"#\">Contact</a></span></nav>",
-      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: rgba(250,249,246,0.92); padding: 1.125rem 1.5rem; border-bottom: 1px solid #e7e4dd; } .ds-nav-wordmark { font-family: 'Cabinet Grotesk', 'Arial Black', sans-serif; font-weight: 800; font-size: 1.3125rem; letter-spacing: -0.01em; color: #161513; } .ds-nav-tail { font-family: 'General Sans', Arial, sans-serif; font-weight: 400; font-size: 1.0625rem; color: #55524b; } .ds-nav-links { display: flex; gap: 2rem; } .ds-nav-links a { font-family: 'General Sans', Arial, sans-serif; font-size: 0.9375rem; font-weight: 500; color: #55524b; text-decoration: none; transition: color 0.2s ease-out; } .ds-nav-links a:hover { color: #161513; } .ds-nav-contact { color: #c7430f !important; } .ds-nav-contact:hover { color: #a0350a !important; }"
-    },
-    {
-      "name": "Editorial Row",
-      "kind": "card",
-      "description": "The capability row: headline left, graphite copy right, hairline top; replaces card grids.",
-      "html": "<div class=\"ds-row\"><h3 class=\"ds-row-title\">Systems that don't exist yet</h3><p class=\"ds-row-copy\">When nothing on the market matches how your business actually runs, we design and build the system that does.</p></div>",
-      "css": ".ds-row { display: grid; grid-template-columns: 5fr 7fr; gap: 1.5rem 4rem; padding: 2.75rem 0; border-top: 1px solid #e7e4dd; background: #faf9f6; } .ds-row-title { font-family: 'Cabinet Grotesk', 'Arial Black', sans-serif; font-weight: 800; font-size: 1.75rem; line-height: 1.12; letter-spacing: -0.015em; color: #161513; margin: 0; } .ds-row-copy { font-family: 'General Sans', Arial, sans-serif; font-size: 1.125rem; line-height: 1.6; color: #55524b; margin: 0; align-self: center; }"
-    },
-    {
-      "name": "Fuse Line",
-      "kind": "custom",
-      "description": "Signature: hairline with an ember segment that draws in after the hero reveal.",
-      "html": "<div class=\"ds-fuse\"><span class=\"ds-fuse-ember\"></span></div>",
-      "css": ".ds-fuse { position: relative; height: 1px; background: #e7e4dd; margin: 2rem 0; } .ds-fuse-ember { position: absolute; left: 0; top: -1px; bottom: 0; width: 38%; background: #c7430f; }"
+      "description": "Opaque Void bar, barcode mark, mono links, Contact in red.",
+      "html": "<nav class=\"ds-nav\"><span class=\"ds-nav-mark\">CODEFUSE SOLUTIONS</span><span class=\"ds-nav-links\"><a href=\"#\">METHOD</a><a href=\"#\">STUDIO</a><a class=\"ds-nav-contact\" href=\"#\">CONTACT</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; gap: 2rem; background: #0b0b0a; padding: 1rem 1.5rem; border-bottom: 1px solid #262622; } .ds-nav-mark { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #f2efe6; } .ds-nav-links { display: flex; gap: 2rem; } .ds-nav-links a { font-family: 'Martian Mono', Consolas, monospace; font-weight: 500; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: #a09d94; text-decoration: none; transition: color 120ms linear; } .ds-nav-links a:hover { color: #f2efe6; } .ds-nav-contact { color: #d0342c !important; } .ds-nav-contact:hover { color: #f2efe6 !important; }"
     }
   ],
   "narrative": {
-    "northStar": "The Confident Studio",
-    "overview": "The category standard, played completely straight and finished to the level of Work & Co, Instrument, and MetaLab: a light, typography-led studio site where restraint reads as competence. The page persuades by craft, not devices — a business owner with a hard problem should feel they are already looking at precise work. Density is low; type is large and decisive; color is rationed so the single accent means something. The user explicitly rejected conceptual carriers; nothing on the surface may read as a costume. Warmth comes from editorial pacing and honest copy, not ornament.",
+    "northStar": "The Catalog",
+    "overview": "Factory-Records catalog identity fused to a software studio: matte void-black board, pulse-ink hairline graphics, engraved industrial display caps, mono body text, and a numbering system that treats everything the studio makes as a pressed release. Every section is a numbered entry; every future case study takes the next number. One deliberate divergence from the source world: Factory withheld; we label — the offer and the action stay in plain words within seconds.",
     "keyCharacteristics": [
-      "Warm paper ground, near-black ink, one ember accent used sparingly",
-      "Cabinet Grotesk Extrabold display over General Sans text; hairline dividers",
-      "One orchestrated entrance motion; everything else is quiet state feedback",
-      "No fabricated proof anywhere: no logos, stats, testimonials until real"
+      "Matte Void ground, Pulse hairline ink, Industrial gray secondary — color only as coded blocks",
+      "Engraved (outline) Technor display caps over Martian Mono body",
+      "Catalog-number grammar on every entry; hairline radial pulse plot as the signature graphic",
+      "Contact red is reserved: the contact entry alone owns a hue"
     ],
     "rules": [
-      { "name": "The One Fuse Rule", "body": "Ember appears once per viewport region — the action, or the drawn line, or a hover emphasis — never several competing at once.", "section": "colors" },
-      { "name": "The One Kicker Rule", "body": "Exactly one tracked-uppercase label exists on the page (the hero kicker). Sections lead with headlines, not eyebrows.", "section": "typography" }
+      { "name": "The Code Rule", "body": "Color hues appear only inside code strips — with one exception: Contact Red may color the contact entry's text accents and nav link. A hue as a background field or headline color is a violation.", "section": "colors" },
+      { "name": "The Entry Header Rule", "body": "Every section opens with the same machined header row: catalog number · code strip · section title. No section may invent a different header grammar.", "section": "typography" }
     ],
     "dos": [
-      "Do keep every claim on the page true today; absence beats filler (the Work section renders only when a case-study file exists).",
-      "Do keep contact@codefusesolutions.com findable within seconds from the first viewport.",
-      "Do give every interactive element hover and visible keyboard focus states.",
-      "Do honor prefers-reduced-motion by rendering the entrance fully settled."
+      "Do keep every claim true today; the Work entry renders only when a case-study file exists, and each new case study takes the next catalog number.",
+      "Do keep the offer and email legible as plain text in the first viewport and the closing entry.",
+      "Do give every interactive element a hard inverted hover state and visible keyboard focus.",
+      "Do honor prefers-reduced-motion: plot static and complete, reveals settled, no rotation."
     ],
     "donts": [
-      "Don't use icon-card grids, hero metrics, section numbers, gradient text, glass-as-decoration, or monospace-as-technical-costume.",
-      "Don't introduce a second accent color or use Ember for decoration.",
-      "Don't let the site drift dark or conceptual — light, conventional, excellent is the commitment."
+      "Don't use glows, neon edges, scanlines, gradients, blur, or any dark-dashboard garnish — the world is matte print, not CRT.",
+      "Don't let a hue escape its code block (Contact Red's defined roles excepted).",
+      "Don't hide meaning behind code alone — every code strip sits beside plain words.",
+      "Don't carry over the ember palette or fuse-line motifs from the replaced world."
     ]
   }
 }
