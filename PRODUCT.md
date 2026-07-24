@@ -39,8 +39,7 @@ CodeFuse Solutions builds custom software for the most complex and niche problem
 - Name: CodeFuse Solutions. (Note: Ant Group operates an unrelated AI project named "CodeFuse" — a known naming collision, not a constraint the user has acted on.)
 - Solo venture presented as a company: the site speaks as "we", and names Derrick Wengerd as founder (a real human for clients to trust; also serves employer/peer readers).
 - Visual identity is being created from scratch — no existing logo, palette, or fonts.
-- User-volunteered binding visual direction: light, editorial.
-- Standing direction preference (user chose the category standard over conceptual worlds): a conventional, modern studio site executed at the highest craft level — no conceptual carrier, no irony. Craft bar: Work & Co, Instrument, MetaLab.
+- User-pinned binding visual direction (2026-07-24 redesign, supersedes the earlier "light, editorial" pin and the canon standing preference): dark & technical — near-black grounds, precise instrument energy, accents earned sparingly. The v1 light-editorial canon site is anti-reference for the redesign.
 
 ## Evidence on Hand
 

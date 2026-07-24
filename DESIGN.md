@@ -1,188 +1,181 @@
 ---
 name: CodeFuse Solutions
-description: Light, editorial studio site — the category standard executed at elite-agency craft level.
+description: Dark-technical catalog identity — matte void, pulse-ink hairlines, numbered entries, coded color strips.
 colors:
-  ember: "#c7430f"
-  ember-deep: "#a0350a"
-  ink: "#161513"
-  paper: "#faf9f6"
-  graphite: "#55524b"
-  hairline: "#e7e4dd"
+  void: "#0b0b0a"
+  pulse: "#f2efe6"
+  industrial: "#a09d94"
+  hairline-dark: "#262622"
+  code-blueprint: "#3760c8"
+  code-frequency: "#1e8f89"
+  code-energy: "#e6b91e"
+  code-contact: "#d0342c"
 typography:
   display:
-    fontFamily: "Cabinet Grotesk, Arial Black, sans-serif"
-    fontSize: "clamp(2.625rem, 7.2vw, 6rem)"
-    fontWeight: 800
-    lineHeight: 1.02
-    letterSpacing: "-0.02em"
-  headline:
-    fontFamily: "Cabinet Grotesk, Arial Black, sans-serif"
-    fontSize: "clamp(2rem, 3.4vw, 2.75rem)"
-    fontWeight: 800
-    lineHeight: 1.12
-    letterSpacing: "-0.015em"
-  title:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.25rem"
-    fontWeight: 600
-    lineHeight: 1.35
+    fontFamily: "Technor, Arial Black, sans-serif"
+    fontSize: "clamp(2.5rem, 6.8vw, 5.75rem)"
+    fontWeight: 900
+    lineHeight: 1.0
+    letterSpacing: "0.01em"
+  section-title:
+    fontFamily: "Technor, Arial Black, sans-serif"
+    fontSize: "clamp(1.5rem, 3vw, 2.5rem)"
+    fontWeight: 700
+    lineHeight: 1.08
+    letterSpacing: "0.02em"
+  entry-title:
+    fontFamily: "Technor, Arial Black, sans-serif"
+    fontSize: "clamp(1.125rem, 1.8vw, 1.5rem)"
+    fontWeight: 700
+    lineHeight: 1.2
+    letterSpacing: "0.03em"
   body:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.125rem"
+    fontFamily: "Martian Mono, Consolas, monospace"
+    fontSize: "0.9375rem"
     fontWeight: 400
-    lineHeight: 1.6
+    lineHeight: 1.75
   label:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.8125rem"
+    fontFamily: "Martian Mono, Consolas, monospace"
+    fontSize: "0.75rem"
     fontWeight: 500
-    letterSpacing: "0.09em"
-  lede:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.1875rem, 1.8vw, 1.375rem)"
-    fontWeight: 400
-    lineHeight: 1.55
-  row-title:
-    fontFamily: "Cabinet Grotesk, Arial Black, sans-serif"
-    fontSize: "clamp(1.5rem, 2.6vw, 2.125rem)"
-    fontWeight: 800
-    lineHeight: 1.15
-  statement:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "clamp(1.375rem, 2.4vw, 1.875rem)"
-    fontWeight: 400
-    lineHeight: 1.45
+    letterSpacing: "0.12em"
   mail-display:
-    fontFamily: "Cabinet Grotesk, Arial Black, sans-serif"
-    fontSize: "clamp(1.375rem, 3.4vw, 2.75rem)"
-    fontWeight: 800
-    letterSpacing: "-0.015em"
-  wordmark:
-    fontFamily: "Cabinet Grotesk, Arial Black, sans-serif"
-    fontSize: "1.3125rem"
-    fontWeight: 800
-  wordmark-tail:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
+    fontFamily: "Technor, Arial Black, sans-serif"
+    fontSize: "clamp(1.25rem, 3.2vw, 2.625rem)"
+    fontWeight: 900
+    letterSpacing: "0.01em"
+  nav:
+    fontFamily: "Martian Mono, Consolas, monospace"
+    fontSize: "0.75rem"
+    fontWeight: 500
+    letterSpacing: "0.1em"
+  statement:
+    fontFamily: "Martian Mono, Consolas, monospace"
     fontSize: "1.0625rem"
     fontWeight: 400
-  nav:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 500
+    lineHeight: 1.8
   button:
-    fontFamily: "General Sans, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1rem"
+    fontFamily: "Martian Mono, Consolas, monospace"
+    fontSize: "0.8125rem"
     fontWeight: 500
+    letterSpacing: "0.1em"
 rounded:
   none: "0px"
 spacing:
   gutter: "clamp(1.25rem, 6vw, 6.5rem)"
-  section: "clamp(5rem, 14vh, 9.5rem)"
+  section: "clamp(4.5rem, 12vh, 8.5rem)"
 components:
   button-primary:
-    backgroundColor: "{colors.ember}"
-    textColor: "{colors.paper}"
+    backgroundColor: "transparent"
+    textColor: "{colors.pulse}"
     rounded: "{rounded.none}"
-    padding: "1.125rem 2.25rem"
+    padding: "1.0625rem 1.75rem"
   button-primary-hover:
-    backgroundColor: "{colors.ember-deep}"
+    backgroundColor: "{colors.pulse}"
+    textColor: "{colors.void}"
 ---
 
 # Design System: CodeFuse Solutions
 
 ## Overview
 
-**Creative North Star: "The Confident Studio"**
+**Creative North Star: "The Catalog"**
 
-The category standard, played completely straight and finished to the level of Work & Co, Instrument, and MetaLab: a light, typography-led studio site where restraint reads as competence. The page persuades by craft, not devices — a business owner with a hard problem should feel they are already looking at precise work. Density is low; type is large and decisive; color is rationed so the single accent means something.
+Factory-Records catalog identity fused to a software studio: matte void-black board, pulse-ink hairline graphics, engraved industrial display caps, mono body text, and a numbering system that treats everything the studio makes as a pressed release. The studio itself is the catalog; every section of the site is a numbered entry (CF 001 THE WORK, CF 002 METHOD, CF 003 STUDIO, CF 007 CONTACT), and every future case study takes the next number — one file, one release. Vast unprinted black is a feature: density lives in precise small type and hairline plots, never in filler.
 
-The user explicitly rejected conceptual carriers (drawing sheets, catalogues, print metaphors). Nothing on the surface may read as a costume. Warmth comes from editorial pacing and honest copy, not ornament.
+One deliberate divergence from the source world: Factory withheld; we label. This is a Persuade surface — the offer and the action stay in plain words within seconds. The coded color strips are a real system (each entry carries its code), but text always accompanies code.
+
+This replaces the light-editorial canon world entirely (user-directed redesign, 2026-07-24). The old site is anti-reference. Product truth (PRODUCT.md) is unchanged: no fabricated proof, work section absent until real, email is the one action.
 
 **Key Characteristics:**
-- Warm paper ground, near-black ink, one ember accent used sparingly
-- Cabinet Grotesk Extrabold display over General Sans text; hairline dividers
-- One orchestrated entrance motion (staggered hero reveal, then the fuse line draws); everything else is quiet state feedback
-- No fabricated proof anywhere: no logos, stats, testimonials until real
+- Matte Void ground, Pulse hairline ink, Industrial gray secondary — color only as coded blocks
+- Engraved (outline) Technor display caps over Martian Mono body
+- Catalog-number grammar on every entry; hairline radial pulse plot as the signature graphic
+- Contact red is reserved: the contact entry alone owns a hue
 
 ## Colors
 
-Restrained strategy: warm neutrals plus one ember accent, rationed hard.
+Void/Pulse monochrome carries the page; the code hues exist only as small coded blocks, never as grounds or text — except Contact red, which marks the contact entry's code and accents.
 
 ### Primary
-- **Ember** (#c7430f): the fuse color. The primary action, the drawn fuse line under the hero, link emphasis on hover, and selection color. Passes 4.5:1 as text on Paper.
-- **Ember Deep** (#a0350a): hover/pressed state of Ember surfaces.
+- **Pulse** (#f2efe6): all text, hairlines, plots, borders on Void. The ink of the system.
+
+### Secondary
+- **Contact Red** (#d0342c): the contact entry's code block, the nav CONTACT link, and the active state of the contact action. Nowhere else.
+
+### Tertiary
+- **Blueprint** (#3760c8), **Frequency** (#1e8f89), **Energy** (#e6b91e): coded blocks in entry code strips only. Never text, never grounds.
 
 ### Neutral
-- **Ink** (#161513): headings, wordmark, primary text.
-- **Paper** (#faf9f6): the ground everywhere; never pure white.
-- **Graphite** (#55524b): secondary text and nav resting state; warm-tinted from Ink, never a cold gray.
-- **Hairline** (#e7e4dd): 1px dividers between sections and rows.
+- **Void** (#0b0b0a): the ground everywhere; matte, never pure #000.
+- **Industrial** (#a09d94): body copy and secondary labels; ≥4.5:1 on Void.
+- **Hairline Dark** (#262622): 1px rules and borders between entries.
 
 ### Named Rules
-**The One Fuse Rule.** Ember appears once per viewport region — the action, or the drawn line, or a hover emphasis — never several competing at once. The fuse rail is the one page-level exception: it lives in the gutter, outside content regions, as the page's single persistent voice.
+**The Code Rule.** Color hues appear only inside code strips (small rectangular blocks) — with one exception: Contact Red may color the contact entry's text accents and nav link. A hue as a background field or headline color is a violation.
 
 ## Typography
 
-**Display Font:** Cabinet Grotesk Extrabold (with Arial Black fallback), self-hosted woff2
-**Body Font:** General Sans 400/500/600 (with Helvetica Neue fallback), self-hosted woff2
+**Display Font:** Technor 900/700 (industrial squared caps; Arial Black fallback), self-hosted woff2
+**Body Font:** Martian Mono 400/500/700 (Consolas fallback), self-hosted woff2
 
-**Character:** Decisive and unornamented. Scale and weight do the expressive work; no italics, no gradient text.
+**Character:** Engraved and machined. Display headlines are UPPERCASE Technor; the hero statement renders "engraved" — outline stroke (1.5px Pulse, transparent fill) with the key phrase solid-filled. Body is mono at a deliberately small size with tall leading — the printed-spec voice.
 
 ### Hierarchy
-- **Display** (800, clamp(2.625rem, 7.2vw, 6rem), 1.02): hero statement and closing CTA only.
-- **Headline** (800, clamp(2rem, 3.4vw, 2.75rem), 1.12): section leads — the 2rem floor keeps a clear step above Row Title at tablet widths.
-- **Title** (600, 1.25rem, 1.35): step and work-item titles.
-- **Body** (400, 1.125rem, 1.6): copy in Graphite, max 65ch.
-- **Label** (500, 0.8125rem, 0.09em tracked uppercase): the single hero kicker; not an every-section eyebrow.
-- **Supporting steps** (all documented in frontmatter): Lede (400, clamp(1.1875rem, 1.8vw, 1.375rem)) for hero and closing standfirsts; Row Title (800, clamp(1.5rem, 2.6vw, 2.125rem)) for capability rows and case-study subheads; Statement (400, clamp(1.375rem, 2.4vw, 1.875rem)) for the studio paragraph; Mail Display (800, clamp(1.375rem, 3.4vw, 2.75rem)) for the closing email link; Wordmark (800, 1.3125rem) with its tail (400, 1.0625rem); Nav/Footer small (500, 0.9375rem); Button label (500, 1rem).
+- **Display** (900, clamp(2.5rem, 6.8vw, 5.75rem), 1.0, uppercase): hero statement and closing email only. Hero uses engraved outline with one filled emphasis phrase.
+- **Section Title** (700, clamp(1.5rem, 3vw, 2.5rem), uppercase): catalog entry titles (THE WORK WE TAKE ON, METHOD…).
+- **Entry Title** (700, clamp(1.125rem, 1.8vw, 1.5rem), uppercase): rows and steps inside entries.
+- **Body** (Martian Mono 400, 0.9375rem, 1.75): copy in Industrial, max 62ch.
+- **Label** (Martian Mono 500, 0.75rem, 0.12em tracked, uppercase): catalog numbers, kickers, nav, code-strip captions.
+- **Mail Display** (900, clamp(1.25rem, 3.2vw, 2.625rem), uppercase): the closing email link.
+- **Statement** (Martian Mono 400, 1.0625rem, 1.8): the studio paragraph, in Pulse rather than Industrial.
+- **Button Label** (Martian Mono 500, 0.8125rem, 0.1em tracked, uppercase): button text.
 
 ### Named Rules
-**The One Kicker Rule.** Exactly one tracked-uppercase label exists on the page (the hero kicker). Sections lead with headlines, not eyebrows.
+**The Entry Header Rule.** Every section opens with the same machined header row: catalog number (Label) · code strip · section title. No section may invent a different header grammar.
 
 ## Layout
 
-Single fluid column inside generous gutters (clamp(1.25rem, 6vw, 6.5rem)), content capped at 1400px. Sections carry clamp(5rem, 14vh, 9.5rem) vertical padding and open with a 1px Hairline rule. Capability content reads as editorial rows on a 5/7 column split (title left, copy right) that stacks below 820px; the approach section is a three-column step grid that stacks the same way. More space above headings than below.
+Single column inside gutters (clamp(1.25rem, 6vw, 6.5rem)), content capped at 1440px. Entries are separated by 1px Hairline Dark rules and clamp(4.5rem, 12vh, 8.5rem) vertical padding. The hero is a 7/5 split — engraved statement left, radial pulse plot right — collapsing to stacked below 900px (plot shrinks, never disappears: mobile keeps the signature). Capability and method content read as hairline-ruled rows with entry titles left, mono copy right (stacking below 820px). Vast black margins are intentional; do not fill them.
 
 ## Elevation & Depth
 
-Flat. The page is paper; depth comes from hierarchy and hairlines, not shadows. The sticky header uses a subtle backdrop blur over translucent Paper and gains its hairline border only after scroll — no shadow vocabulary exists.
+None. The board is matte; there are no shadows, no glows, no blur. Depth is drawn — hairline weight (1px resting, 2px active), plot line density, and type scale. The sticky nav is opaque Void with a Hairline Dark bottom rule (no translucency, no backdrop blur).
 
 ## Shapes
 
-Squared editorial geometry: 0 radius everywhere. Buttons are confident rectangles; underlines are drawn 1–3px background-image rules, not text-decoration defaults.
+Machined rectangles, 0 radius everywhere. Buttons are 1px Pulse-bordered rectangles with mono labels; active/hover inverts (Pulse fill, Void text). Code strips are butt-jointed rectangles. The only circles on the page belong to the radial plot's ticked ring.
 
 ## Components
 
 ### Buttons
-- **Shape:** square-cornered (0px)
-- **Primary:** Ember background, Paper text, 1.125rem × 2.25rem padding, General Sans 500
-- **Hover / Focus:** background deepens to Ember Deep with a -2px lift; focus-visible shows a 2px Ember outline offset 3px
+- **Shape:** square-cornered, 1px solid Pulse border, transparent ground
+- **Primary:** mono Label text in Pulse, 1.0625rem × 1.75rem padding, trailing "→"
+- **Hover / Active / Focus:** Pulse fill with Void text (hard swap, 120ms); focus-visible adds a 2px Pulse outline offset 3px
+- **Contact variant:** border and text in Contact Red; hover fills Contact Red with Pulse text
 
 ### Text links
-- **Style:** General Sans 500 with a 1px Ink underline drawn via background-image
-- **Hover:** text and underline shift to Ember
+- Mono, Pulse, 1px underline drawn via background-image; hover doubles the underline to 2px. The nav CONTACT link is Contact Red.
 
 ### Navigation
-- Sticky, translucent Paper with 8px backdrop blur; Graphite links that darken to Ink on hover; the Contact link is the one Ember item; hairline bottom border appears after 8px of scroll. The "Solutions" tail of the wordmark drops below 480px.
+- Sticky, opaque Void, Hairline Dark bottom rule always visible; left: barcode mark + CODEFUSE SOLUTIONS in Label caps; right: mono links (METHOD, STUDIO, CONTACT-in-red, plus WORK when it exists). Tap targets ≥44px tall on mobile.
 
-### The Fuse Line (signature)
-A full-width 1px Hairline at the hero's foot with an Ember segment (left 38%) that draws in with scaleX over 1.3s ease-out-expo, 450ms after the staggered hero reveal. Reduced motion renders it fully drawn and static.
+### Entry Header (signature)
+`CF 00N` Label + code strip (3–5 hue blocks, 14×8px, butt-jointed) + Section Title on one baseline row, sitting directly on the entry's top hairline.
 
-### The Burning Fuse (signature motion system)
-The fuse-line grammar carried through the whole scroll, in three parts:
-- **Section ignition:** every section's top hairline carries an Ember segment (left 38%, 2px) that draws in with the same 1.3s ease-out-expo the first time the section enters the viewport (IntersectionObserver, threshold 0.15, once), and the section's tagged content ([data-scroll-reveal]: leads, rows, steps, closing elements) rises 26px into place with a 110ms sibling stagger in the same easing.
-- **The fuse rail:** a fixed 2px Hairline in the left half-gutter running the full viewport height, whose Ember fill scales from the top to track scroll progress (rAF-throttled, transform-only, 8px square ember burn tip). The page reads as a fuse burning down toward the contact section. Hidden below 820px and without JS.
-- **Interaction feedback:** nav links draw a 1px currentColor underline (scaleX from left, 250ms ease-out-expo) on hover/focus; the closing mail link's ember underline thickens from 3px to 0.18em on hover/focus.
-No looping, parallax, or autonomous motion exists; every animation is entrance, scroll-position, or interaction feedback, and reduced-motion renders everything settled.
+### The Pulse Plot (signature graphic)
+A radial burst of hairline Pulse strokes (deterministic pseudo-random lengths, seeded at build) inside a ticked ring — the studio's "pressed signal." Lives in the hero at large scale; a compact variant may mark future case-study entries. Motion: the plot draws once on load (stroke groups fading in over ~1.2s) and thereafter rotates imperceptibly slowly (≥180s/rev); reduced-motion renders it complete and static. Canvas/SVG hairlines only — no bitmap.
 
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every claim on the page true today; absence beats filler (the Work section renders only when a case-study file exists).
-- **Do** keep contact@codefusesolutions.com findable within seconds from the first viewport.
-- **Do** give every interactive element hover and visible keyboard focus states.
-- **Do** honor prefers-reduced-motion by rendering the entrance fully settled.
+- **Do** keep every claim true today; the Work entry (CF 004+) renders only when a case-study file exists, and each new case study takes the next catalog number automatically.
+- **Do** keep the offer and contact@codefusesolutions.com legible as plain text within the first viewport and again at the closing entry; the hero primary action targets #contact (visible address), and mailtos carry a ?subject= prefill.
+- **Do** give every interactive element a hard inverted hover state and visible keyboard focus.
+- **Do** honor prefers-reduced-motion: plot static and complete, reveals settled, no rotation.
 
 ### Don't:
-- **Don't** use icon-card grids, hero metrics, section numbers, gradient text, glass-as-decoration, or monospace-as-technical-costume.
-- **Don't** introduce a second accent color or use Ember for decoration.
-- **Don't** let the site drift dark or conceptual — light, conventional, excellent is the commitment.
+- **Don't** use glows, neon edges, scanlines, gradients, blur, or any "dark dashboard" garnish — the world is matte print, not CRT.
+- **Don't** let a hue escape its code block (Contact Red's defined roles excepted).
+- **Don't** hide meaning behind code alone — every code strip sits beside plain words.
+- **Don't** carry over the ember palette, fuse-line motifs, or any grammar from the replaced light-editorial world.

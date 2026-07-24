@@ -5,16 +5,27 @@ interface Props {
 const { showWork = false } = Astro.props;
 ---
 
-<header data-header>
+<header>
   <div class="wrap bar">
     <a class="wordmark" href="/" aria-label="CodeFuse Solutions — home">
-      CodeFuse<span class="wordmark-tail">&nbsp;Solutions</span>
+      <svg class="mark" width="26" height="16" viewBox="0 0 26 16" aria-hidden="true">
+        <g fill="currentColor">
+          <rect x="0" y="0" width="2" height="16"></rect>
+          <rect x="4" y="0" width="1" height="16"></rect>
+          <rect x="7" y="0" width="3" height="16"></rect>
+          <rect x="12" y="0" width="1" height="16"></rect>
+          <rect x="15" y="0" width="2" height="16"></rect>
+          <rect x="19" y="0" width="1" height="16"></rect>
+          <rect x="22" y="0" width="4" height="16"></rect>
+        </g>
+      </svg>
+      <span class="label">CodeFuse Solutions</span>
     </a>
     <nav aria-label="Main">
-      {showWork && <a href="/#work">Work</a>}
-      <a href="/#approach">Approach</a>
-      <a href="/#studio">Studio</a>
-      <a class="nav-contact" href="mailto:contact@codefusesolutions.com">Contact</a>
+      {showWork && <a class="label" href="/#work">Work</a>}
+      <a class="label" href="/#method">Method</a>
+      <a class="label" href="/#studio">Studio</a>
+      <a class="label nav-contact" href="/#contact">Contact</a>
     </nav>
   </div>
 </header>
@@ -24,85 +35,60 @@ const { showWork = false } = Astro.props;
     position: sticky;
     top: 0;
     z-index: 10;
-    background: color-mix(in srgb, var(--paper) 92%, transparent);
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.3s ease-out;
-  }
-
-  header.scrolled {
-    border-bottom-color: var(--hairline);
+    background: var(--void);
+    border-bottom: 1px solid var(--hairline);
   }
 
   .bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-block: 1.125rem;
+    gap: 1rem;
+    min-height: 3.5rem;
   }
 
   .wordmark {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: 1.3125rem;
-    letter-spacing: -0.01em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--pulse);
     text-decoration: none;
+    padding-block: 0.75rem;
   }
 
-  .wordmark-tail {
-    font-family: var(--font-body);
-    font-weight: 400;
-    color: var(--graphite);
-    font-size: 1.0625rem;
+  .mark {
+    display: block;
   }
 
   nav {
     display: flex;
-    gap: clamp(1.25rem, 3vw, 2.5rem);
+    align-items: stretch;
+    gap: clamp(1rem, 3vw, 2.25rem);
   }
 
   nav a {
-    font-size: 0.9375rem;
-    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    color: var(--industrial);
     text-decoration: none;
-    color: var(--graphite);
-    transition: color 0.2s ease-out;
-    position: relative;
-  }
-
-  nav a::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -5px;
-    height: 1px;
-    background: currentColor;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.25s var(--ease-out-expo);
-  }
-
-  nav a:hover::after,
-  nav a:focus-visible::after {
-    transform: scaleX(1);
+    transition: color 120ms linear;
   }
 
   nav a:hover {
-    color: var(--ink);
+    color: var(--pulse);
   }
 
   .nav-contact {
-    color: var(--ember);
+    color: var(--code-contact);
   }
 
   .nav-contact:hover {
-    color: var(--ember-deep);
+    color: var(--pulse);
   }
 
   @media (max-width: 480px) {
-    .wordmark-tail {
+    .wordmark .label {
       display: none;
     }
   }

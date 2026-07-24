@@ -1,48 +1,57 @@
-/* CodeFuse Solutions — design tokens & base styles */
+/* CodeFuse Solutions — The Catalog. Normative source: DESIGN.md */
 
 @font-face {
-  font-family: 'Cabinet Grotesk';
-  src: url('/fonts/CabinetGrotesk-800.woff2') format('woff2');
-  font-weight: 800;
+  font-family: 'Technor';
+  src: url('/fonts/Technor-700.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'General Sans';
-  src: url('/fonts/GeneralSans-400.woff2') format('woff2');
+  font-family: 'Technor';
+  src: url('/fonts/Technor-900.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Martian Mono';
+  src: url('/fonts/MartianMono-400.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'General Sans';
-  src: url('/fonts/GeneralSans-500.woff2') format('woff2');
+  font-family: 'Martian Mono';
+  src: url('/fonts/MartianMono-500.woff2') format('woff2');
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'General Sans';
-  src: url('/fonts/GeneralSans-600.woff2') format('woff2');
-  font-weight: 600;
+  font-family: 'Martian Mono';
+  src: url('/fonts/MartianMono-700.woff2') format('woff2');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  --paper: #faf9f6;
-  --ink: #161513;
-  --graphite: #55524b;
-  --hairline: #e7e4dd;
-  --ember: #c7430f;
-  --ember-deep: #a0350a;
+  --void: #0b0b0a;
+  --pulse: #f2efe6;
+  --industrial: #a09d94;
+  --hairline: #262622;
+  --code-blueprint: #3760c8;
+  --code-frequency: #1e8f89;
+  --code-energy: #e6b91e;
+  --code-contact: #d0342c;
 
-  --font-display: 'Cabinet Grotesk', 'Arial Black', sans-serif;
-  --font-body: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'Technor', 'Arial Black', sans-serif;
+  --font-mono: 'Martian Mono', Consolas, monospace;
 
   --gutter: clamp(1.25rem, 6vw, 6.5rem);
-  --max: 1400px;
-  --section-pad: clamp(5rem, 14vh, 9.5rem);
+  --max: 1440px;
+  --section-pad: clamp(4.5rem, 12vh, 8.5rem);
 
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -60,11 +69,11 @@ html {
 
 body {
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font-family: var(--font-body);
-  font-size: 1.125rem;
-  line-height: 1.6;
+  background: var(--void);
+  color: var(--pulse);
+  font-family: var(--font-mono);
+  font-size: 0.9375rem;
+  line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -76,18 +85,14 @@ p {
   margin: 0;
 }
 
-a {
-  color: inherit;
+::selection {
+  background: var(--pulse);
+  color: var(--void);
 }
 
 :focus-visible {
-  outline: 2px solid var(--ember);
+  outline: 2px solid var(--pulse);
   outline-offset: 3px;
-}
-
-::selection {
-  background: var(--ember);
-  color: var(--paper);
 }
 
 .wrap {
@@ -96,143 +101,174 @@ a {
   padding-inline: var(--gutter);
 }
 
-/* ---------- type scale ---------- */
+/* ---------- type ---------- */
 
 .display {
   font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2.625rem, 7.2vw, 6rem);
-  line-height: 1.02;
-  letter-spacing: -0.02em;
-  text-wrap: balance;
-}
-
-.headline {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(2rem, 3.4vw, 2.75rem);
-  line-height: 1.12;
-  letter-spacing: -0.015em;
-  text-wrap: balance;
-}
-
-.title {
-  font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 1.25rem;
-  line-height: 1.35;
-}
-
-.kicker {
-  font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 0.8125rem;
-  letter-spacing: 0.09em;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6.8vw, 5.75rem);
+  line-height: 1;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: var(--graphite);
+  text-wrap: balance;
 }
 
-.lede {
-  font-size: clamp(1.1875rem, 1.8vw, 1.375rem);
-  line-height: 1.55;
-  color: var(--graphite);
-  max-width: 34em;
+.engraved {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--pulse);
+}
+
+.engraved .filled {
+  color: var(--pulse);
+  -webkit-text-stroke: 0;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.08;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.entry-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.125rem, 1.8vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .body-copy {
-  color: var(--graphite);
-  max-width: 65ch;
+  color: var(--industrial);
+  max-width: 62ch;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ---------- entry grammar ---------- */
+
+.entry {
+  padding-block: var(--section-pad);
+  border-top: 1px solid var(--hairline);
+}
+
+.entry-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem 2rem;
+  flex-wrap: wrap;
+  margin-bottom: clamp(2.5rem, 6vh, 4rem);
+}
+
+.entry-num {
+  color: var(--industrial);
+}
+
+.code-strip {
+  display: inline-flex;
+  gap: 2px;
+  align-self: center;
+}
+
+.code-strip i {
+  display: block;
+  width: 14px;
+  height: 8px;
 }
 
 /* ---------- buttons & links ---------- */
 
 .btn {
   display: inline-block;
-  background: var(--ember);
-  color: var(--paper);
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 1rem;
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   line-height: 1;
+  color: var(--pulse);
+  background: transparent;
+  border: 1px solid var(--pulse);
+  padding: 1.0625rem 1.75rem;
   text-decoration: none;
-  padding: 1.125rem 2.25rem;
-  border: 0;
+  cursor: pointer;
   transition:
-    background 0.25s var(--ease-out-expo),
-    transform 0.25s var(--ease-out-expo);
+    background 120ms linear,
+    color 120ms linear;
 }
 
-.btn:hover {
-  background: var(--ember-deep);
-  transform: translateY(-2px);
-}
-
+.btn:hover,
 .btn:active {
-  transform: translateY(0);
+  background: var(--pulse);
+  color: var(--void);
+}
+
+.btn-contact {
+  color: var(--code-contact);
+  border-color: var(--code-contact);
+}
+
+.btn-contact:hover,
+.btn-contact:active {
+  background: var(--code-contact);
+  color: var(--pulse);
 }
 
 .text-link {
+  font-family: var(--font-mono);
   font-weight: 500;
+  color: var(--pulse);
   text-decoration: none;
-  background-image: linear-gradient(var(--ink), var(--ink));
+  background-image: linear-gradient(currentColor, currentColor);
   background-repeat: no-repeat;
   background-size: 100% 1px;
   background-position: 0 100%;
-  padding-bottom: 2px;
-  transition: color 0.2s ease-out;
+  padding-bottom: 3px;
+  transition: background-size 120ms linear;
 }
 
 .text-link:hover {
-  color: var(--ember);
-  background-image: linear-gradient(var(--ember), var(--ember));
+  background-size: 100% 2px;
 }
 
-/* ---------- motion ---------- */
-
-html.js [data-reveal] {
-  opacity: 0;
-  transform: translateY(22px);
-}
+/* ---------- reveals ---------- */
 
 html.js [data-scroll-reveal] {
   opacity: 0;
-  transform: translateY(26px);
+  transform: translateY(18px);
 }
 
 html.js [data-scroll-reveal].in {
   opacity: 1;
   transform: none;
   transition:
-    opacity 0.9s var(--ease-out-expo),
-    transform 0.9s var(--ease-out-expo);
-}
-
-html.js [data-reveal].in {
-  opacity: 1;
-  transform: none;
-  transition:
-    opacity 0.9s var(--ease-out-expo),
-    transform 0.9s var(--ease-out-expo);
-}
-
-html.js .fuse-line::after {
-  transform: scaleX(0);
-}
-
-html.js .fuse-line.lit::after {
-  transform: scaleX(1);
-  transition: transform 1.3s var(--ease-out-expo) 0.45s;
+    opacity 0.8s var(--ease-out-expo),
+    transform 0.8s var(--ease-out-expo);
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
-  html.js [data-reveal],
-  html.js [data-scroll-reveal],
-  html.js .fuse-line::after {
+  html.js [data-scroll-reveal] {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

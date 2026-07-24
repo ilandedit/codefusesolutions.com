@@ -5,20 +5,21 @@ import Footer from '../components/Footer.astro';
 ---
 
 <Base
-  title="Page not found — CodeFuse Solutions"
+  title="No such entry — CodeFuse Solutions"
   description="That page doesn't exist. CodeFuse Solutions builds custom software for complex, niche problems."
 >
   <Header />
 
   <main class="wrap not-found">
-    <h1 class="display">Nothing here.</h1>
-    <p class="lede">
+    <p class="label num">CF&nbsp;404 — not in catalog</p>
+    <h1 class="display engraved">No such <span class="filled">entry</span>.</h1>
+    <p class="body-copy">
       That page doesn&rsquo;t exist — but if your problem is the kind nothing
       off the shelf can solve, you&rsquo;re in the right place.
     </p>
     <div class="actions">
-      <a class="text-link" href="/">Back to the studio</a>
-      <a class="text-link" href="mailto:contact@codefusesolutions.com">contact@codefusesolutions.com</a>
+      <a class="text-link label" href="/">Back to the catalog</a>
+      <a class="text-link label" href="/#contact">Contact</a>
     </div>
   </main>
 
@@ -27,15 +28,20 @@ import Footer from '../components/Footer.astro';
 
 <style>
   .not-found {
-    padding-top: clamp(5rem, 18vh, 11rem);
-    padding-bottom: clamp(6rem, 20vh, 12rem);
+    padding-top: clamp(4rem, 16vh, 10rem);
+    padding-bottom: clamp(5rem, 18vh, 11rem);
     display: grid;
-    gap: 2rem;
+    gap: 1.75rem;
+    justify-items: start;
+  }
+
+  .num {
+    color: var(--industrial);
   }
 
   .actions {
     display: flex;
-    gap: 2.25rem;
+    gap: 2rem;
     flex-wrap: wrap;
   }
 </style>
