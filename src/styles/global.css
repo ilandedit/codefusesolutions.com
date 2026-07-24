@@ -218,8 +218,12 @@ p {
 }
 
 .misfit-compact {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   padding: 0.625rem 0.875rem;
   font-size: 0.8125rem;
+  letter-spacing: 0.06em;
   rotate: -1.5deg;
 }
 

@@ -132,9 +132,9 @@ Monochrome professionalism plus one purposeful accent that means exactly one thi
 
 ## Layout
 
-Content capped at 1200px inside gutters (clamp(1.25rem, 6vw, 6rem)). The grid is drawn: faint Gridline column rules run vertically through the content area (6 columns desktop, 3 below 820px), with section hairlines horizontal. Every module aligns to the columns — except each screen's one misfit. Sections carry clamp(4.5rem, 12vh, 8.5rem) padding. Capability rows: title left, copy right on the column rules, stacking below 820px; Method is a three-step row that stacks the same.
+Content capped at 1200px inside gutters (clamp(1.25rem, 6vw, 6rem)). The grid is drawn: faint Gridline column rules run vertically through the content area (6 columns desktop, 3 below 820px), with section hairlines horizontal. **Content rides the same six tracks it draws** — rows and steps are `repeat(6, 1fr)` with `column-gap: 0` (breathing room comes from item padding, never gaps, because a gap pushes content edges off the drawn sixths). Capability titles occupy tracks 1–2, copy tracks 3–6; method steps span two tracks each. Every module aligns to the rules — except each screen's one misfit, whose break is measured in whole tracks so it lands exactly on a rule. Sections carry clamp(4.5rem, 12vh, 8.5rem) padding. Capability rows: title left, copy right on the column rules, stacking below 820px; Method is a three-step row that stacks the same.
 
-**Break inventory (one per screen, by design):** nav — the Contact plate (tilted -1.5°, Cobalt); hero — the CTA plate (tilted -2°, spanning a column rule, Cobalt); work-we-take-on — row three's title crosses onto the copy column (ink, positional); method — step three sits 1rem below its siblings' baseline (ink, positional); studio — the paragraph bleeds left across the first column rule (ink, positional); contact — the email plate (tilted -2°, bleeding the right margin, Cobalt). No screen has two misfits.
+**Break inventory (one per screen, by design):** nav — the Contact plate (tilted -1.5°, Cobalt); hero — the CTA plate (tilted -2°, Cobalt), landing tilted after the rest assembles; work-we-take-on — row three's title takes track 3, crossing the rule at two-sixths where every other title stops, and its copy yields to the next rule (ink, positional); method — step three sits 1.5rem below its siblings' baseline (ink, positional); studio — the paragraph bleeds left across the gutter rule (ink, positional); contact — the email plate (tilted -2°, Cobalt). No screen has two misfits. Stacked below 820px, positional breaks become bounded indents (margin, never offset) so nothing overflows the gutter.
 
 ## Elevation & Depth
 
@@ -149,7 +149,7 @@ Squared, 0 radius everywhere. Misfit plates are rectangles with the tilt as thei
 ### The Misfit Plate (signature)
 - **Primary (action):** Cobalt ground, white Button text, 1.25rem × 2rem padding, rotate(-2deg), hard offset shadow, trailing "→".
 - **Hover / Focus:** the plate straightens to rotate(0) and deepens to Cobalt Deep over 200ms ease-out-expo — the signature "we make it fit" moment; focus-visible adds a 2px Cobalt outline offset 3px.
-- **Nav variant:** compact (0.5rem 0.875rem padding, -1.5° tilt), same behavior.
+- **Nav variant:** compact (0.625rem 0.875rem padding, min-height 44px, -1.5° tilt), same behavior.
 
 ### Text links
 - Switzer 500, Ink, 1px underline via background-image; hover shifts text and underline to Cobalt.
