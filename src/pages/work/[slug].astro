@@ -4,6 +4,8 @@ import Base from '../../layouts/Base.astro';
 import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import Band from '../../components/Band.astro';
+import Figure from '../../components/Figure.astro';
+import VideoBlock from '../../components/VideoBlock.astro';
 
 export async function getStaticPaths() {
   const work = (await getCollection('work'))
@@ -35,10 +37,44 @@ const hasNext = next && next.id !== entry.id;
       <p class="lede">{entry.data.summary}</p>
     </section>
 
+    {
+      entry.data.cover && (
+        <section class="wrap lead">
+          <Figure
+            src={entry.data.cover}
+            alt={entry.data.coverAlt ?? `${entry.data.title} — screenshot`}
+            eager
+            wide
+          />
+        </section>
+      )
+    }
+
     <section class="wrap section">
       <article class="case-body">
         <Content />
       </article>
+
+      {
+        entry.data.video && (
+          <VideoBlock
+            src={entry.data.video.src}
+            poster={entry.data.video.poster}
+            caption={entry.data.video.caption}
+            autoplay={entry.data.video.autoplay}
+          />
+        )
+      }
+
+      {
+        entry.data.gallery && entry.data.gallery.length > 0 && (
+          <div class="gallery">
+            {entry.data.gallery.map((shot) => (
+              <Figure src={shot.src} alt={shot.alt} caption={shot.caption} wide />
+            ))}
+          </div>
+        )
+      }
 
       {
         hasNext && (
@@ -87,8 +123,27 @@ const hasNext = next && next.id !== entry.id;
     color: var(--mute);
   }
 
+  .lead {
+    padding-top: 0.5rem;
+  }
+
   .case-body {
     max-width: 68ch;
+  }
+
+  /* Screenshots written inline in the markdown body. */
+  .case-body :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-block: 2rem;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--card);
+  }
+
+  .gallery {
+    display: grid;
   }
 
   .case-body :global(h2) {

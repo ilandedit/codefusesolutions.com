@@ -5,6 +5,8 @@ client: Manufacturing
 year: 2026
 order: 2
 sample: true
+cover: ../../assets/work/inventory-reconciliation/cover.png
+coverAlt: The nightly reconciliation summary with matched, timing-difference and review counts
 ---
 
 ## The problem

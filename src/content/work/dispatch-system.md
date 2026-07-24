@@ -5,6 +5,12 @@ client: Logistics
 year: 2026
 order: 1
 sample: true
+cover: ../../assets/work/dispatch-system/cover.png
+coverAlt: The dispatch board showing today's routes and an on-time percentage
+gallery:
+  - src: ../../assets/work/dispatch-system/detail.png
+    alt: The assignment drawer open beside the route list
+    caption: Assigning a driver never leaves the board — the drawer keeps the schedule in view.
 ---
 
 ## The problem

@@ -5,6 +5,8 @@ client: Professional services
 year: 2026
 order: 3
 sample: true
+cover: ../../assets/work/compliance-portal/cover.png
+coverAlt: The client portal document checklist showing nine of fourteen documents received
 ---
 
 ## The problem
