@@ -5,9 +5,9 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 
 export async function getStaticPaths() {
-  const work = (await getCollection('work')).sort(
-    (a, b) => a.data.order - b.data.order
-  );
+  const work = (await getCollection('work'))
+    .filter((entry) => !(import.meta.env.PROD && entry.data.sample))
+    .sort((a, b) => a.data.order - b.data.order);
   return work.map((entry) => ({
     params: { slug: entry.id },
     props: { entry },
@@ -26,6 +26,7 @@ const { Content } = await render(entry);
       <header class="case-head">
         <p class="ptag">
           {entry.data.client ?? 'Case study'}{entry.data.year && ` · ${entry.data.year}`}
+          {entry.data.sample && <span class="sample">Sample</span>}
         </p>
         <h1 class="headline">{entry.data.title}</h1>
         <p class="lede">{entry.data.summary}</p>
@@ -57,6 +58,16 @@ const { Content } = await render(entry);
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--live);
+  }
+
+  .sample {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--mute);
+    letter-spacing: 0.04em;
   }
 
   .case-body {

@@ -22,9 +22,10 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
-const work = (await getCollection('work')).sort(
-  (a, b) => a.data.order - b.data.order
-);
+// Sample entries preview the layout in dev; production ships real work only.
+const work = (await getCollection('work'))
+  .filter((entry) => !(import.meta.env.PROD && entry.data.sample))
+  .sort((a, b) => a.data.order - b.data.order);
 const hasWork = work.length > 0;
 ---
 
@@ -110,6 +111,13 @@ const hasWork = work.length > 0;
         <section id="work" class="wrap section">
           <div class="section-head" data-reveal>
             <h2 class="headline">Selected work</h2>
+            {
+              work.some((e) => e.data.sample) && (
+                <p class="section-note">
+                  Sample entries — visible in development only, never in the built site
+                </p>
+              )
+            }
           </div>
           <div class="work">
             {work.map((entry) => (
@@ -118,6 +126,7 @@ const hasWork = work.length > 0;
                   <p class="ptag">
                     {entry.data.client ?? 'Case study'}
                     {entry.data.year && ` · ${entry.data.year}`}
+                    {entry.data.sample && <span class="sample">Sample</span>}
                   </p>
                   <h3 class="title">{entry.data.title}</h3>
                   <p class="body-copy">{entry.data.summary}</p>
@@ -324,8 +333,18 @@ const hasWork = work.length > 0;
   /* 3 · work */
   .work {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
     gap: 1.25rem;
+  }
+
+  .sample {
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.1rem 0.4rem;
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    color: var(--mute);
+    letter-spacing: 0.04em;
   }
 
   .proj {

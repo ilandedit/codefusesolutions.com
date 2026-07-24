@@ -11,6 +11,10 @@ const work = defineCollection({
     client: z.string().optional(),
     year: z.number().optional(),
     order: z.number().default(0),
+    // Placeholder entries for previewing layout. They render in dev with a
+    // visible Sample badge and are stripped from production builds, so the
+    // live site can never claim work that doesn't exist.
+    sample: z.boolean().default(false),
   }),
 });
 
