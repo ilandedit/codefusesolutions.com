@@ -9,7 +9,7 @@ related_targets: []
 
 Scope: the home page at src/pages/index.astro, the entry point of a four-page site. Visitor mode: Persuade.
 
-Audience & job: business owners with complex, niche software problems deciding whether to trust CodeFuse Solutions. The one action: email contact@codefusesolutions.com. Home's specific job is to state the claim, show what the studio takes on, offer a taste of the work, and hand the visitor onward — to /work/ for proof or /contact/ to act. It does not try to close the sale alone.
+Audience & job: business owners with complex, niche software problems deciding whether to trust CodeFuse Solutions. The one action: email codefusesolutions@protonmail.com. Home's specific job is to state the claim, show what the studio takes on, offer a taste of the work, and hand the visitor onward — to /work/ for proof or /contact/ to act. It does not try to close the sale alone.
 
 Proof & content constraints: no real case studies yet. The three entries in src/content/work carry `sample: true` — they render in development with a visible badge and are stripped from production builds, where /work/ shows an honest empty state instead. No fabricated logos, stats, testimonials, or clients, ever. Founder Derrick Wengerd is named once, on /studio/. Voice is "we".
 

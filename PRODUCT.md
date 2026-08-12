@@ -31,7 +31,7 @@ CodeFuse Solutions builds custom software for the most complex and niche problem
 
 - Stack: Astro, fully static output, no backend and no form services.
 - Adding a project later must be exactly one content file — no redesign, no new plumbing.
-- Contact is a branded address (contact@codefusesolutions.com) forwarded to the founder's inbox; forwarding setup is a go-live task outside the site itself.
+- Contact is codefusesolutions@protonmail.com, a Proton Mail inbox read directly by the founder — no forwarding setup required.
 - Undecided product facts: the future templated product (nature, name, timing); which side projects will eventually be published.
 
 ## Brand Commitments

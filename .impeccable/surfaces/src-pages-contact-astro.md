@@ -19,4 +19,4 @@ Conversion constraints, all binding and hard-won from earlier critique findings:
 
 Tone: the lede promises an honest answer including "no". That reassurance is the page's real conversion mechanism — it is not decoration and should not be cut for brevity.
 
-Unresolved: email forwarding for contact@codefusesolutions.com is a go-live task outside the site.
+Contact address: codefusesolutions@protonmail.com, a Proton Mail inbox read directly by the founder — no forwarding dependency.
