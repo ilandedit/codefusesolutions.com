@@ -19,9 +19,9 @@ import Footer from '../components/Footer.astro';
 import Band from '../components/Band.astro';
 import { Image } from 'astro:assets';
 
-const work = (await getCollection('work'))
-  .filter((entry) => !(import.meta.env.PROD && entry.data.sample))
-  .sort((a, b) => a.data.order - b.data.order);
+const work = (await getCollection('work')).sort(
+  (a, b) => a.data.order - b.data.order
+);
 const featured = work.slice(0, 2);
 ---
 

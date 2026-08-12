@@ -43,9 +43,9 @@ const work = defineCollection({
         })
         .optional(),
 
-      // Placeholder entries for previewing layout. They render in dev with a
-      // visible Sample badge and are stripped from production builds, so the
-      // live site can never claim work that doesn't exist.
+      // Illustrative entries, not real client engagements. They publish with
+      // a visible Sample badge everywhere they appear, so the live site never
+      // claims work that doesn't exist.
       sample: z.boolean().default(false),
     }),
 });

@@ -8,9 +8,9 @@ import Figure from '../../components/Figure.astro';
 import VideoBlock from '../../components/VideoBlock.astro';
 
 export async function getStaticPaths() {
-  const work = (await getCollection('work'))
-    .filter((entry) => !(import.meta.env.PROD && entry.data.sample))
-    .sort((a, b) => a.data.order - b.data.order);
+  const work = (await getCollection('work')).sort(
+    (a, b) => a.data.order - b.data.order
+  );
   return work.map((entry, i) => ({
     params: { slug: entry.id },
     props: { entry, next: work[(i + 1) % work.length] },

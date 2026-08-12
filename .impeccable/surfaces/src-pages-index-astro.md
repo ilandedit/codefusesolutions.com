@@ -11,7 +11,7 @@ Scope: the home page at src/pages/index.astro, the entry point of a four-page si
 
 Audience & job: business owners with complex, niche software problems deciding whether to trust CodeFuse Solutions. The one action: email codefusesolutions@protonmail.com. Home's specific job is to state the claim, show what the studio takes on, offer a taste of the work, and hand the visitor onward — to /work/ for proof or /contact/ to act. It does not try to close the sale alone.
 
-Proof & content constraints: no real case studies yet. The three entries in src/content/work carry `sample: true` — they render in development with a visible badge and are stripped from production builds, where /work/ shows an honest empty state instead. No fabricated logos, stats, testimonials, or clients, ever. Founder Derrick Wengerd is named once, on /studio/. Voice is "we".
+Proof & content constraints: no real case studies yet. The three entries in src/content/work carry `sample: true` — they publish with a visible Sample badge everywhere they appear (a 2026-08-12 decision; previously they were stripped from production builds). No fabricated logos, stats, testimonials, or clients, ever. Founder Derrick Wengerd is named once, on /studio/. Voice is "we".
 
 Chosen direction (2026-07-24, current — "Navy & Copper"): user-selected from a six-palette board that held layout and type constant so colour was the only variable under judgement. White ground, navy (#0f2a5c) for structure and actions, copper (#a9642a) for the human half; Clash Display over Switzer. The two-halves colour logic is binding: copper means listening and people, navy means building and commitment.
 

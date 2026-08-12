@@ -84,7 +84,7 @@ video:
 
 ### Sample entries
 
-The three case studies currently in `src/content/work/` carry `sample: true`. They render in development with a visible "Sample" badge so the layout can be reviewed, and are **stripped from production builds** — `npm run build` produces a site with no Work section and an honest empty state instead. Delete them, or drop the flag when a story becomes real.
+The three case studies currently in `src/content/work/` carry `sample: true`. They publish to the live site with a visible "Sample" badge on every appearance (home, work index, case-study pages), and the work index carries a note explaining they are illustrative, not real client engagements. Drop the flag when a story becomes real, or delete the file to unpublish it.
 
 ## Design
 

@@ -124,7 +124,7 @@ The site is **four real pages** — Home, Work, Studio, Contact — not one long
 - White ground, navy structure, copper warmth; no third accent
 - Clash Display headlines over Switzer body
 - Navy bands close each page at full width — colour committed at page scale, not sprinkled
-- No fabricated proof; sample case studies are dev-only and never build
+- No fabricated proof; sample case studies publish only with a visible Sample badge and an explanatory note
 
 ## Colors
 
@@ -206,7 +206,7 @@ Three panels in one bordered container on the Studio page, top bars running Copp
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep every claim true today; sample case studies carry `sample: true`, show a visible badge, and are stripped from production builds.
+- **Do** keep every claim true today; sample case studies carry `sample: true` and always show a visible Sample badge, with a note on the work index explaining they are illustrative.
 - **Do** give every page a page header and a closing band (except Contact, which is the ending).
 - **Do** mark the current page in the nav with both colour and `aria-current="page"`.
 - **Do** honor prefers-reduced-motion: reveals render settled.

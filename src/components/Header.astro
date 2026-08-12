@@ -5,11 +5,8 @@ const path = Astro.url.pathname;
 const isCurrent = (href: string) =>
   href === '/' ? path === '/' : path.startsWith(href);
 
-// Don't advertise Work until there is work: in production the samples are
-// filtered out, so the link would lead to an empty room.
-const work = (await getCollection('work')).filter(
-  (entry) => !(import.meta.env.PROD && entry.data.sample)
-);
+// Don't advertise Work unless there is something to show there.
+const work = await getCollection('work');
 
 const links = [
   ...(work.length > 0 ? [{ href: '/work/', label: 'Work' }] : []),
