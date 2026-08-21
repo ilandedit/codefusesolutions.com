@@ -4,7 +4,7 @@ summary: >-
   Oversize-load haulers get one state-issued route per permit and no navigation
   app that respects it; this one turns the permit itself into the route and
   alarms instead of re-routing.
-client: Geiser Trucking
+client: Heavy haul
 year: 2026
 order: 0
 ---
