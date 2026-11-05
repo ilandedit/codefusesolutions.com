@@ -9,7 +9,6 @@ import { Image } from 'astro:assets';
 const work = (await getCollection('work')).sort(
   (a, b) => a.data.order - b.data.order
 );
-const hasSamples = work.some((e) => e.data.sample);
 ---
 
 <Base
@@ -30,16 +29,6 @@ const hasSamples = work.some((e) => e.data.sample);
     </section>
 
     <section class="wrap section">
-      {
-        hasSamples && (
-          <p class="section-note dev-note">
-            Entries marked <strong>Sample</strong> are illustrative — they show
-            the kind of work we take on and how we write about it, not real
-            client engagements.
-          </p>
-        )
-      }
-
       {
         work.length > 0 ? (
           <ul class="work-list">
@@ -106,10 +95,6 @@ const hasSamples = work.some((e) => e.data.sample);
 </Base>
 
 <style>
-  .dev-note {
-    margin-bottom: 1.5rem;
-  }
-
   .work-list {
     list-style: none;
     margin: 0;
