@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/studio/derrick-wengerd.jpg';
 ---
 
 <Base
@@ -42,7 +44,14 @@ import Footer from '../components/Footer.astro';
         <div class="helper-col">
         <h2 class="title">Who reads this</h2>
         <div class="who">
-          <span class="avatar" aria-hidden="true">DW</span>
+          <Image
+            class="avatar"
+            src={portrait}
+            alt="Derrick Wengerd, founder of CodeFuse Solutions"
+            width={104}
+            height={104}
+            densities={[1, 2]}
+          />
           <div>
             <p class="title who-name">Derrick Wengerd</p>
             <p class="small who-role">Founder</p>
@@ -153,14 +162,11 @@ import Footer from '../components/Footer.astro';
     width: 52px;
     height: 52px;
     flex: 0 0 auto;
-    border-radius: 6px;
-    display: grid;
-    place-items: center;
-    background: var(--navy);
-    color: #fff;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.125rem;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid var(--card);
+    box-shadow: 0 0 0 1px var(--line);
   }
 
   .who-name {
