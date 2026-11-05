@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import Band from '../components/Band.astro';
+import { Image } from 'astro:assets';
+import portrait from '../assets/studio/derrick-wengerd.jpg';
 ---
 
 <Base
@@ -16,15 +18,24 @@ import Band from '../components/Band.astro';
       <p class="label">The studio</p>
       <h1 class="display">Small on purpose.</h1>
       <p class="lede">
-        CodeFuse Solutions is an independent software studio. We keep the
-        practice deliberately small so every engagement gets senior attention
-        from the first conversation to the shipped system.
+        CodeFuse Solutions is an independent software studio. We deliberately
+        limit the number of clients we take on so that we can ensure every
+        engagement gets the attention and intention it needs, from the first
+        conversation, all the way to the shipped system.
       </p>
     </section>
 
     <section class="wrap section">
       <div class="founder" data-reveal>
-        <span class="avatar" aria-hidden="true">DW</span>
+        <Image
+          class="avatar"
+          src={portrait}
+          alt="Derrick Wengerd, founder of CodeFuse Solutions"
+          width={200}
+          height={200}
+          densities={[1, 2]}
+          loading="eager"
+        />
         <div>
           <p class="lede founder-copy">
             The studio is run by founder Derrick Wengerd. You talk directly to
@@ -94,16 +105,13 @@ import Band from '../components/Band.astro';
   }
 
   .avatar {
-    width: 78px;
-    height: 78px;
-    border-radius: 6px;
-    display: grid;
-    place-items: center;
-    background: var(--navy);
-    color: #fff;
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.625rem;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid var(--card);
+    box-shadow: 0 0 0 1px var(--line);
   }
 
   .founder-copy {
