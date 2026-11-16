@@ -14,38 +14,35 @@ import portrait from '../assets/studio/derrick-wengerd.jpg';
   <Header />
 
   <main>
-    <section class="wrap page-head">
-      <p class="label">The studio</p>
-      <h1 class="display">Small on purpose.</h1>
-      <p class="lede">
-        CodeFuse Solutions is an independent software studio. We deliberately
-        limit the number of clients we take on so that we can ensure every
-        engagement gets the attention and intention it needs, from the first
-        conversation, all the way to the shipped system.
-      </p>
-    </section>
-
-    <section class="wrap section">
-      <div class="founder" data-reveal>
-        <Image
-          class="avatar"
-          src={portrait}
-          alt="Derrick Wengerd, founder of CodeFuse Solutions"
-          width={200}
-          height={200}
-          densities={[1, 2]}
-          loading="eager"
-        />
-        <div>
-          <p class="lede founder-copy">
-            This studio is founder run. You talk with and work directly with me
-            and you get access to a decade of software development expertise.
-            There is no account layer between the conversation and the work,
-            and I only take on projects that we can do exceptionally well.
-            Let&rsquo;s have a conversation!
-          </p>
-          <p class="small sig">Derrick Wengerd · Founder</p>
-        </div>
+    <!-- The founder block: the portrait with a navy panel laid over its
+         corner, the way a caption card sits on a print. -->
+    <section class="founder">
+      <Image
+        class="portrait"
+        src={portrait}
+        alt="Derrick Wengerd, founder of CodeFuse Solutions"
+        widths={[400, 754]}
+        sizes="(max-width: 860px) 100vw, 48vw"
+        loading="eager"
+        fetchpriority="high"
+      />
+      <div class="card">
+        <p class="label card-label">The studio</p>
+        <h1 class="display card-title">Small on purpose.</h1>
+        <p>
+          CodeFuse Solutions is an independent software studio. We deliberately
+          limit the number of clients we take on so that we can ensure every
+          engagement gets the attention and intention it needs, from the first
+          conversation, all the way to the shipped system.
+        </p>
+        <p>
+          This studio is founder run. You talk with and work directly with me
+          and you get access to a decade of software development expertise.
+          There is no account layer between the conversation and the work, and
+          I only take on projects that we can do exceptionally well.
+          Let&rsquo;s have a conversation!
+        </p>
+        <p class="label sig">Derrick Wengerd · Founder</p>
       </div>
     </section>
 
@@ -53,9 +50,9 @@ import portrait from '../assets/studio/derrick-wengerd.jpg';
       <div class="section-head" data-reveal>
         <h2 class="headline">How we work</h2>
       </div>
-      <div class="steps" data-reveal>
-        <div class="step s1">
-          <p class="label stepn">01 — Understand</p>
+      <div class="steps">
+        <div class="step" data-reveal>
+          <p class="label">01 — Understand</p>
           <h3 class="title">The conversations come first</h3>
           <p class="body-copy">
             We always start with a conversation with the people that matter,
@@ -64,8 +61,8 @@ import portrait from '../assets/studio/derrick-wengerd.jpg';
             We don&rsquo;t start to build before we genuinely understand.
           </p>
         </div>
-        <div class="step s2">
-          <p class="label stepn">02 — Build</p>
+        <div class="step" data-reveal>
+          <p class="label">02 — Build</p>
           <h3 class="title">Built precisely for you</h3>
           <p class="body-copy">
             We hand build our solutions, and tailor them to our customers
@@ -73,8 +70,8 @@ import portrait from '../assets/studio/derrick-wengerd.jpg';
             you can make decisions and help shape the solution as we work.
           </p>
         </div>
-        <div class="step s3">
-          <p class="label stepn">03 — Support</p>
+        <div class="step" data-reveal>
+          <p class="label">03 — Support</p>
           <h3 class="title">We stay reachable after launch</h3>
           <p class="body-copy">
             We ship software that we&rsquo;re prepared to live with, because a
@@ -99,103 +96,80 @@ import portrait from '../assets/studio/derrick-wengerd.jpg';
 <style>
   .founder {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: clamp(1.5rem, 4vw, 2.5rem);
+    grid-template-columns: repeat(12, minmax(0, 1fr));
     align-items: start;
-    background: var(--wash);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    padding: clamp(1.5rem, 3.5vw, 2.5rem);
+    max-width: 1400px;
+    margin-inline: auto;
+    padding: clamp(1rem, 4vh, 2.5rem) clamp(1rem, 2.6vw, 2.5rem) 0;
   }
 
-  .avatar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
+  .portrait {
+    grid-column: 1 / span 6;
+    grid-row: 1;
     display: block;
-    border: 2px solid var(--card);
-    box-shadow: 0 0 0 1px var(--line);
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
   }
 
-  .founder-copy {
-    max-width: 56ch;
-    color: var(--ink);
+  .card {
+    grid-column: 6 / -1;
+    grid-row: 1;
+    z-index: 1;
+    margin-top: clamp(3rem, 7vw, 6rem);
+    padding: clamp(2rem, 4.5vw, 4.25rem);
+    background: var(--navy);
+    color: rgba(255, 255, 255, 0.9);
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .card-label {
+    color: #fff;
+  }
+
+  .card-title {
+    color: #fff;
+    font-size: clamp(2.25rem, 4.4vw, 3.5rem);
+    margin-bottom: 0.5rem;
   }
 
   .sig {
-    margin-top: 1rem;
-    color: var(--copper);
-    font-weight: 600;
+    margin-top: 0.5rem;
+    color: #fff;
   }
 
   .steps {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    overflow: hidden;
+    gap: clamp(1.75rem, 4vw, 3.5rem);
   }
 
   .step {
-    background: var(--card);
-    border-right: 1px solid var(--line);
-    padding: 1.75rem 1.5rem;
-    position: relative;
+    display: grid;
+    gap: 0.625rem;
+    align-content: start;
+    padding-top: 1.25rem;
+    border-top: 2px solid var(--ink);
   }
 
-  .step:last-child {
-    border-right: 0;
+  .step .body-copy {
+    font-size: 1.0625rem;
+    line-height: 1.7;
   }
 
-  .step::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-  }
-
-  /* the one gradient in the system: listening becoming building */
-  .s1::before {
-    background: var(--copper);
-  }
-
-  .s2::before {
-    background: linear-gradient(90deg, var(--copper), var(--navy));
-  }
-
-  .s3::before {
-    background: var(--navy);
-  }
-
-  .stepn {
-    color: var(--mute);
-    margin-bottom: 0.875rem;
-  }
-
-  .step .title {
-    margin-bottom: 0.5rem;
-  }
-
-  @media (max-width: 900px) {
-    .steps {
-      grid-template-columns: 1fr;
-    }
-
-    .step {
-      border-right: 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .step:last-child {
-      border-bottom: 0;
-    }
-  }
-
-  @media (max-width: 640px) {
+  @media (max-width: 860px) {
     .founder {
+      display: block;
+      padding-inline: var(--inset);
+    }
+
+    .card {
+      margin-top: 0;
+    }
+
+    .steps {
       grid-template-columns: 1fr;
     }
   }
