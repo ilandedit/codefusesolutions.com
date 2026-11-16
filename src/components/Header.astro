@@ -8,113 +8,139 @@ const isCurrent = (href: string) =>
 // Don't advertise Work unless there is something to show there.
 const work = await getCollection('work');
 
-const links = [
+// The wordmark sits in the middle with the links split either side of it.
+const left = [
+  { href: '/', label: 'Home' },
   ...(work.length > 0 ? [{ href: '/work/', label: 'Work' }] : []),
+];
+const right = [
   { href: '/studio/', label: 'Studio' },
+  { href: '/contact/', label: 'Contact' },
 ];
 ---
 
-<header data-header>
-  <div class="wrap bar">
-    <a class="wordmark" href="/" aria-label="CodeFuse Solutions — home">
-      CodeFuse<span class="tail">&nbsp;Solutions</span>
-    </a>
-    <nav aria-label="Main">
-      {
-        links.map((l) => (
-          <a
-            class:list={['nav-link', 'small', { current: isCurrent(l.href) }]}
-            href={l.href}
-            aria-current={isCurrent(l.href) ? 'page' : undefined}
-          >
-            {l.label}
-          </a>
-        ))
-      }
-      <a
-        class="btn nav-btn"
-        href="/contact/"
-        aria-current={isCurrent('/contact/') ? 'page' : undefined}
-      >
-        Contact
-      </a>
-    </nav>
-  </div>
+<header class="site-head">
+  <a class="wordmark" href="/" aria-label="CodeFuse Solutions — home">
+    CodeFuse Solutions
+  </a>
+  <nav class="nav nav-left" aria-label="Main">
+    {
+      left.map((l) => (
+        <a
+          class:list={['nav-link', { current: isCurrent(l.href) }]}
+          href={l.href}
+          aria-current={isCurrent(l.href) ? 'page' : undefined}
+        >
+          {l.label}
+        </a>
+      ))
+    }
+  </nav>
+  <nav class="nav nav-right" aria-label="Main, continued">
+    {
+      right.map((l) => (
+        <a
+          class:list={['nav-link', { current: isCurrent(l.href) }]}
+          href={l.href}
+          aria-current={isCurrent(l.href) ? 'page' : undefined}
+        >
+          {l.label}
+        </a>
+      ))
+    }
+  </nav>
 </header>
 
 <style>
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 9;
-    background: var(--paper);
-    border-bottom: 1px solid var(--line);
-    transition: box-shadow 0.2s var(--ease);
-  }
-
-  header.scrolled {
-    box-shadow: 0 6px 20px rgba(16, 26, 46, 0.06);
-  }
-
-  .bar {
-    display: flex;
-    justify-content: space-between;
+  .site-head {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-areas: 'left mark right';
     align-items: center;
-    gap: 1rem;
-    min-height: 4rem;
-    padding-block: 0.5rem;
+    gap: 1.5rem;
+    padding: clamp(2rem, 7vh, 3.75rem) clamp(1.25rem, 3vw, 2.75rem);
   }
 
   .wordmark {
+    grid-area: mark;
     font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 1.3125rem;
-    color: var(--navy);
+    font-weight: 700;
+    font-size: clamp(1.125rem, 1.75vw, 1.5625rem);
+    line-height: 1;
+    letter-spacing: 0.15em;
+    /* Tracking adds trailing space; pull it back so the mark centres. */
+    margin-right: -0.15em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    color: var(--ink);
     text-decoration: none;
-    letter-spacing: -0.01em;
   }
 
-  .tail {
-    font-family: var(--font-text);
-    font-weight: 400;
-    font-size: 1rem;
-    color: var(--mute);
-  }
-
-  nav {
+  .nav {
     display: flex;
     align-items: center;
-    gap: clamp(0.75rem, 2.5vw, 1.75rem);
+    gap: clamp(1rem, 1.7vw, 1.5rem);
+  }
+
+  .nav-left {
+    grid-area: left;
+    justify-content: flex-start;
+  }
+
+  .nav-right {
+    grid-area: right;
+    justify-content: flex-end;
   }
 
   .nav-link {
     display: inline-flex;
     align-items: center;
     min-height: 44px;
+    font-size: 0.75rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--mute);
     text-decoration: none;
-    border-bottom: 2px solid transparent;
-    transition: color 0.18s var(--ease), border-color 0.18s var(--ease);
+    transition: color 0.18s var(--ease);
   }
 
-  .nav-link:hover {
+  .nav-link:hover,
+  .nav-link.current {
     color: var(--ink);
   }
 
   .nav-link.current {
-    color: var(--ink);
-    border-bottom-color: var(--copper);
+    font-weight: 600;
   }
 
-  .nav-btn {
-    padding: 0.625rem 1.125rem;
-    min-height: 40px;
-    font-size: 0.875rem;
-  }
+  /* Small screens: the mark on its own line, all four links in a row under
+     it. Four short links fit, so there is no menu to open. */
+  @media (max-width: 760px) {
+    .site-head {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        'mark mark'
+        'left right';
+      row-gap: 0.75rem;
+      column-gap: clamp(1rem, 5vw, 1.5rem);
+      padding-block: 1.5rem 1rem;
+    }
 
-  @media (max-width: 520px) {
-    .tail {
-      display: none;
+    .wordmark {
+      justify-self: center;
+    }
+
+    .nav {
+      gap: clamp(1rem, 5vw, 1.5rem);
+    }
+
+    .nav-left {
+      justify-content: flex-end;
+    }
+
+    .nav-right {
+      justify-content: flex-start;
     }
   }
 </style>

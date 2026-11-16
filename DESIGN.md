@@ -1,13 +1,13 @@
 ---
 name: CodeFuse Solutions
-description: Navy & Copper — a multi-page studio site with engineering-firm credibility and a warm metal edge.
+description: Inset Panels — a quiet off-white studio site with a centred tracked wordmark and large navy and copper fields carrying big geometric white type.
 colors:
-  paper: "#ffffff"
-  ink: "#101a2e"
-  mute: "#5a6478"
-  line: "#e2e6ee"
-  card: "#f7f9fc"
-  wash: "#fdf3ea"
+  paper: "#fafafa"
+  ink: "#111111"
+  heading: "#3d3d3d"
+  text: "#413e3e"
+  mute: "#6b6b6b"
+  line: "#e2e2e2"
   navy: "#0f2a5c"
   navy-deep: "#0a1f47"
   copper: "#a9642a"
@@ -15,204 +15,138 @@ colors:
   white: "#ffffff"
 typography:
   display:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(2.25rem, 5.2vw, 4rem)"
-    fontWeight: 600
-    lineHeight: 1.08
-    letterSpacing: "-0.015em"
+    fontFamily: "Jost Variable, Century Gothic, Futura, sans-serif"
+    fontSize: "clamp(2.375rem, 6.2vw, 5.25rem)"
+    fontWeight: 700
+    lineHeight: 1.02
+    letterSpacing: "-0.012em"
   headline:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(1.5rem, 3vw, 2.25rem)"
+    fontFamily: "Jost Variable, Century Gothic, Futura, sans-serif"
+    fontSize: "clamp(1.75rem, 3vw, 2.1875rem)"
     fontWeight: 600
-    lineHeight: 1.15
+    lineHeight: 1.1
   title:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "1.1875rem"
+    fontFamily: "Jost Variable, Century Gothic, Futura, sans-serif"
+    fontSize: "1.375rem"
     fontWeight: 600
-    lineHeight: 1.25
+    lineHeight: 1.2
   body:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1.0625rem"
-    fontWeight: 400
-    lineHeight: 1.65
-  lede:
     fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
     fontSize: "1.125rem"
     fontWeight: 400
-    lineHeight: 1.6
-  small:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 400
+    lineHeight: 1.8
   label:
+    fontFamily: "Jost Variable, Century Gothic, Futura, sans-serif"
+    fontSize: "0.8125rem"
+    fontWeight: 700
+    letterSpacing: "0.15em"
+  button:
+    fontFamily: "Jost Variable, Century Gothic, Futura, sans-serif"
+    fontSize: "0.75rem"
+    fontWeight: 700
+    letterSpacing: "0.24em"
+  wordmark:
+    fontFamily: "Jost Variable, Century Gothic, Futura, sans-serif"
+    fontSize: "clamp(1.125rem, 1.75vw, 1.5625rem)"
+    fontWeight: 700
+    letterSpacing: "0.15em"
+  nav:
     fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
     fontSize: "0.75rem"
-    fontWeight: 600
-    letterSpacing: "0.09em"
-  button:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.9375rem"
-    fontWeight: 600
-  mail-display:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(1.25rem, 3vw, 2.25rem)"
-    fontWeight: 600
-  case-title:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(1.875rem, 4.2vw, 3.25rem)"
-    fontWeight: 600
-    lineHeight: 1.1
-  row-title:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "clamp(1.375rem, 2.6vw, 1.875rem)"
-    fontWeight: 600
-    lineHeight: 1.2
-  wordmark:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "1.3125rem"
-    fontWeight: 600
-  wordmark-tail:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "1rem"
     fontWeight: 400
-  monogram:
-    fontFamily: "Clash Display, Arial Black, sans-serif"
-    fontSize: "1.625rem"
-    fontWeight: 600
-  ui-small:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.8125rem"
-    fontWeight: 600
-  nav-action:
-    fontFamily: "Switzer, Helvetica Neue, Arial, sans-serif"
-    fontSize: "0.875rem"
-    fontWeight: 600
+    letterSpacing: "0.08em"
 rounded:
-  sm: "4px"
-  md: "6px"
+  none: "0"
 spacing:
+  inset: "clamp(0.625rem, 1.4vw, 1.25rem)"
   gutter: "clamp(1.25rem, 5vw, 3.5rem)"
-  section: "clamp(3.5rem, 9vh, 5.5rem)"
+  section: "clamp(3.5rem, 10vh, 6rem)"
 components:
-  button-primary:
-    backgroundColor: "{colors.navy}"
+  button-outline:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.none}"
+    padding: "1rem 1.75rem"
+  button-outline-on-panel:
+    backgroundColor: "transparent"
     textColor: "{colors.white}"
-    rounded: "{rounded.sm}"
-    padding: "1rem 1.625rem"
-  button-primary-hover:
-    backgroundColor: "{colors.navy-deep}"
-  button-invert:
-    backgroundColor: "{colors.white}"
-    textColor: "{colors.navy}"
-    rounded: "{rounded.sm}"
-    padding: "1rem 1.625rem"
+    rounded: "{rounded.none}"
+    padding: "1rem 1.75rem"
 ---
 
 # Design System: CodeFuse Solutions
 
 ## Overview
 
-**Creative North Star: "Navy & Copper"**
+**Creative North Star: "Inset Panels"**
 
-A multi-page studio site with the credibility of an engineering firm and the warmth of hand-worked metal. White ground, deep navy for structure and action, copper for the human side. Chosen by the user from a six-palette board that held layout and type constant so colour was the only variable under judgement.
+Rebuilt on 2026-11-16 at the owner's request, modelled on the layout language
+of christopherboyer.com (a Squarespace site): an off-white page, a centred
+tracked-capitals wordmark with the navigation split either side of it, and
+large full-width blocks held a small margin off the viewport edge, carrying
+big geometric white type. This replaces the earlier "Navy & Copper" card
+layout. The copy, the four-page structure and the navy and copper brand
+colours carry over; the reference's photography, text and fonts do not.
 
-The site is **four real pages** — Home, Work, Studio, Contact — not one long scroll with anchors. Each page does one job and ends by pointing at the next; the visitor always knows where they are because the nav marks it.
-
-**The two halves carry through the colour:** copper marks listening and the human (eyebrows, the founder, step one of the method), navy marks building and commitment (actions, the closing band, step three). This survives from an earlier accepted concept and remains binding.
+The reference fills its blocks with photographs. This site has none yet, so
+the blocks are solid navy (with a faint drafting grid) and deep copper.
+`Panel` accepts an `image` prop for when a real photograph exists.
 
 **Key Characteristics:**
-- White ground, navy structure, copper warmth; no third accent
-- Clash Display headlines over Switzer body
-- Navy bands close each page at full width — colour committed at page scale, not sprinkled
-- No fabricated proof; sample case studies publish only with a visible Sample badge and an explanatory note
+- Off-white ground; colour appears only as inset panels, never as tint
+- Jost (a free Futura-style geometric) for display, headings and all tracked
+  capitals; Switzer for reading text
+- Square corners everywhere; outline buttons in tracked capitals
+- Centred page heads; prose in a 900px column
+- No fabricated proof; sample case studies always show a Sample badge
 
 ## Colors
 
-### Primary
-- **Navy** (#0f2a5c): primary actions, closing bands, step three, the wordmark. White on navy is 13.9:1. **Navy Deep** (#0a1f47) is its hover.
-
-### Secondary
-- **Copper** (#a9642a): eyebrows, section labels, the founder line, step one, link hovers. 4.6:1 on white — legible for small text but never used for long body copy. **Copper Deep** (#8c5122) for hovers on light grounds.
-
-### Neutral
-- **Paper** (#ffffff): the ground. **Card** (#f7f9fc): raised panels. **Wash** (#fdf3ea): the copper-tinted panel used once per page at most, to mark the human moment.
-- **Ink** (#101a2e): headings and primary text — navy-black, never pure black.
-- **Mute** (#5a6478): body copy, 5.9:1 on white.
-- **Line** (#e2e6ee): hairlines and borders.
-
-### Named Rules
-**The Two Halves Rule.** Copper means listening and people; navy means building and commitment. An accent that fits neither shouldn't be coloured.
-**The Band Rule.** Navy appears at page scale (full-width closing bands, never a thin stripe) or as a solid action. Navy is never a background tint.
+- **Paper** (#fafafa): the ground. **Ink** (#111111): wordmark, display type,
+  buttons. **Heading** (#3d3d3d): section headings. **Text** (#413e3e): body.
+  **Mute** (#6b6b6b): nav and secondary lines. **Line** (#e2e2e2): hairlines.
+- **Navy** (#0f2a5c → #0a1f47): the hero, the closing band, the founder card,
+  and the placeholder tile for a case study with no screenshot.
+- **Copper Deep** (#8c5122): the second panel tone, and small labels and link
+  hovers on the light ground. **Copper** (#a9642a) is too light for small text
+  on Paper and is not used for it.
 
 ## Typography
 
-**Display Font:** Clash Display 600 (Arial Black fallback), self-hosted woff2
-**Body Font:** Switzer 400/500/600 (Helvetica Neue fallback), self-hosted woff2
+- **Display** (Jost 700, up to 84px, tight): one per page; white on a panel or
+  Ink on Paper.
+- **Headline** (Jost 600, up to 35px): section titles.
+- **Title** (Jost 600, 22px): tiles, steps, names.
+- **Body** (Switzer 400, 18px / 1.8).
+- **Label** (Jost 700, 13px, 0.15em, uppercase): eyebrows, the hero's second
+  line, the footer line. Buttons use the same face at 12px / 0.24em.
 
-**Character:** Confident geometric headlines, invisible reading text. Sentence case except small tracked labels.
-
-### Hierarchy
-- **Display** (600, clamp(2.25rem, 5.2vw, 4rem)): one per page — the page's own statement.
-- **Headline** (600, clamp(1.5rem, 3vw, 2.25rem)): section titles.
-- **Title** (600, 1.1875rem): cards, steps, project titles.
-- **Lede** (400, 1.125rem): the standfirst under each page's display, in Mute.
-- **Body** (400, 1.0625rem, 1.65): copy in Mute, max 62ch.
-- **Small** (400, 0.9375rem): nav, footer, meta.
-- **Label** (600, 0.75rem, 0.09em, uppercase): eyebrows and section labels, usually copper.
-- **Mail Display** (600, clamp(1.25rem, 3vw, 2.25rem)): the contact page's address.
-- **Supporting steps** (all in frontmatter): Case Title (clamp(1.875rem, 4.2vw, 3.25rem)) for a case study's own heading; Row Title (clamp(1.375rem, 2.6vw, 1.875rem)) for work-index rows; Wordmark (1.3125rem) with its tail (1rem); Monogram (1.625rem) for founder initials; UI Small (600, 0.8125rem) for ghost buttons and section notes; Nav Action (600, 0.875rem) for the header's Contact button.
+Jost is bundled from `@fontsource-variable/jost`; Switzer is self-hosted in
+`public/fonts`.
 
 ## Layout
 
-Content capped at 1140px inside gutters (clamp(1.25rem, 5vw, 3.5rem)). Every page opens with a page header (label + display + lede) and closes with a full-bleed navy band pointing at the next step. Sections are separated by Line hairlines with clamp(3.5rem, 9vh, 5.5rem) padding. Grids collapse to one column at 900px (capabilities, method) and 820px (work, studio).
+- **Header:** not sticky. Three columns: Home, Work | wordmark | Studio,
+  Contact. Under 760px the wordmark takes its own line with all four links in
+  one row beneath it; there is no menu to open.
+- **Panel:** full width minus `--inset` each side. Centred variant for the
+  hero and closing bands; the hero is `min(74vh, 46rem)` tall.
+- **Page head:** centred label, display, lede.
+- **Prose:** `.column`, 900px.
+- **Work:** two-column tiles (16:10 screenshot, label, title, summary).
+- **Studio:** the portrait with a navy card overlapping its right edge.
 
-**Site structure (binding):** four real routes.
-- `/` — Home: the claim, what we take on, featured work, band → Work.
-- `/work/` — Work: the index of case studies; honest empty state when none exist yet; band → Contact.
-- `/work/<slug>/` — a case study: problem → approach → result; band → Contact.
-- `/studio/` — Studio: who we are, the founder, and the three-step method; band → Contact.
-- `/contact/` — Contact: the ask, the address in plain text, and a copy affordance. This page ends the journey and carries no onward band.
-
-Navigation marks the current page (copper underline, `aria-current="page"`). No anchor-link navigation between sections; links go to pages.
-
-## Elevation & Depth
-
-Flat with hairlines. Cards are Card or Wash panels with 1px Line borders. The primary action lifts 1px on hover — the only movement. No shadows beyond a single soft one under the sticky header once scrolled.
-
-## Shapes
-
-Restrained radii: 4px on actions and small chips, 6px on panels and cards. No pills, no circles except the small copper dot marking the current nav item on mobile.
-
-## Components
-
-### Primary action
-Navy fill, white text, 4px radius, 1rem × 1.625rem padding, Switzer 600. Hover: Navy Deep, translateY(-1px). Focus-visible: 2px navy outline offset 3px. **Invert variant** (white fill, navy text) for use inside navy bands.
-
-### Text links
-Ink with a 1px Line underline; hover shifts text and underline to Copper.
-
-### Cards (capability, project)
-Card ground, 1px Line border, 6px radius. Interactive cards move the border to Copper and lift 2px on hover; project cards show a copper "Read the case study →" on hover.
-
-### Navigation
-Sticky, white, Line bottom border (plus a soft shadow after scroll). Wordmark left; Work, Studio, Contact right, with the current page marked by a copper underline and `aria-current`. Targets ≥44px. Contact is a solid navy action.
-
-### The Closing Band (signature)
-A full-bleed navy section ending every page except Contact: a headline, one line of copy, and a white action pointing at the next step. It gives each page a real ending and puts the brand colour on the page at scale rather than as decoration.
-
-### The Method Block
-Three panels in one bordered container on the Studio page, top bars running Copper → Copper/Navy gradient → Navy: listening becoming building. The only gradient in the system.
+**Site structure (binding, unchanged):** `/`, `/work/`, `/work/<slug>/`,
+`/studio/`, `/contact/`. Every page except Contact ends with a navy closing
+band pointing at Contact. Current page is marked with `aria-current="page"`.
 
 ## Do's and Don'ts
 
-### Do:
-- **Do** keep every claim true today; sample case studies carry `sample: true` and always show a visible Sample badge, with a note on the work index explaining they are illustrative.
-- **Do** give every page a page header and a closing band (except Contact, which is the ending).
-- **Do** mark the current page in the nav with both colour and `aria-current="page"`.
+- **Do** keep every claim true today; `sample: true` entries always show the
+  badge.
 - **Do** honor prefers-reduced-motion: reveals render settled.
-
-### Don't:
-- **Don't** return to a dark ground with bright accents — the user rejected that as machine-looking, and it is permanently out.
-- **Don't** add a third accent, gradients (except the method bar), glass, or big blurred shadows.
-- **Don't** use copper for long body copy, or navy as a background tint.
-- **Don't** rebuild the site as a single-page scroll; the multi-page structure is the user's explicit decision.
+- **Do** use a real photograph in a panel only if it is the studio's own or
+  properly licensed.
+- **Don't** add rounded corners, shadows, cards with borders, or a third
+  panel colour.
+- **Don't** copy the reference site's photographs, copy or licensed fonts.

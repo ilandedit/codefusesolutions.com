@@ -39,8 +39,7 @@ const { src, alt, caption, eager = false, wide = false } = Astro.props;
     width: 100%;
     height: auto;
     border: 1px solid var(--line);
-    border-radius: 6px;
-    background: var(--card);
+    background: #fff;
   }
 
   figcaption {
@@ -53,10 +52,10 @@ const { src, alt, caption, eager = false, wide = false } = Astro.props;
     width: min(100%, var(--max));
   }
 
-  @media (min-width: 1100px) {
+  @media (min-width: 1180px) {
     .wide {
-      width: calc(100% + 8rem);
-      margin-inline: -4rem;
+      width: calc(100% + 12rem);
+      margin-inline: -6rem;
     }
   }
 </style>

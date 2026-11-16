@@ -1,4 +1,6 @@
 ---
+import Panel from './Panel.astro';
+
 interface Props {
   heading: string;
   copy: string;
@@ -8,10 +10,15 @@ interface Props {
 const { heading, copy, cta, href } = Astro.props;
 ---
 
-<section class="band">
-  <div class="wrap band-inner">
-    <h2 class="headline" data-reveal>{heading}</h2>
-    <p data-reveal>{copy}</p>
-    <a class="btn btn-invert" href={href} data-reveal>{cta}</a>
-  </div>
-</section>
+<Panel center>
+  <h2 class="display band-heading" data-reveal>{heading}</h2>
+  <p data-reveal>{copy}</p>
+  <a class="btn btn-invert" href={href} data-reveal>{cta}</a>
+</Panel>
+
+<style>
+  .band-heading {
+    font-size: clamp(2rem, 4.6vw, 3.75rem);
+    max-width: 18ch;
+  }
+</style>

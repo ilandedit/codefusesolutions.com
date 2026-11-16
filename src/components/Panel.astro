@@ -1,0 +1,51 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  tone?: 'navy' | 'copper';
+  /** Optional photograph behind the type. Import it from src/assets. */
+  image?: ImageMetadata;
+  /** Centre the content, as the hero and closing bands do. */
+  center?: boolean;
+  /** Hero height. */
+  tall?: boolean;
+  /** Load the photograph eagerly (first panel on the page). */
+  eager?: boolean;
+}
+
+const {
+  tone = 'navy',
+  image,
+  center = false,
+  tall = false,
+  eager = false,
+} = Astro.props;
+---
+
+<section
+  class:list={[
+    'panel',
+    `panel-${tone}`,
+    { 'panel-center': center, 'panel-tall': tall, 'panel-has-img': image },
+  ]}
+>
+  {
+    image && (
+      <Image
+        class="panel-img"
+        src={image}
+        alt=""
+        widths={[800, 1400, 2000, 2800]}
+        sizes="100vw"
+        format="webp"
+        quality={72}
+        loading={eager ? 'eager' : 'lazy'}
+        fetchpriority={eager ? 'high' : 'auto'}
+      />
+    )
+  }
+  <div class="panel-inner">
+    <slot />
+  </div>
+</section>
